@@ -1,0 +1,320 @@
+const PPL_DATA = {
+  siklus: [
+    {
+      id: 1,
+      tema: "Penyisipan Objek pada Aplikasi Ms. Word (Insert Picture, Shapes, dan Word Art)",
+      tanggal: "21 April 2026",
+      mapel: "Informatika Kelas VII",
+      deskripsi:
+        "Siklus pertama berfokus pada keterampilan penyisipan objek gambar, bentuk, dan teks dekoratif pada dokumen Ms. Word.",
+      files: [
+        {
+          name: "RPP Siklus 1",
+          filename: "dokumen/rpp/RPP_Siklus1.pdf",
+          type: "pdf",
+          size: "597 KB",
+          date: "2026-04-21",
+        },
+        {
+          name: "Modul Praktikum Siklus 1",
+          filename: "dokumen/rpp/Modul_Praktik_Siklus1.pdf",
+          type: "pdf",
+          size: "3.1 MB",
+          date: "2026-04-21",
+        },
+      ],
+      penilaian: [
+        {
+          name: "Lampiran 7 Siklus 1",
+          filename: "dokumen/penilaian/Lampiran 7 siklus 1.pdf",
+          type: "pdf",
+          size: "2.0 MB",
+          date: "2026-04-21",
+        },
+        {
+          name: "Lampiran 8 Siklus 1",
+          filename: "dokumen/penilaian/Lampiran 8 siklus 1.pdf",
+          type: "pdf",
+          size: "1.6 MB",
+          date: "2026-04-21",
+        },
+      ],
+      dokumentasi: [
+        {
+          name: "Foto Pembelajaran 1",
+          filename: "foto/siklus1/foto1.jpg",
+          type: "jpg",
+        },
+      ],
+      konteks:
+        "RPP dirancang menggunakan pendekatan kontekstual berbasis Project-Based Learning (PjBL) untuk membuat dokumen kreatif.",
+      tujuan:
+        "Siswa mampu menyisipkan gambar (Insert Picture), bentuk geometris (Shapes), dan seni tulisan (Word Art) secara estetik dalam dokumen.",
+      kelebihan:
+        "Siswa sangat antusias mendesain dokumen sendiri, modul praktik interaktif, dan panduan visual mudah dipahami.",
+      kekurangan:
+        "Sebagian siswa lambat dalam mengoperasikan mouse/keyboard; diperlukan bimbingan personal (scaffolding).",
+      teori: [
+        "Project-Based Learning",
+        "TPACK Framework",
+        "Teori Kognitivisme Piaget",
+      ],
+    },
+    {
+      id: 2,
+      tema: "Ms. Word (Insert Table)",
+      tanggal: "28 April 2026",
+      mapel: "Informatika Kelas VII",
+      deskripsi:
+        "Siklus kedua mengembangkan pemahaman penyisipan tabel, pemformatan kolom dan baris, serta penataan data secara terstruktur.",
+      files: [
+        {
+          name: "RPP Siklus 2",
+          filename: "dokumen/rpp/RPP_Siklus2.pdf",
+          type: "pdf",
+          size: "595 KB",
+          date: "2026-04-28",
+        },
+        {
+          name: "Modul Praktikum Siklus 2",
+          filename: "dokumen/rpp/Modul_Praktik_Siklus2.pdf",
+          type: "pdf",
+          size: "456 KB",
+          date: "2026-04-28",
+        },
+      ],
+      penilaian: [
+        {
+          name: "Lampiran 7 Siklus 2",
+          filename: "dokumen/penilaian/Lampiran 7 siklus 2.pdf",
+          type: "pdf",
+          size: "1.8 MB",
+          date: "2026-04-28",
+        },
+        {
+          name: "Lampiran 8 Siklus 2",
+          filename: "dokumen/penilaian/Lampiran 8 siklus 2.pdf",
+          type: "pdf",
+          size: "1.6 MB",
+          date: "2026-04-28",
+        },
+      ],
+      dokumentasi: [
+        {
+          name: "Foto Pembelajaran 2",
+          filename: "foto/siklus2/foto1.jpeg",
+          type: "jpeg",
+        },
+      ],
+      konteks:
+        "Pembelajaran mengintegrasikan pembuatan tabel untuk jadwal pelajaran atau jadwal piket kelas secara mandiri.",
+      tujuan:
+        "Siswa mampu menyisipkan tabel (Insert Table), memformat sel, serta menata data teks dan angka secara rapi.",
+      kelebihan:
+        "Praktik pembuatan jadwal pelajaran nyata sangat relevan dengan kebutuhan sehari-hari siswa kelas VII.",
+      kekurangan:
+        "Keterbatasan waktu saat pemformatan border dan warna sel; perlu panduan langkah-demi-langkah (cheat sheet) yang dicetak.",
+      teori: [
+        "Multimedia Learning Mayer",
+        "Discovery Learning Bruner",
+      ],
+    },
+    {
+      id: 3,
+      tema: "Ms. Word (Insert Symbol dan Equation)",
+      tanggal: "5 Mei 2026",
+      mapel: "Informatika Kelas VII",
+      deskripsi:
+        "Siklus ketiga berfokus pada pengenalan penyisipan simbol-simbol khusus dan formula matematika menggunakan fitur Symbol dan Equation di Ms. Word.",
+      files: [
+        {
+          name: "RPP Siklus 3",
+          filename: "dokumen/rpp/RPP_Siklus3.pdf",
+          type: "pdf",
+          size: "544 KB",
+          date: "2026-05-05",
+        },
+        {
+          name: "Modul Praktikum Siklus 3",
+          filename: "dokumen/rpp/Modul_Praktik_Siklus3.pdf",
+          type: "pdf",
+          size: "421 KB",
+          date: "2026-05-05",
+        },
+      ],
+      penilaian: [
+        {
+          name: "Lampiran 7 Siklus 3",
+          filename: "dokumen/penilaian/Lampiran 7 siklus 3.pdf",
+          type: "pdf",
+          size: "1.9 MB",
+          date: "2026-05-05",
+        },
+        {
+          name: "Lampiran 8 Siklus 3",
+          filename: "dokumen/penilaian/Lampiran 8 siklus 3.pdf",
+          type: "pdf",
+          size: "1.6 MB",
+          date: "2026-05-05",
+        },
+      ],
+      dokumentasi: [
+        {
+          name: "Foto Pembelajaran 3",
+          filename: "foto/siklus3/foto1.jpeg",
+          type: "jpeg",
+        },
+      ],
+      konteks:
+        "Siklus final dengan penekanan pada pembuatan lembar soal matematika sederhana menggunakan Word.",
+      tujuan:
+        "Siswa mampu menggunakan fitur Symbol dan Equation untuk menyisipkan rumus matematika dan karakter khusus pada dokumen.",
+      kelebihan:
+        "Siswa memahami bahwa Ms. Word dapat digunakan untuk menulis dokumen ilmiah dan matematis secara profesional.",
+      kekurangan:
+        "Beberapa siswa kesulitan mencari letak simbol khusus; diperlukan pendampingan ekstra untuk menemukan menu simbol.",
+      teori: [
+        "Assessment for Learning",
+        "Scaffolding Vygotsky",
+        "Reflective Practice",
+      ],
+    },
+  ],
+  lampiran: {
+    lampiran7: [
+      {
+        name: "Lampiran 7 Siklus 1",
+        filename: "dokumen/penilaian/Lampiran 7 siklus 1.pdf",
+        type: "pdf",
+        size: "2.0 MB",
+        date: "2026-04-21",
+      },
+      {
+        name: "Lampiran 7 Siklus 2",
+        filename: "dokumen/penilaian/Lampiran 7 siklus 2.pdf",
+        type: "pdf",
+        size: "1.8 MB",
+        date: "2026-04-28",
+      },
+      {
+        name: "Lampiran 7 Siklus 3",
+        filename: "dokumen/penilaian/Lampiran 7 siklus 3.pdf",
+        type: "pdf",
+        size: "1.9 MB",
+        date: "2026-05-05",
+      },
+    ],
+    lampiran8: [
+      {
+        name: "Lampiran 8 Siklus 1",
+        filename: "dokumen/penilaian/Lampiran 8 siklus 1.pdf",
+        type: "pdf",
+        size: "1.6 MB",
+        date: "2026-04-21",
+      },
+      {
+        name: "Lampiran 8 Siklus 2",
+        filename: "dokumen/penilaian/Lampiran 8 siklus 2.pdf",
+        type: "pdf",
+        size: "1.6 MB",
+        date: "2026-04-28",
+      },
+      {
+        name: "Lampiran 8 Siklus 3",
+        filename: "dokumen/penilaian/Lampiran 8 siklus 3.pdf",
+        type: "pdf",
+        size: "1.6 MB",
+        date: "2026-05-05",
+      },
+    ],
+  },
+  berkas: {
+    files: [],
+    dokumentasi: [
+      {
+        name: "Apel Peringatan Hari Kartini",
+        filename: "foto/kegiatan/Apel peringantan hari kartini.jpeg",
+        type: "jpeg",
+        size: "182 KB",
+        date: "2026-04-21",
+      },
+      {
+        name: "Foto Bersama DPL dan Guru Pamong",
+        filename:
+          "foto/kegiatan/Foto bersama guru pamong dan dosen pembimbing lapangan.jpeg",
+        type: "jpeg",
+        size: "219 KB",
+        date: "2026-11-20",
+      },
+      {
+        name: "Penerimaan Kegiatan PPL",
+        filename: "foto/kegiatan/penerimaan kegiatan PPL.jpeg",
+        type: "jpeg",
+        size: "98 KB",
+        date: "2026-08-15",
+      },
+      {
+        name: "Penjemputan Kegiatan PPL",
+        filename: "foto/kegiatan/penjemputan kegiatan PPL.jpeg",
+        type: "jpeg",
+        size: "77 KB",
+        date: "2026-11-30",
+      },
+      {
+        name: "Diskusi Kelompok PPL di LMS",
+        filename:
+          "foto/kegiatan/Diskusi Kelompok PPL untuk mengerjakan tugas di LMS.jpeg",
+        type: "jpeg",
+        size: "139 KB",
+        date: "2026-09-15",
+      },
+      {
+        name: "Distribusi MBG",
+        filename: "foto/kegiatan/Distribusi MBG.jpeg",
+        type: "jpeg",
+        size: "182 KB",
+        date: "2026-10-10",
+      },
+      {
+        name: "Workshop Finalisasi Artikel",
+        filename:
+          "foto/kegiatan/Pelaksanaan kegiatan workshop finalisasi artikel.jpeg",
+        type: "jpeg",
+        size: "100 KB",
+        date: "2026-11-12",
+      },
+      {
+        name: "Workshop Proposal Artikel",
+        filename:
+          "foto/kegiatan/Pelaksanaan kegiatan workshop proposal artikel.jpeg",
+        type: "jpeg",
+        size: "110 KB",
+        date: "2026-09-05",
+      },
+      {
+        name: "Kegiatan Istighosah",
+        filename: "foto/kegiatan/istighosah.jpeg",
+        type: "jpeg",
+        size: "120 KB",
+        date: "2026-10-25",
+      },
+    ],
+  },
+  foto: [
+    {
+      src: "files/foto/siklus1/foto1.jpg",
+      caption: "Kegiatan Pembelajaran Siklus 1",
+      label: "Siklus 1",
+    },
+    {
+      src: "files/foto/siklus2/foto1.jpeg",
+      caption: "Kegiatan Pembelajaran Siklus 2",
+      label: "Siklus 2",
+    },
+    {
+      src: "files/foto/siklus3/foto1.jpeg",
+      caption: "Kegiatan Pembelajaran Siklus 3",
+      label: "Siklus 3",
+    },
+  ],
+};
