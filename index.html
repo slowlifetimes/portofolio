@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>E-Portfolio PPL | Muhammad Fajrul Fahmi</title>
+    <meta
+      name="description"
+      content="E-Portfolio PPL PPG – Muhammad Fajrul Fahmi, PPG Informatika Universitas Negeri Malang"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+  </head>
+
+  <body>
+    <div id="page-loader">
+      <div class="loader-ring"></div>
+    </div>
+    <div class="bg-wrap">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+    </div>
+
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
+        <ul class="nav-links" id="navList">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="artefak.html">Artefak</a></li>
+          <li><a href="penilaian.html">Penilaian</a></li>
+          <li><a href="model-guru.html">Model Guru</a></li>
+          <li><a href="refleksi.html">Refleksi</a></li>
+          <li><a href="berkas.html">Berkas</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-btn" id="themeBtn" title="Ganti Tema">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-wrap">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-badge">
+                <span class="badge-dot"></span> PPL PPG 2026
+              </div>
+              <h1 class="hero-title">
+                Halo, saya<br /><span class="name">Muhammad Fajrul Fahmi</span>
+              </h1>
+              <p class="hero-sub">Mahasiswa PPG Informatika</p>
+              <p class="hero-desc">
+                Universitas Negeri Malang<br />
+                Menempuh PPL di SMPN 18 Malang — membangun fondasi
+                menjadi guru informatika profesional, kreatif, dan berdampak.
+              </p>
+              <div class="hero-cta">
+                <a href="artefak.html" class="btn-primary"
+                  >Lihat Artefak
+                  <i
+                    data-lucide="arrow-right"
+                    style="
+                      width: 16px;
+                      height: 16px;
+                      vertical-align: middle;
+                      margin-left: 4px;
+                    "
+                  ></i
+                ></a>
+                <a href="berkas.html" class="btn-outline"
+                  ><i
+                    data-lucide="download"
+                    style="
+                      width: 15px;
+                      height: 15px;
+                      vertical-align: middle;
+                      margin-right: 6px;
+                    "
+                  ></i
+                  >Unduh Berkas</a
+                >
+              </div>
+            </div>
+            <div
+              class="hero-img"
+              style="display: flex; justify-content: center"
+            >
+              <div class="hero-avatar">
+                <img
+                  src="files/foto/profil.jpg"
+                  alt="Muhammad Fajrul Fahmi"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                  "
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Nav Cards -->
+          <div class="nav-cards fade-in" style="margin-top: 56px">
+            <a href="profil.html" class="nav-card glass glass-hover">
+              <div class="nav-card-icon"><i data-lucide="user-round"></i></div>
+              <h3>Profil Mahasiswa</h3>
+              <p>
+                Kisah dari Gumul Kediri, inspirasi, dan tujuan menjadi guru
+                profesional.
+              </p>
+            </a>
+            <a href="artefak.html" class="nav-card glass glass-hover">
+              <div class="nav-card-icon">
+                <i data-lucide="clipboard-list"></i>
+              </div>
+              <h3>Artefak Pembelajaran</h3>
+              <p>
+                RPP, media, dan hasil kerja siswa dari 3 siklus PPL Terbimbing.
+              </p>
+            </a>
+            <a href="penilaian.html" class="nav-card glass glass-hover">
+              <div class="nav-card-icon"><i data-lucide="bar-chart-2"></i></div>
+              <h3>Penilaian GP & DPL</h3>
+              <p>
+                Lampiran 7 & 8 — instrumen penilaian dan catatan umpan balik per
+                siklus.
+              </p>
+            </a>
+            <a href="model-guru.html" class="nav-card glass glass-hover">
+              <div class="nav-card-icon"><i data-lucide="star"></i></div>
+              <h3>Model Guru Idaman</h3>
+              <p>
+                Misi, kompetensi, dan karakter guru profesional yang ingin
+                diwujudkan.
+              </p>
+            </a>
+            <a href="berkas.html" class="nav-card glass glass-hover">
+              <div class="nav-card-icon"><i data-lucide="folder-open"></i></div>
+              <h3>Berkas Proyek</h3>
+              <p>
+                Seluruh file dan dokumentasi PPL tersusun rapi dan siap diunduh.
+              </p>
+            </a>
+          </div>
+
+          <!-- Photo Slider -->
+          <div class="photo-slider-section fade-in" style="margin-top: 64px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 24px;
+                flex-wrap: wrap;
+                gap: 12px;
+              "
+            >
+              <div>
+                <span class="sec-tag">Dokumentasi</span>
+                <h2
+                  class="sec-title"
+                  style="font-size: 1.5rem; margin-top: 4px; margin-bottom: 0"
+                >
+                  Momen PPL Terbimbing
+                </h2>
+              </div>
+              <a
+                href="berkas.html"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  font-size: 0.82rem;
+                  color: var(--primary-light);
+                  text-decoration: none;
+                  border: 1px solid var(--badge-border);
+                  background: var(--badge-bg);
+                  padding: 7px 16px;
+                  border-radius: 100px;
+                  transition: var(--transition);
+                "
+                onmouseover="this.style.background = 'var(--glass-hover)'"
+                onmouseout="this.style.background = 'var(--badge-bg)'"
+              >
+                <i
+                  data-lucide="folder-open"
+                  style="width: 14px; height: 14px"
+                ></i>
+                Semua Berkas
+              </a>
+            </div>
+            <div class="glass photo-slider" id="photoSlider">
+              <!-- Slides injected by JS -->
+              <div class="slider-track" id="sliderTrack"></div>
+              <!-- Caption overlay -->
+              <div class="slider-caption" id="sliderCaption"></div>
+              <!-- Controls -->
+              <button
+                class="slider-btn slider-btn-prev"
+                id="sliderPrev"
+                aria-label="Sebelumnya"
+              >
+                <i
+                  data-lucide="chevron-left"
+                  style="width: 20px; height: 20px"
+                ></i>
+              </button>
+              <button
+                class="slider-btn slider-btn-next"
+                id="sliderNext"
+                aria-label="Berikutnya"
+              >
+                <i
+                  data-lucide="chevron-right"
+                  style="width: 20px; height: 20px"
+                ></i>
+              </button>
+              <!-- Dots -->
+              <div class="slider-dots" id="sliderDots"></div>
+              <!-- Placeholder (shown when no images) -->
+              <div
+                class="slider-placeholder"
+                id="sliderPlaceholder"
+                style="display: none"
+              >
+                <i
+                  data-lucide="image"
+                  style="width: 48px; height: 48px; opacity: 0.3"
+                ></i>
+                <p>
+                  Belum ada foto dokumentasi.<br />Tambahkan file ke folder
+                  <code>files/dokumentasi/foto/</code>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG
+      </p>
+      <p style="margin-top: 6px">
+        Universitas Negeri Malang &nbsp;·&nbsp; DPL:
+        <a href="#">Dyah Lestari, S.T., M.Eng</a> &nbsp;·&nbsp; GP:
+        <a href="#">Ratna Agustyasari, S.Pd.</a>
+      </p>
+    </footer>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      /* ── Photo Slider ── */
+      (function () {
+        const track = document.getElementById("sliderTrack");
+        const caption = document.getElementById("sliderCaption");
+        const dotsWrap = document.getElementById("sliderDots");
+        const prevBtn = document.getElementById("sliderPrev");
+        const nextBtn = document.getElementById("sliderNext");
+        const placeholder = document.getElementById("sliderPlaceholder");
+        let slides = [],
+          current = 0,
+          timer = null;
+
+        async function initSlider() {
+          let data;
+          try {
+            data = await loadManifest();
+          } catch (e) {
+            showPlaceholder();
+            return;
+          }
+
+          // Base photos
+          const fotos = [...(data.foto || [])];
+
+          // Dynamically append photos from berkas.dokumentasi
+          if (data.berkas && data.berkas.dokumentasi) {
+            data.berkas.dokumentasi.forEach((d) => {
+              const isImg = ["jpg", "jpeg", "png", "webp"].includes(
+                d.type.toLowerCase(),
+              );
+              if (isImg) {
+                const srcPath = "files/" + d.filename;
+                // Prevent duplicates
+                if (!fotos.some((f) => f.src === srcPath)) {
+                  fotos.push({
+                    src: srcPath,
+                    caption: d.name,
+                    label: "Dokumentasi",
+                  });
+                }
+              }
+            });
+          }
+
+          if (!fotos.length) {
+            showPlaceholder();
+            return;
+          }
+
+          // Check which images actually exist
+          const valid = [];
+          for (const f of fotos) {
+            const ok = await fileExists(f.src);
+            if (ok) valid.push(f);
+          }
+          if (!valid.length) {
+            showPlaceholder();
+            return;
+          }
+
+          slides = valid;
+          build();
+          go(0);
+          startAuto();
+        }
+
+        function build() {
+          track.innerHTML = "";
+          dotsWrap.innerHTML = "";
+
+          // Dynamically scale track width based on slide count to prevent mobile flexbox bugs
+          track.style.width = `${slides.length * 100}%`;
+
+          slides.forEach((f, i) => {
+            const slide = document.createElement("div");
+            slide.className = "slider-slide";
+            slide.style.width = `${100 / slides.length}%`;
+            slide.innerHTML = `<img src="${f.src}" alt="${f.caption}" loading="lazy"/>`;
+            track.appendChild(slide);
+
+            const dot = document.createElement("button");
+            dot.className = "slider-dot";
+            dot.setAttribute("aria-label", `Foto ${i + 1}`);
+            dot.addEventListener("click", () => {
+              go(i);
+              resetAuto();
+            });
+            dotsWrap.appendChild(dot);
+          });
+          prevBtn.style.display = nextBtn.style.display = "flex";
+          dotsWrap.style.display = "flex";
+        }
+
+        function go(idx) {
+          current = (idx + slides.length) % slides.length;
+          const offset = -(current * (100 / slides.length));
+          track.style.transform = `translateX(${offset}%)`;
+          const f = slides[current];
+          caption.innerHTML = `<span class="slider-cap-label">${f.label}</span><span class="slider-cap-text">${f.caption}</span>`;
+          dotsWrap
+            .querySelectorAll(".slider-dot")
+            .forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        function startAuto() {
+          timer = setInterval(() => go(current + 1), 5000);
+        }
+        function resetAuto() {
+          clearInterval(timer);
+          startAuto();
+        }
+
+        function showPlaceholder() {
+          placeholder.style.display = "flex";
+          prevBtn.style.display = nextBtn.style.display = "none";
+          dotsWrap.style.display = "none";
+          if (window.lucide) lucide.createIcons({ nodes: [placeholder] });
+        }
+
+        prevBtn.addEventListener("click", () => {
+          go(current - 1);
+          resetAuto();
+        });
+        nextBtn.addEventListener("click", () => {
+          go(current + 1);
+          resetAuto();
+        });
+
+        // Swipe support
+        let startX = 0;
+        const slider = document.getElementById("photoSlider");
+        slider.addEventListener(
+          "touchstart",
+          (e) => {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        slider.addEventListener(
+          "touchend",
+          (e) => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) {
+              go(current + (dx < 0 ? 1 : -1));
+              resetAuto();
+            }
+          },
+          { passive: true },
+        );
+
+        initSlider();
+      })();
+    </script>
+    <style>
+      /* ── Photo Slider Styles ── */
+      .photo-slider {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        height: 420px;
+        background: var(--glass-bg);
+        touch-action: pan-y;
+      }
+
+      .slider-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+      }
+
+      .slider-slide {
+        height: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+
+      .slider-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+
+      .slider-slide img:hover {
+        transform: scale(1.03);
+      }
+
+      /* Caption overlay */
+      .slider-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px 24px 20px;
+        background: linear-gradient(
+          to top,
+          rgba(10, 8, 40, 0.75) 0%,
+          transparent 100%
+        );
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        pointer-events: none;
+      }
+
+      .slider-cap-label {
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary-light);
+        opacity: 0.9;
+      }
+
+      .slider-cap-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      /* Prev / Next buttons */
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        z-index: 10;
+      }
+
+      .slider-btn:hover {
+        background: rgba(255, 255, 255, 0.32);
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      .slider-btn-prev {
+        left: 14px;
+      }
+
+      .slider-btn-next {
+        right: 14px;
+      }
+
+      /* Dots */
+      .slider-dots {
+        position: absolute;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 7px;
+        z-index: 10;
+      }
+
+      .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        padding: 0;
+      }
+
+      .slider-dot.active {
+        background: #fff;
+        width: 22px;
+        border-radius: 4px;
+      }
+
+      /* Placeholder */
+      .slider-placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        color: var(--text-muted);
+        text-align: center;
+        padding: 32px;
+      }
+
+      .slider-placeholder p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+
+      .slider-placeholder code {
+        background: var(--code-bg);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        color: var(--primary-light);
+      }
+
+      @media (max-width: 600px) {
+        .photo-slider {
+          height: 260px;
+        }
+      }
+    </style>
+  </body>
+</html>
