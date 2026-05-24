@@ -782,8 +782,11 @@ function initSwipeNav() {
   if (nextBtn)
     nextBtn.addEventListener("click", () => navigate(currentIdx + 1));
 
+<<<<<<< HEAD
   // Swipe navigation disabled to prevent scroll and navigation conflicts on mobile layout
   /*
+=======
+>>>>>>> c2d32af30d7c07185a1f0dd807b8b0aee0a3b7de
   // ── Swipe detection ──
   const IGNORE_SELECTORS =
     ".tab-nav, .berkas-tabs, .nav-links, [data-no-swipe]";
@@ -817,7 +820,10 @@ function initSwipeNav() {
     },
     { passive: true },
   );
+<<<<<<< HEAD
   */
+=======
+>>>>>>> c2d32af30d7c07185a1f0dd807b8b0aee0a3b7de
 }
 
 // Premium Glassmorphic Lightbox Modal Manager
@@ -937,11 +943,14 @@ document.addEventListener("click", (e) => {
   if (fileLink && !fileLink.classList.contains("berkas-unavail")) {
     const url = fileLink.getAttribute("href");
     if (url && url.toLowerCase().endsWith(".pdf")) {
+<<<<<<< HEAD
       // On mobile view (<= 768px), allow the PDF to open directly in a new tab natively
       // to avoid broken iframe renderings and make it instantly viewable.
       if (window.innerWidth <= 768) {
         return;
       }
+=======
+>>>>>>> c2d32af30d7c07185a1f0dd807b8b0aee0a3b7de
       e.preventDefault();
       const title =
         fileLink.querySelector("strong, h4")?.textContent || "Dokumen PDF";
