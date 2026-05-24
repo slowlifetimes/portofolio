@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Profil | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    .leaflet-popup-content-wrapper {
+      background: #fff;
+      color: #1e1b4b;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .leaflet-popup-tip {
+      background: #fff;
+    }
+
+    .leaflet-popup-content {
+      font-family: "Inter", sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #1e1b4b;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="artefak.html">Artefak</a></li>
+        <li><a href="penilaian.html">Penilaian</a></li>
+        <li><a href="model-guru.html">Model Guru</a></li>
+        <li><a href="refleksi.html">Refleksi</a></li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn" title="Ganti Tema">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+        <div class="sec-header fade-in">
+          <span class="sec-tag">Tentang Saya</span>
+          <h1 class="sec-title grad-text">Profil Mahasiswa</h1>
+          <p class="sec-desc">
+            Mengenal lebih dekat latar belakang, inspirasi, dan tujuan
+            profesional selama pelaksanaan PPL Terbimbing.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="profile-grid fade-in">
+          <div class="glass profile-sidebar">
+            <div style="
+                  display: flex;
+                  justify-content: center;
+                  margin-bottom: 24px;
+                ">
+              <div style="
+                    width: 180px;
+                    height: 180px;
+                    border-radius: 50%;
+                    background: var(--glass-bg);
+                    border: 4px solid var(--glass-border);
+                    padding: 8px;
+                    box-shadow: var(--shadow);
+                    overflow: hidden;
+                    position: relative;
+                  ">
+                <img src="files/foto/profil.jpg" alt="Foto Profil" style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      border-radius: 50%;
+                    " />
+              </div>
+            </div>
+            <div class="p-name">Muhammad Fajrul Fahmi</div>
+            <span class="badge">PPG Informatika</span><br />
+            <span class="badge">Universitas Negeri Malang</span>
+            <div class="p-stats">
+              <div class="stat-card">
+                <div class="stat-n" data-count="3">3</div>
+                <div class="stat-l">Siklus PPL</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-n">VII</div>
+                <div class="stat-l">Kelas</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-n" data-count="2026">2026</div>
+                <div class="stat-l">Tahun</div>
+              </div>
+            </div>
+            <div style="
+                  margin-top: 18px;
+                  padding-top: 18px;
+                  border-top: 1px solid var(--glass-border);
+                  text-align: left;
+                ">
+              <p style="
+                    font-size: 0.78rem;
+                    color: var(--text-muted);
+                    margin-bottom: 12px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                  ">
+                Info PPL
+              </p>
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <div style="display: flex; align-items: flex-start; gap: 10px">
+                  <i data-lucide="building-2" class="icon-sm icon-primary" style="margin-top: 3px; flex-shrink: 0"></i>
+                  <div>
+                    <div style="
+                          font-size: 0.72rem;
+                          color: var(--text-muted);
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.8px;
+                        ">
+                      Sekolah PPL
+                    </div>
+                    <div style="
+                          font-size: 0.85rem;
+                          color: var(--text-primary);
+                          font-weight: 500;
+                        ">
+                      SMPN 18 Malang
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 10px">
+                  <i data-lucide="book-open" class="icon-sm icon-primary" style="margin-top: 3px; flex-shrink: 0"></i>
+                  <div>
+                    <div style="
+                          font-size: 0.72rem;
+                          color: var(--text-muted);
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.8px;
+                        ">
+                      Mata Pelajaran
+                    </div>
+                    <div style="
+                          font-size: 0.85rem;
+                          color: var(--text-primary);
+                          font-weight: 500;
+                        ">
+                      Informatika Kelas VII
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 10px">
+                  <i data-lucide="user-check" class="icon-sm icon-primary" style="margin-top: 3px; flex-shrink: 0"></i>
+                  <div>
+                    <div style="
+                          font-size: 0.72rem;
+                          color: var(--text-muted);
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.8px;
+                        ">
+                      Guru Pamong
+                    </div>
+                    <div style="
+                          font-size: 0.85rem;
+                          color: var(--text-primary);
+                          font-weight: 500;
+                        ">
+                      Ratna Agustyasari, S.Pd.
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 10px">
+                  <i data-lucide="graduation-cap" class="icon-sm icon-primary"
+                    style="margin-top: 3px; flex-shrink: 0"></i>
+                  <div>
+                    <div style="
+                          font-size: 0.72rem;
+                          color: var(--text-muted);
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.8px;
+                        ">
+                      Dosen Pembimbing
+                    </div>
+                    <div style="
+                          font-size: 0.85rem;
+                          color: var(--text-primary);
+                          font-weight: 500;
+                        ">
+                      Dyah Lestari, S.T., M.Eng
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass profile-main">
+            <h3 class="icon-label">
+              <i data-lucide="home" class="icon-primary"></i>
+              <span class="grad-text">Asal Daerah &amp; Keunikan</span>
+            </h3>
+            <div class="fade-in" style="
+              margin-bottom: 18px;
+              border-radius: var(--radius-sm);
+              overflow: hidden;
+              border: 1px solid var(--glass-border);
+              box-shadow: var(--shadow);
+              position: relative;
+            ">
+              <img
+                src="files/foto/gumul.jpeg"
+                alt="Monumen Simpang Lima Gumul, Kediri"
+                style="
+                  width: 100%;
+                  height: 220px;
+                  object-fit: cover;
+                  display: block;
+                "
+              />
+              <div style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 10px 14px;
+                background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+                display: flex;
+                align-items: center;
+                gap: 7px;
+              ">
+                <i data-lucide="map-pin" style="width:13px;height:13px;color:#fff;flex-shrink:0;"></i>
+                <span style="font-size:0.78rem;color:#fff;font-weight:500;">Monumen Simpang Lima Gumul (SLG), Kabupaten Kediri</span>
+              </div>
+            </div>
+            <p data-words>
+              Saya berasal dari Kabupaten Kediri, wilayah yang memiliki pesona khas melalui perpaduan warisan Kerajaan
+              Kadiri (Panjalu), lanskap alam kaki Gunung Kelud, serta budaya agraris yang masih kuat. Ikon utamanya
+              adalah Monumen Simpang Lima Gumul (SLG), simbol perkembangan dan identitas daerah. Kabupaten Kediri juga
+              dikenal melalui kekayaan budayanya, seperti Tahu Takwa dan kesenian Jaranan. Perpaduan antara tradisi dan
+              modernitas tersebut membentuk cara pandang saya bahwa pendidikan harus mampu menjembatani akar budaya
+              dengan semangat pembaruan yang tidak pernah berhenti.
+            </p>
+
+            <h3 class="icon-label" style="margin-top: 20px">
+              <i data-lucide="lightbulb" class="icon-primary"></i>
+              <span class="grad-text">Inspirasi Menjadi Guru</span>
+            </h3>
+            <p data-words>
+              Kecintaan saya pada Informatika lahir dari seorang guru komputer SMK yang
+              luar biasa — yang mampu mengubah konsep pemrograman dan logika abstrak menjadi
+              praktik nyata yang hidup, kreatif, dan berdampak. Dari situ tumbuh tekad kuat:
+              saya ingin menjadi bagian dari rantai inspirasi itu, meneruskannya kepada generasi berikutnya.
+            </p>
+
+            <h3 class="icon-label" style="margin-top: 20px">
+              <i data-lucide="target" class="icon-primary"></i>
+              <span class="grad-text">Tujuan Profesional</span>
+            </h3>
+            <p data-words>
+              Melalui PPL ini, saya tidak sekadar belajar mengajar
+              — saya belajar menjadi guru. Saya berlatih merancang
+              pembelajaran Informatika yang interaktif, menyenangkan, serta ramah anak, serta terus berefleksi
+              demi perbaikan berkelanjutan. Tujuan akhir saya adalah menjadi guru informatika
+              profesional yang menginspirasi siswa menemukan keindahan logika teknologi dan berpikir komputasional.
+            </p>
+
+            <div class="quote-block">
+              <p>
+                "Seorang guru yang baik dapat menginspirasi harapan,
+                menyalakan imajinasi, dan menanamkan cinta belajar seumur
+                hidup."
+              </p>
+              <cite>— Brad Henry</cite>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAP -->
+        <div class="map-section fade-in">
+          <div class="maps-grid">
+            <!-- Peta Kampus -->
+            <div class="glass map-card">
+              <div class="map-card-header">
+                <h3>
+                  <i data-lucide="graduation-cap" class="icon-primary"></i>
+                  Lokasi Kampus (Universitas Negeri Malang)
+                </h3>
+              </div>
+              <div id="map-univ" class="split-map"></div>
+              <div class="map-card-footer">
+                <p>
+                  Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang
+                </p>
+              </div>
+            </div>
+
+            <!-- Peta PPL -->
+            <div class="glass map-card">
+              <div class="map-card-header">
+                <h3>
+                  <i data-lucide="building-2" class="icon-primary"></i> Lokasi
+                  PPL (SMPN 18 Malang)
+                </h3>
+              </div>
+              <div id="map-ppl" class="split-map"></div>
+              <div class="map-card-footer">
+                <p>
+                  Jl. Soekarno - Hatta No.A-394, Jatimulyo, Kec. Lowokwaru,
+                  Kota Malang
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      <a href="index.html">Kembali ke Beranda</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function pageInit() {
+      // Initialize University Map
+      const mapUniv = L.map("map-univ").setView(
+        [-7.9604093, 112.6185939],
+        15,
+      );
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      }).addTo(mapUniv);
+
+      // Initialize PPL Map
+      const mapPPL = L.map("map-ppl").setView([-7.9392772, 112.6195131], 15);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      }).addTo(mapPPL);
+
+      const mkUniv =
+        "<div style=\"background:#6366f1;color:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(99,102,241,0.5);border:2px solid #fff\"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg></div>";
+      const mkPPL =
+        "<div style=\"background:#ec4899;color:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(236,72,153,0.5);border:2px solid #fff\"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z'/><path d='M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2'/><path d='M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2'/><path d='M10 6h4'/><path d='M10 10h4'/><path d='M10 14h4'/><path d='M10 18h4'/></svg></div>";
+
+      const iU = L.divIcon({
+        className: "",
+        html: mkUniv,
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
+      });
+      const iP = L.divIcon({
+        className: "",
+        html: mkPPL,
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
+      });
+
+      L.marker([-7.9604093, 112.6185939], { icon: iU })
+        .addTo(mapUniv)
+        .bindPopup(
+          "<strong>Universitas Negeri Malang</strong><br>Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang",
+        )
+        .openPopup();
+
+      L.marker([-7.9392772, 112.6195131], { icon: iP })
+        .addTo(mapPPL)
+        .bindPopup(
+          "<strong>SMPN 18 Malang</strong><br>Lokasi PPL PPG 2026<br>Jl. Soekarno - Hatta No.A-394, Jatimulyo, Kec. Lowokwaru, Kota Malang",
+        )
+        .openPopup();
+    }
+  </script>
+</body>
+
+</html>

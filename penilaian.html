@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Penilaian | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <style>
+      .pdf-frame-wrap {
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        border: 1px solid var(--glass-border);
+        background: rgba(0, 0, 0, 0.04);
+      }
+      .pdf-frame-wrap iframe {
+        display: block;
+        width: 100%;
+        height: 520px;
+        border: none;
+      }
+      .pdf-unavail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        gap: 14px;
+        color: var(--text-muted);
+        text-align: center;
+      }
+      .pdf-unavail svg {
+        color: var(--text-muted);
+        opacity: 0.5;
+      }
+      .pdf-unavail p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+      }
+      .pdf-unavail code {
+        background: var(--code-bg);
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        color: var(--primary-light);
+      }
+      .lampiran-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        gap: 16px;
+      }
+      .lampiran-header h3 {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--primary-light);
+        margin: 0;
+        line-height: 1.4;
+        flex: 1;
+      }
+      .lampiran-header h3 svg,
+      .lampiran-header h3 .lucide {
+        margin-top: 2px;
+      }
+      .lampiran-header a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.81rem;
+        color: var(--primary-light);
+        border: 1px solid var(--badge-border);
+        background: var(--badge-bg);
+        padding: 5px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: var(--transition);
+        flex-shrink: 0;
+        margin-top: -2px;
+      }
+      .lampiran-header a:hover {
+        background: var(--glass-hover);
+      }
+      @media (min-width: 769px) {
+        .lampiran-header {
+          min-height: 56px;
+        }
+      }
+      .siklus-card {
+        padding: 24px;
+      }
+      .siklus-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+        color: var(--text-primary);
+      }
+      .siklus-card-sub {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        margin-bottom: 32px;
+      }
+      .pdf-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 768px) {
+        .pdf-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .loading-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        gap: 10px;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+      .spin {
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-loader"><div class="loader-ring"></div></div>
+    <div class="bg-wrap">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+    </div>
+
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
+        <ul class="nav-links" id="navList">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="artefak.html">Artefak</a></li>
+          <li><a href="penilaian.html">Penilaian</a></li>
+          <li><a href="model-guru.html">Model Guru</a></li>
+          <li><a href="refleksi.html">Refleksi</a></li>
+          <li><a href="berkas.html">Berkas</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-btn" id="themeBtn">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-wrap">
+      <section>
+        <div class="container">
+          <div class="sec-header fade-in">
+            <span class="sec-tag">Lampiran 7 &amp; 8</span>
+            <h1 class="sec-title">Instrumen Penilaian PPL</h1>
+            <p class="sec-desc">
+              Klik tab siklus di bawah ini untuk melihat dokumen penilaian
+              penyusunan perangkat pembelajaran (Lampiran 7) dan penilaian
+              praktik mengajar (Lampiran 8) dari Guru Pamong.
+            </p>
+            <div class="divider"></div>
+          </div>
+
+          <div class="tab-nav fade-in">
+            <button class="tab-btn active" data-target="ps1">
+              <i
+                data-lucide="book"
+                style="
+                  width: 14px;
+                  height: 14px;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              ></i
+              >Siklus 1
+            </button>
+            <button class="tab-btn" data-target="ps2">
+              <i
+                data-lucide="book"
+                style="
+                  width: 14px;
+                  height: 14px;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              ></i
+              >Siklus 2
+            </button>
+            <button class="tab-btn" data-target="ps3">
+              <i
+                data-lucide="book"
+                style="
+                  width: 14px;
+                  height: 14px;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              ></i
+              >Siklus 3
+            </button>
+          </div>
+
+          <!-- Siklus 1 -->
+          <div class="tab-pane active" id="ps1">
+            <div class="glass siklus-card fade-in">
+              <p class="siklus-card-title">
+                Siklus 1 — Penyisipan Objek pada Aplikasi Ms. Word (Insert Picture, Shapes, dan Word Art)
+              </p>
+              <p class="siklus-card-sub">
+                21 April 2026 · Informatika Kelas VII · SMPN 18 Malang
+              </p>
+              <div class="pdf-grid">
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="file-text" class="icon-sm"></i> Lampiran
+                      7: Instrumen Penilaian Penyusunan Perangkat Pembelajaran
+                    </h3>
+                    <a
+                      id="dl-l7s1"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l7s1">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="presentation" class="icon-sm"></i>
+                      Lampiran 8: Instrumen Penilaian Praktik Mengajar
+                    </h3>
+                    <a
+                      id="dl-l8s1"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l8s1">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Siklus 2 -->
+          <div class="tab-pane" id="ps2">
+            <div class="glass siklus-card fade-in">
+              <p class="siklus-card-title">
+                Siklus 2 — Ms. Word (Insert Table)
+              </p>
+              <p class="siklus-card-sub">
+                28 April 2026 · Informatika Kelas VII · SMPN 18 Malang
+              </p>
+              <div class="pdf-grid">
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="file-text" class="icon-sm"></i> Lampiran
+                      7: Instrumen Penilaian Penyusunan Perangkat Pembelajaran
+                    </h3>
+                    <a
+                      id="dl-l7s2"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l7s2">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="presentation" class="icon-sm"></i>
+                      Lampiran 8: Instrumen Penilaian Praktik Mengajar
+                    </h3>
+                    <a
+                      id="dl-l8s2"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l8s2">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Siklus 3 -->
+          <div class="tab-pane" id="ps3">
+            <div class="glass siklus-card fade-in">
+              <p class="siklus-card-title">
+                Siklus 3 — Ms. Word (Insert Symbol dan Equation)
+              </p>
+              <p class="siklus-card-sub">
+                5 Mei 2026 · Informatika Kelas VII · SMPN 18 Malang
+              </p>
+              <div class="pdf-grid">
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="file-text" class="icon-sm"></i> Lampiran
+                      7: Instrumen Penilaian Penyusunan Perangkat Pembelajaran
+                    </h3>
+                    <a
+                      id="dl-l7s3"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l7s3">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="lampiran-header">
+                    <h3>
+                      <i data-lucide="presentation" class="icon-sm"></i>
+                      Lampiran 8: Instrumen Penilaian Praktik Mengajar
+                    </h3>
+                    <a
+                      id="dl-l8s3"
+                      href="#"
+                      target="_blank"
+                      style="display: none"
+                    >
+                      <i
+                        data-lucide="download"
+                        style="width: 13px; height: 13px"
+                      ></i>
+                      Unduh
+                    </a>
+                  </div>
+                  <div id="pdf-l8s3">
+                    <div class="loading-state">
+                      <i
+                        data-lucide="loader-2"
+                        class="spin"
+                        style="width: 20px; height: 20px"
+                      ></i>
+                      Memuat...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+        <a href="index.html">Beranda</a>
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      async function loadPdf(containerId, dlId, fileUrl) {
+        const el = document.getElementById(containerId);
+        const dl = document.getElementById(dlId);
+        if (!el) return;
+
+        const exists = await fileExists(fileUrl);
+        if (exists) {
+          el.innerHTML = `<div class="pdf-frame-wrap"><iframe src="${fileUrl}"></iframe></div>`;
+          if (dl) {
+            dl.href = fileUrl;
+            dl.style.display = "inline-flex";
+          }
+        } else {
+          el.innerHTML = `
+      <div class="pdf-frame-wrap">
+        <div class="pdf-unavail">
+          <i data-lucide="file-x" style="width:44px;height:44px"></i>
+          <p>File belum tersedia.<br>Tambahkan ke folder<br><code>files/dokumen/penilaian/</code></p>
+        </div>
+      </div>`;
+        }
+        if (window.lucide) lucide.createIcons({ nodes: [el] });
+      }
+
+      function pageInit() {
+        initTabs(".tab-btn", ".tab-pane");
+
+        loadManifest().then((data) => {
+          const l7 = data.lampiran.lampiran7;
+          const l8 = data.lampiran.lampiran8;
+          const pdfData = { l7, l8 };
+
+          // Function to load PDFs for a specific cycle on-demand
+          function loadCyclePdfs(cycle) {
+            const f7 = pdfData.l7[cycle - 1];
+            const f8 = pdfData.l8[cycle - 1];
+            if (f7)
+              loadPdf(
+                `pdf-l7s${cycle}`,
+                `dl-l7s${cycle}`,
+                "files/" + f7.filename,
+              );
+            if (f8)
+              loadPdf(
+                `pdf-l8s${cycle}`,
+                `dl-l8s${cycle}`,
+                "files/" + f8.filename,
+              );
+          }
+
+          // Load active cycle (Siklus 1) immediately on start
+          loadCyclePdfs(1);
+
+          // Track loaded cycles to avoid redundant network loading
+          const loadedCycles = { 1: true };
+
+          // Listen to tab clicks to lazily fetch PDFs on-demand
+          document.querySelectorAll(".tab-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const targetId = btn.dataset.target; // "ps1", "ps2", "ps3"
+              const cycle = parseInt(targetId.replace("ps", ""), 10);
+              if (cycle && !loadedCycles[cycle]) {
+                // Pre-render a elegant glassmorphic loading spinner inside the frames
+                const c7 = document.getElementById(`pdf-l7s${cycle}`);
+                const c8 = document.getElementById(`pdf-l8s${cycle}`);
+                if (c7)
+                  c7.innerHTML =
+                    '<div class="pdf-frame-wrap"><div style="padding:80px 20px;text-align:center"><div class="loader-ring" style="width:32px;height:32px;margin:0 auto 16px;border:3px solid var(--glass-border);border-top-color:var(--primary)"></div><p style="font-size:0.82rem;color:var(--text-muted)">Memuat PDF...</p></div></div>';
+                if (c8)
+                  c8.innerHTML =
+                    '<div class="pdf-frame-wrap"><div style="padding:80px 20px;text-align:center"><div class="loader-ring" style="width:32px;height:32px;margin:0 auto 16px;border:3px solid var(--glass-border);border-top-color:var(--primary)"></div><p style="font-size:0.82rem;color:var(--text-muted)">Memuat PDF...</p></div></div>';
+
+                setTimeout(() => {
+                  loadCyclePdfs(cycle);
+                  loadedCycles[cycle] = true;
+                }, 120); // Smooth natural delay for seamless UI transitions
+              }
+            });
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
