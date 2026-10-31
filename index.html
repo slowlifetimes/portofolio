@@ -51,6 +51,7 @@
               <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
             </div>
           </li>
+          <li><a href="refleksi.html">Refleksi</a></li>
           <li><a href="berkas.html">Berkas</a></li>
         </ul>
         <div class="nav-right">
@@ -210,26 +211,6 @@
               <!-- Caption overlay -->
               <div class="slider-caption" id="sliderCaption"></div>
               <!-- Controls -->
-              <button
-                class="slider-btn slider-btn-prev"
-                id="sliderPrev"
-                aria-label="Sebelumnya"
-              >
-                <i
-                  data-lucide="chevron-left"
-                  style="width: 20px; height: 20px"
-                ></i>
-              </button>
-              <button
-                class="slider-btn slider-btn-next"
-                id="sliderNext"
-                aria-label="Berikutnya"
-              >
-                <i
-                  data-lucide="chevron-right"
-                  style="width: 20px; height: 20px"
-                ></i>
-              </button>
               <!-- Dots -->
               <div class="slider-dots" id="sliderDots"></div>
               <!-- Placeholder (shown when no images) -->
@@ -264,177 +245,285 @@
       </p>
     </footer>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/data.js?v=20261031_05"></script>
+    <script src="js/main.js?v=20261031_05"></script>
     <script>
-      /* â”€â”€ Photo Slider â”€â”€ */
+      /* ── Photo Slider v2 ── */
       (function () {
-        const track = document.getElementById("sliderTrack");
-        const caption = document.getElementById("sliderCaption");
-        const dotsWrap = document.getElementById("sliderDots");
-        const prevBtn = document.getElementById("sliderPrev");
-        const nextBtn = document.getElementById("sliderNext");
-        const placeholder = document.getElementById("sliderPlaceholder");
-        let slides = [],
-          current = 0,
-          timer = null;
-
-        async function initSlider() {
-          let data;
-          try {
-            data = await loadManifest();
-          } catch (e) {
-            showPlaceholder();
-            return;
+        var ALL_WEBSITE_PHOTOS = [
+          {
+                    "src": "files/foto/siklus1/foto1.jpg",
+                    "caption": "Praktik PPL Terbimbing Siklus 1 (Insert Picture & Shapes)",
+                    "label": "PPL Terbimbing · Siklus 1"
+          },
+          {
+                    "src": "files/foto/siklus2/foto1.jpeg",
+                    "caption": "Praktik PPL Terbimbing Siklus 2 (Insert Table)",
+                    "label": "PPL Terbimbing · Siklus 2"
+          },
+          {
+                    "src": "files/foto/siklus3/foto1.jpeg",
+                    "caption": "Praktik PPL Terbimbing Siklus 3 (Symbol & Equation)",
+                    "label": "PPL Terbimbing · Siklus 3"
+          },
+          {
+                    "src": "files/foto/siklus4/foto1.jpg",
+                    "caption": "Praktik PPL Terbimbing Siklus 4 (Evaluasi Akhir)",
+                    "label": "PPL Terbimbing · Siklus 4"
+          },
+          {
+                    "src": "files/foto/siklus4/foto2.jpg",
+                    "caption": "Media Pembelajaran Siklus 4 Terbimbing",
+                    "label": "PPL Terbimbing · Siklus 4"
+          },
+          {
+                    "src": "files/foto/siklus4/foto3.jpg",
+                    "caption": "Aktivitas Siswa Siklus 4 Terbimbing",
+                    "label": "PPL Terbimbing · Siklus 4"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 1/Pembukaan.jpeg",
+                    "caption": "Tahap Pembukaan & Pengondisian Kelas",
+                    "label": "PPL Mandiri · Siklus 1"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 1/Kegiatan Inti Pembelajaran.jpeg",
+                    "caption": "Kegiatan Inti & Diskusi Terbimbing",
+                    "label": "PPL Mandiri · Siklus 1"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 1/Presentasi Kelompok.jpeg",
+                    "caption": "Presentasi Hasil Diskusi Kelompok",
+                    "label": "PPL Mandiri · Siklus 1"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 1/Presentasi Kelompok yang lain.jpeg",
+                    "caption": "Tanggapan & Sesi Tanya Jawab Antar Kelompok",
+                    "label": "PPL Mandiri · Siklus 1"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 2/Pendahuluan.png",
+                    "caption": "Tahap Pendahuluan & Apersepsi Pembelajaran",
+                    "label": "PPL Mandiri · Siklus 2"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 2/Kegiatan Inti Pembelajaran.png",
+                    "caption": "Kegiatan Inti & Eksplorasi Konsep Terbimbing",
+                    "label": "PPL Mandiri · Siklus 2"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 2/Presentasi Kelompok.png",
+                    "caption": "Presentasi Hasil Diskusi & Tanggapan Antar Kelompok",
+                    "label": "PPL Mandiri · Siklus 2"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 3/Pendahuluan.png",
+                    "caption": "Tahap Pendahuluan & Apersepsi Praktik Lab",
+                    "label": "PPL Mandiri · Siklus 3"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 3/Kegiatan Praktik menggunakan Google Lens.png",
+                    "caption": "Praktik Penyelidikan Hardware Berbantuan Google Lens",
+                    "label": "PPL Mandiri · Siklus 3"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 3/Murid Menjawab LKPD.png",
+                    "caption": "Pengerjaan LKPD & Pengelompokan Komponen IPOS",
+                    "label": "PPL Mandiri · Siklus 3"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 4/Screenshot 2026-10-31 144837.png",
+                    "caption": "Tahap Pendahuluan & Stimulus Kasus Raka",
+                    "label": "PPL Mandiri · Siklus 4"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 4/Diskusi Kelompok.jpg",
+                    "caption": "Kegiatan Inti & Diskusi Kelompok SIAP TEMPEL",
+                    "label": "PPL Mandiri · Siklus 4"
+          },
+          {
+                    "src": "files/foto/PPL Mandiri/Siklus 4/Hasil Pembelajaran Murid.jpg",
+                    "caption": "Hasil Karya Pembelajaran Murid pada Media Papan Sekat",
+                    "label": "PPL Mandiri · Siklus 4"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Bimbingan Lomba Coding.jpeg",
+                    "caption": "Bimbingan Siswa Lomba Coding & Pemrograman",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Juara 2 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg",
+                    "caption": "Juara 2 Malang Young Coder Competition 2026 (Kategori AI)",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Juara 3 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg",
+                    "caption": "Juara 3 Malang Young Coder Competition 2026 (Kategori AI)",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Kegiatan Piket Sekolah.jpeg",
+                    "caption": "Pelaksanaan Piket & Tata Tertib Sekolah",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Keliling Mencatat Absensi.jpeg",
+                    "caption": "Monitoring Kehadiran Siswa di Kelas",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/Kegiatan Non Mengajar/Pembiasaan Budaya 5S.jpeg",
+                    "caption": "Penyambutan Siswa & Pembiasaan Budaya 5S",
+                    "label": "Kegiatan Non Mengajar"
+          },
+          {
+                    "src": "files/foto/kegiatan/Apel peringantan hari kartini.jpeg",
+                    "caption": "Apel Peringatan Hari Kartini",
+                    "label": "Kegiatan Sekolah"
+          },
+          {
+                    "src": "files/foto/kegiatan/Foto bersama guru pamong dan dosen pembimbing lapangan.jpeg",
+                    "caption": "Foto Bersama DPL dan Guru Pamong PPL",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/penerimaan kegiatan PPL.jpeg",
+                    "caption": "Penerimaan Mahasiswa PPL di Sekolah Mitra",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/penjemputan kegiatan PPL.jpeg",
+                    "caption": "Penjemputan & Pelepasan Mahasiswa PPL",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/Diskusi Kelompok PPL untuk mengerjakan tugas di LMS.jpeg",
+                    "caption": "Diskusi Kolaboratif PPL di LMS",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/Distribusi MBG.jpeg",
+                    "caption": "Distribusi Program Makan Bergizi Gratis (MBG)",
+                    "label": "Kegiatan Sekolah"
+          },
+          {
+                    "src": "files/foto/kegiatan/Pelaksanaan kegiatan workshop proposal artikel.jpeg",
+                    "caption": "Workshop Penyusunan Proposal Artikel Ilmiah",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/Pelaksanaan kegiatan workshop finalisasi artikel.jpeg",
+                    "caption": "Workshop Finalisasi Artikel Ilmiah",
+                    "label": "Kegiatan PPL"
+          },
+          {
+                    "src": "files/foto/kegiatan/istighosah.jpeg",
+                    "caption": "Kegiatan Istighosah & Doa Bersama Sekolah",
+                    "label": "Kegiatan Sekolah"
           }
+];
 
-          // Base photos
-          const fotos = [...(data.foto || [])];
+        var slider = document.getElementById("photoSlider");
+        var track  = document.getElementById("sliderTrack");
+        var caption = document.getElementById("sliderCaption");
+        var dotsW  = document.getElementById("sliderDots");
+        var empty  = document.getElementById("sliderPlaceholder");
 
-          // Dynamically append photos from berkas.dokumentasi
-          if (data.berkas && data.berkas.dokumentasi) {
-            data.berkas.dokumentasi.forEach((d) => {
-              const isImg = ["jpg", "jpeg", "png", "webp"].includes(
-                d.type.toLowerCase(),
-              );
-              if (isImg) {
-                const srcPath = "files/" + d.filename;
-                // Prevent duplicates
-                if (!fotos.some((f) => f.src === srcPath)) {
-                  fotos.push({
-                    src: srcPath,
-                    caption: d.name,
-                    label: "Dokumentasi",
-                  });
-                }
-              }
-            });
-          }
+        var photos = [], cur = 0, auto = null;
 
-          if (!fotos.length) {
-            showPlaceholder();
-            return;
-          }
-
-          // Check which images actually exist
-          const valid = [];
-          for (const f of fotos) {
-            const ok = await fileExists(f.src);
-            if (ok) valid.push(f);
-          }
-          if (!valid.length) {
-            showPlaceholder();
-            return;
-          }
-
-          slides = valid;
+        async function init() {
+          var data;
+          try { data = await loadManifest(); } catch(e) { data = null; }
+          var f = ALL_WEBSITE_PHOTOS;
+          if (data && data.foto && data.foto.length >= f.length) f = data.foto;
+          if (!f || !f.length) { showEmpty(); return; }
+          photos = f;
           build();
-          go(0);
-          startAuto();
+          goTo(0, true);
+          play();
         }
 
         function build() {
           track.innerHTML = "";
-          dotsWrap.innerHTML = "";
+          dotsW.innerHTML = "";
+          for (var i = 0; i < photos.length; i++) {
+            var s = document.createElement("div");
+            s.className = "ps-slide";
+            var img = document.createElement("img");
+            img.src = encodeURI(photos[i].src);
+            img.alt = photos[i].caption;
+            img.loading = (i < 2) ? "eager" : "lazy";
+            img.draggable = false;
+            s.appendChild(img);
+            track.appendChild(s);
 
-          // Dynamically scale track width based on slide count to prevent mobile flexbox bugs
-          track.style.width = `${slides.length * 100}%`;
-
-          slides.forEach((f, i) => {
-            const slide = document.createElement("div");
-            slide.className = "slider-slide";
-            slide.style.width = `${100 / slides.length}%`;
-            const encodedSrc = encodeURI(f.src);
-            slide.innerHTML = `<img src="${encodedSrc}" alt="${f.caption}" loading="lazy"/>`;
-            track.appendChild(slide);
-
-            if (slides.length <= 20) {
-              const dot = document.createElement("button");
-              dot.className = "slider-dot";
-              dot.setAttribute("aria-label", `Foto ${i + 1}`);
-              dot.addEventListener("click", () => {
-                go(i);
-                resetAuto();
-              });
-              dotsWrap.appendChild(dot);
-            }
-          });
-          prevBtn.style.display = nextBtn.style.display = "flex";
-          dotsWrap.style.display = slides.length <= 20 ? "flex" : "none";
-        }
-
-        function go(idx) {
-          current = (idx + slides.length) % slides.length;
-          const offset = -(current * (100 / slides.length));
-          track.style.transform = `translateX(${offset}%)`;
-          const f = slides[current];
-          caption.innerHTML = `
-            <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:12px; width:100%;">
-              <div style="min-width:0;">
-                <span class="slider-cap-label">${f.label}</span>
-                <span class="slider-cap-text">${f.caption}</span>
-              </div>
-              <span class="slider-cap-count">${current + 1} / ${slides.length}</span>
-            </div>
-          `;
-          if (slides.length <= 20) {
-            dotsWrap
-              .querySelectorAll(".slider-dot")
-              .forEach((d, i) => d.classList.toggle("active", i === current));
+            var d = document.createElement("button");
+            d.className = "ps-dot";
+            d.setAttribute("aria-label", "Foto " + (i+1));
+            (function(idx){ d.addEventListener("click", function(){ goTo(idx); restart(); }); })(i);
+            dotsW.appendChild(d);
           }
+          dotsW.style.display = "flex";
         }
 
-        function startAuto() {
-          timer = setInterval(() => go(current + 1), 5000);
-        }
-        function resetAuto() {
-          clearInterval(timer);
-          startAuto();
+        function goTo(idx, instant) {
+          cur = ((idx % photos.length) + photos.length) % photos.length;
+          if (instant) track.style.transition = "none";
+          track.style.transform = "translateX(-" + (cur * slider.offsetWidth) + "px)";
+          if (instant) {
+            // Force reflow then restore transition
+            track.offsetHeight;
+            track.style.transition = "";
+          }
+
+          var f = photos[cur];
+          caption.innerHTML =
+            '<div class="ps-cap-row">' +
+              '<div style="min-width:0">' +
+                '<span class="ps-cap-label">' + f.label + '</span>' +
+                '<span class="ps-cap-text">'  + f.caption + '</span>' +
+              '</div>' +
+              '<span class="ps-cap-count">Foto ' + (cur+1) + ' / ' + photos.length + '</span>' +
+            '</div>';
+
+          var dots = dotsW.querySelectorAll(".ps-dot");
+          for (var i = 0; i < dots.length; i++) {
+            if (i === cur) dots[i].classList.add("active");
+            else dots[i].classList.remove("active");
+          }
+          if (dots[cur]) dots[cur].scrollIntoView({ behavior:"smooth", block:"nearest", inline:"center" });
         }
 
-        function showPlaceholder() {
-          placeholder.style.display = "flex";
-          prevBtn.style.display = nextBtn.style.display = "none";
-          dotsWrap.style.display = "none";
-          if (window.lucide) lucide.createIcons({ nodes: [placeholder] });
-        }
+        function play()    { auto = setInterval(function(){ goTo(cur+1); }, 5000); }
+        function restart()  { clearInterval(auto); play(); }
 
-        prevBtn.addEventListener("click", () => {
-          go(current - 1);
-          resetAuto();
+        function showEmpty() {
+          empty.style.display = "flex";
+          dotsW.style.display = "none";
+          if (window.lucide) lucide.createIcons({ nodes: [empty] });
+        }
+        var tx = 0;
+        slider.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive:true});
+        slider.addEventListener("touchend", function(e){
+          var dx = e.changedTouches[0].clientX - tx;
+          if (Math.abs(dx) > 40) { goTo(cur + (dx<0?1:-1)); restart(); }
+        }, {passive:true});
+
+        // Recalculate on resize
+        window.addEventListener("resize", function() {
+          if (photos.length) {
+            track.style.transition = "none";
+            track.style.transform = "translateX(-" + (cur * slider.offsetWidth) + "px)";
+            track.offsetHeight; // force reflow
+            track.style.transition = "";
+          }
         });
-        nextBtn.addEventListener("click", () => {
-          go(current + 1);
-          resetAuto();
-        });
 
-        // Swipe support
-        let startX = 0;
-        const slider = document.getElementById("photoSlider");
-        slider.addEventListener(
-          "touchstart",
-          (e) => {
-            startX = e.touches[0].clientX;
-          },
-          { passive: true },
-        );
-        slider.addEventListener(
-          "touchend",
-          (e) => {
-            const dx = e.changedTouches[0].clientX - startX;
-            if (Math.abs(dx) > 40) {
-              go(current + (dx < 0 ? 1 : -1));
-              resetAuto();
-            }
-          },
-          { passive: true },
-        );
-
-        initSlider();
+        init();
       })();
     </script>
     <style>
-      /* â”€â”€ Photo Slider Styles â”€â”€ */
+      /* ── Photo Slider ── */
       .photo-slider {
         position: relative;
         overflow: hidden;
@@ -444,50 +533,52 @@
         touch-action: pan-y;
       }
 
+      /*
+       * Track approach: display:flex with children width:100%.
+       * translateX(-N00%) on the TRACK moves by N slides.
+       * Key: track width = children count * 100% via flex,
+       * and translateX% is relative to the track's own width.
+       * So we set track width explicitly.
+       */
       .slider-track {
         display: flex;
         height: 100%;
-        transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         will-change: transform;
       }
 
-      .slider-slide {
+      .ps-slide {
+        flex: 0 0 100%;   /* each slide = 100% of the PARENT (.photo-slider) */
         height: 100%;
-        flex-shrink: 0;
         overflow: hidden;
+        position: relative;
       }
-
-      .slider-slide img {
+      .ps-slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.6s ease;
+        user-select: none;
+        -webkit-user-drag: none;
       }
 
-      .slider-slide img:hover {
-        transform: scale(1.03);
-      }
-
-      /* Caption overlay */
+      /* Caption */
       .slider-caption {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 20px 24px 20px;
-        background: linear-gradient(
-          to top,
-          rgba(10, 8, 40, 0.75) 0%,
-          transparent 100%
-        );
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
+        bottom: 0; left: 0; right: 0;
+        padding: 28px 24px 42px;
+        background: linear-gradient(to top, rgba(10,8,40,0.85) 0%, rgba(10,8,40,0.4) 60%, transparent 100%);
         pointer-events: none;
+        z-index: 5;
       }
-
-      .slider-cap-label {
+      .ps-cap-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 12px;
+      }
+      .ps-cap-label {
+        display: block;
         font-size: 0.72rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -495,120 +586,82 @@
         color: var(--primary-light);
         opacity: 0.9;
       }
-
-      .slider-cap-count {
-        font-size: 0.78rem;
-        font-weight: 700;
-        color: #ffffff;
-        background: rgba(15, 23, 42, 0.65);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        padding: 5px 12px;
-        border-radius: 50px;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        white-space: nowrap;
-        letter-spacing: 0.5px;
-        flex-shrink: 0;
-      }
-
-      .slider-cap-text {
+      .ps-cap-text {
+        display: block;
         font-size: 0.95rem;
         font-weight: 600;
         color: #fff;
       }
-
-      /* Prev / Next buttons */
-      .slider-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.18);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+      .ps-cap-count {
+        font-size: 0.78rem;
+        font-weight: 700;
         color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: var(--transition);
-        z-index: 10;
-      }
-
-      .slider-btn:hover {
-        background: rgba(255, 255, 255, 0.32);
-        transform: translateY(-50%) scale(1.08);
-      }
-
-      .slider-btn-prev {
-        left: 14px;
-      }
-
-      .slider-btn-next {
-        right: 14px;
+        background: rgba(15,23,42,0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.25);
+        white-space: nowrap;
+        flex-shrink: 0;
       }
 
       /* Dots */
       .slider-dots {
         position: absolute;
-        bottom: 14px;
-        left: 50%;
+        bottom: 10px; left: 50%;
         transform: translateX(-50%);
-        display: flex;
-        gap: 7px;
+        display: flex; align-items: center; gap: 6px;
         z-index: 10;
+        max-width: 80%;
+        overflow-x: auto;
+        padding: 4px 0;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        border-radius: 0;
+        box-shadow: none !important;
+        scrollbar-width: none;
       }
-
-      .slider-dot {
-        width: 8px;
-        height: 8px;
+      .slider-dots::-webkit-scrollbar { display: none; }
+      .ps-dot {
+        width: 6px; height: 6px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
-        border: none;
-        cursor: pointer;
-        transition: var(--transition);
-        padding: 0;
+        background: rgba(255,255,255,0.45);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        border: none; cursor: pointer;
+        transition: all 0.25s ease;
+        padding: 0; flex-shrink: 0;
       }
-
-      .slider-dot.active {
+      .ps-dot:hover { background: rgba(255,255,255,0.85); }
+      .ps-dot.active {
         background: #fff;
-        width: 22px;
-        border-radius: 4px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.8);
+        width: 18px; border-radius: 4px;
       }
 
       /* Placeholder */
       .slider-placeholder {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-        color: var(--text-muted);
-        text-align: center;
-        padding: 32px;
+        position: absolute; inset: 0;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 14px; color: var(--text-muted);
+        text-align: center; padding: 32px;
       }
-
-      .slider-placeholder p {
-        font-size: 0.85rem;
-        line-height: 1.7;
-      }
-
+      .slider-placeholder p { font-size: 0.85rem; line-height: 1.7; }
       .slider-placeholder code {
         background: var(--code-bg);
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        color: var(--primary-light);
+        padding: 2px 6px; border-radius: 4px;
+        font-size: 0.8rem; color: var(--primary-light);
       }
 
       @media (max-width: 600px) {
-        .photo-slider {
-          height: 260px;
-        }
+        .photo-slider { height: 260px; }
+        .slider-caption { padding: 20px 14px 34px; }
+        .ps-cap-text { font-size: 0.82rem; line-height: 1.35; }
+        .ps-cap-count { font-size: 0.72rem; padding: 4px 8px; }
+        .slider-dots { bottom: 6px; max-width: 85%; }
       }
     </style>
   </body>

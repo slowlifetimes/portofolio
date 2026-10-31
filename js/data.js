@@ -334,21 +334,6 @@ const PPL_DATA = {
       label: "PPL Terbimbing \u00b7 Siklus 4",
     },
     {
-      src: "files/foto/siklus4/foto_3_Image22.jpg",
-      caption: "Dokumentasi Praktik Mengajar Siklus 4",
-      label: "PPL Terbimbing \u00b7 Siklus 4",
-    },
-    {
-      src: "files/foto/siklus4/foto_4_Image25.jpg",
-      caption: "Pendampingan Siswa Siklus 4",
-      label: "PPL Terbimbing \u00b7 Siklus 4",
-    },
-    {
-      src: "files/foto/siklus4/foto_5_Image28.jpg",
-      caption: "Hasil Pembelajaran Siklus 4",
-      label: "PPL Terbimbing \u00b7 Siklus 4",
-    },
-    {
       src: "files/foto/PPL Mandiri/Siklus 1/Pembukaan.jpeg",
       caption: "Tahap Pembukaan & Pengondisian Kelas",
       label: "PPL Mandiri \u00b7 Siklus 1",
@@ -487,21 +472,6 @@ const PPL_DATA = {
       src: "files/foto/kegiatan/istighosah.jpeg",
       caption: "Kegiatan Istighosah & Doa Bersama Sekolah",
       label: "Kegiatan Sekolah",
-    },
-    {
-      src: "files/foto/gumul.jpeg",
-      caption: "Monumen Simpang Lima Gumul Kediri",
-      label: "Inspirasi & Profil",
-    },
-    {
-      src: "files/foto/foto model guru.jpeg",
-      caption: "Model Guru Profesional & Inspiratif",
-      label: "Model Guru",
-    },
-    {
-      src: "files/foto/foto refleksi.jpeg",
-      caption: "Refleksi Diri Praktik Pembelajaran",
-      label: "Refleksi Diri",
     },
   ],
 };
