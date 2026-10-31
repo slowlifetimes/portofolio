@@ -1,0 +1,1945 @@
+﻿<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Peserta Didik dan Pemahamannya | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <style>
+    /* ── CT Page Layout ── */
+    .ct-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* ── Sidebar TOC ── */
+    .ct-toc {
+      position: sticky;
+      top: 100px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .ct-toc-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ct-toc-title svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ct-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ct-toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      border-left: 2px solid transparent;
+    }
+
+    .ct-toc-list li a:hover,
+    .ct-toc-list li a.active {
+      background: rgba(99, 102, 241, 0.08);
+      color: var(--primary-light);
+      border-left-color: var(--primary-light);
+    }
+
+    .ct-toc-list li a svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .ct-toc-list li a:hover svg,
+    .ct-toc-list li a.active svg {
+      opacity: 1;
+    }
+
+    .ct-toc-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--glass-border);
+      margin: 8px 0;
+    }
+
+    /* ── Main Content ── */
+    .ct-main {
+      min-width: 0;
+    }
+
+    /* ── Section Cards ── */
+    .ct-section {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+
+    .ct-section:hover {
+      border-color: rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.06);
+    }
+
+    .ct-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .ct-section-header .ct-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-section-header .ct-icon-wrap svg {
+      width: 20px;
+      height: 20px;
+      color: #fff;
+    }
+
+    .ct-section-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: "Playfair Display", serif;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .ct-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 6px;
+    }
+
+    .ct-section-divider {
+      width: 50px;
+      height: 2.5px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      margin-top: 4px;
+    }
+
+    .ct-section-body {
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-size: 0.92rem;
+    }
+
+    .ct-section-body p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .ct-section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ct-section-body p.drop-cap::first-letter {
+      font-family: "Playfair Display", serif;
+      font-size: 2.8em;
+      float: left;
+      line-height: 0.85;
+      margin-right: 8px;
+      margin-top: 4px;
+      color: var(--primary-light);
+      font-weight: 700;
+    }
+
+    /* Ordered / Unordered lists */
+    .ct-section-body ol,
+    .ct-section-body ul {
+      padding-left: 20px;
+      margin: 12px 0 18px;
+    }
+
+    .ct-section-body ol li,
+    .ct-section-body ul li {
+      margin-bottom: 8px;
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+
+    .ct-section-body ol li strong,
+    .ct-section-body ul li strong {
+      color: var(--text-primary);
+    }
+
+    /* Highlight blockquote */
+    .ct-highlight {
+      border-left: 3px solid var(--primary);
+      padding: 16px 20px;
+      margin: 20px 0;
+      background: rgba(99, 102, 241, 0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .ct-highlight p {
+      margin-bottom: 0 !important;
+      font-style: italic;
+      color: var(--text-primary) !important;
+      font-size: 0.93rem !important;
+    }
+
+    /* ── Topic Cards (Connection) ── */
+    .ct-topic-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0 20px;
+    }
+
+    .ct-topic-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      background: rgba(99, 102, 241, 0.02);
+      transition: var(--transition);
+    }
+
+    .ct-topic-card:hover {
+      border-color: rgba(99, 102, 241, 0.22);
+      background: rgba(99, 102, 241, 0.05);
+      transform: translateX(4px);
+    }
+
+    .ct-topic-num {
+      min-width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ct-topic-num.n1 { background: linear-gradient(135deg,#6366f1,#818cf8); }
+    .ct-topic-num.n2 { background: linear-gradient(135deg,#8b5cf6,#a78bfa); }
+    .ct-topic-num.n3 { background: linear-gradient(135deg,#06b6d4,#22d3ee); }
+    .ct-topic-num.n4 { background: linear-gradient(135deg,#10b981,#34d399); }
+    .ct-topic-num.n5 { background: linear-gradient(135deg,#f59e0b,#fbbf24); }
+    .ct-topic-num.n6 { background: linear-gradient(135deg,#ec4899,#f472b6); }
+
+    .ct-topic-body { flex: 1; min-width: 0; }
+
+    .ct-topic-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .ct-topic-desc {
+      font-size: 0.84rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+      text-align: justify;
+    }
+
+    /* ── Sub-heading ── */
+    .ct-sub-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 24px 0 14px;
+      padding: 10px 16px;
+      background: rgba(245,158,11,0.06);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(245,158,11,0.15);
+    }
+
+    .ct-sub-heading-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: linear-gradient(135deg,#f59e0b,#fbbf24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-sub-heading-icon svg { width: 14px; height: 14px; color: #fff; }
+
+    .ct-sub-heading h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    /* ── Challenge alert boxes ── */
+    .ct-challenge-box {
+      display: flex;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid;
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .ct-challenge-box:hover { transform: translateX(3px); }
+
+    .ct-challenge-box.cb-1 { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.18); }
+    .ct-challenge-box.cb-2 { background: rgba(6,182,212,0.04); border-color: rgba(6,182,212,0.18); }
+    .ct-challenge-box.cb-3 { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.18); }
+
+    .ct-challenge-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .cb-1 .ct-challenge-icon { background: rgba(245,158,11,0.12); color: #d97706; }
+    .cb-2 .ct-challenge-icon { background: rgba(6,182,212,0.12); color: #0891b2; }
+    .cb-3 .ct-challenge-icon { background: rgba(239,68,68,0.12); color: #dc2626; }
+
+    .ct-challenge-icon svg { width: 16px; height: 16px; }
+
+    .ct-challenge-body { flex: 1; min-width: 0; }
+
+    .ct-challenge-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+    }
+
+    .cb-1 .ct-challenge-label { color: #d97706; }
+    .cb-2 .ct-challenge-label { color: #0891b2; }
+    .cb-3 .ct-challenge-label { color: #dc2626; }
+
+    .ct-challenge-text {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin: 0;
+      text-align: justify;
+    }
+
+    /* ── Foundation Grid (Concept) ── */
+    .ct-foundation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0 20px;
+    }
+
+    .ct-foundation-card {
+      padding: 18px 18px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ct-foundation-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .ct-foundation-card:nth-child(1)::before { background: linear-gradient(90deg,#6366f1,#818cf8); }
+    .ct-foundation-card:nth-child(2)::before { background: linear-gradient(90deg,#8b5cf6,#a78bfa); }
+    .ct-foundation-card:nth-child(3)::before { background: linear-gradient(90deg,#06b6d4,#22d3ee); }
+    .ct-foundation-card:nth-child(4)::before { background: linear-gradient(90deg,#10b981,#34d399); }
+
+    .ct-foundation-card:hover {
+      border-color: rgba(99,102,241,0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99,102,241,0.08);
+    }
+
+    .ct-foundation-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .ct-foundation-card:nth-child(1) .ct-foundation-icon { background: rgba(99,102,241,0.12); color: #6366f1; }
+    .ct-foundation-card:nth-child(2) .ct-foundation-icon { background: rgba(139,92,246,0.12); color: #8b5cf6; }
+    .ct-foundation-card:nth-child(3) .ct-foundation-icon { background: rgba(6,182,212,0.12); color: #06b6d4; }
+    .ct-foundation-card:nth-child(4) .ct-foundation-icon { background: rgba(16,185,129,0.12); color: #10b981; }
+
+    .ct-foundation-icon svg { width: 17px; height: 17px; }
+
+    .ct-foundation-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+
+    .ct-foundation-desc {
+      font-size: 0.81rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* ── Change Cards ── */
+    .ct-change-cards { display: flex; flex-direction: column; gap: 12px; margin: 16px 0 20px; }
+
+    .ct-change-card {
+      display: flex;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      transition: var(--transition);
+    }
+
+    .ct-change-card:hover { border-color: rgba(236,72,153,0.25); transform: translateX(3px); }
+
+    .ct-change-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-change-card:nth-child(1) .ct-change-icon { background: rgba(236,72,153,0.1); color: #ec4899; }
+    .ct-change-card:nth-child(2) .ct-change-icon { background: rgba(139,92,246,0.1); color: #8b5cf6; }
+    .ct-change-card:nth-child(3) .ct-change-icon { background: rgba(16,185,129,0.1); color: #10b981; }
+
+    .ct-change-icon svg { width: 17px; height: 17px; }
+
+    .ct-change-body { flex: 1; min-width: 0; }
+
+    .ct-change-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 5px;
+    }
+
+    .ct-change-card:nth-child(1) .ct-change-label { color: #ec4899; }
+    .ct-change-card:nth-child(2) .ct-change-label { color: #8b5cf6; }
+    .ct-change-card:nth-child(3) .ct-change-label { color: #10b981; }
+
+    .ct-change-text {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin: 0;
+      text-align: justify;
+    }
+
+    /* ── Method Pills ── */
+    .ct-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 4px;
+    }
+
+    .ct-method-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.18);
+      color: var(--primary-light);
+      transition: var(--transition);
+    }
+
+    .ct-method-pill:hover {
+      background: rgba(99,102,241,0.15);
+      transform: translateY(-1px);
+    }
+
+    .ct-method-pill svg { width: 12px; height: 12px; }
+
+    /* ── Info banner (Pendahuluan) ── */
+    .ct-info-banner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 20px 0 4px;
+    }
+
+    .ct-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 14px;
+      border-radius: var(--radius-sm);
+      background: rgba(99,102,241,0.04);
+      border: 1px solid rgba(99,102,241,0.1);
+    }
+
+    .ct-info-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-info-icon svg { width: 15px; height: 15px; color: #fff; }
+
+    .ct-info-item:nth-child(1) .ct-info-icon { background: linear-gradient(135deg,#6366f1,#818cf8); }
+    .ct-info-item:nth-child(2) .ct-info-icon { background: linear-gradient(135deg,#10b981,#34d399); }
+    .ct-info-item:nth-child(3) .ct-info-icon { background: linear-gradient(135deg,#f59e0b,#fbbf24); }
+
+    .ct-info-text {
+      flex: 1;
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
+    .ct-info-text strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      margin-bottom: 2px;
+    }
+
+    /* ── Progress steps (Hasil Refleksi) ── */
+    .ct-progress {
+      position: relative;
+      padding-left: 28px;
+      margin: 20px 0;
+    }
+
+    .ct-progress::before {
+      content: "";
+      position: absolute;
+      left: 9px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg,#06b6d4,#6366f1,#8b5cf6);
+      border-radius: 2px;
+    }
+
+    .ct-progress-step {
+      position: relative;
+      padding: 4px 0 16px;
+    }
+
+    .ct-progress-step:last-child { padding-bottom: 0; }
+
+    .ct-progress-step::before {
+      content: "";
+      position: absolute;
+      left: -23px; top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid rgba(99,102,241,0.25);
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.06);
+    }
+
+    .ct-progress-step p {
+      margin: 0 !important;
+      font-size: 0.87rem !important;
+      line-height: 1.8 !important;
+      color: var(--text-secondary) !important;
+      text-align: justify !important;
+    }
+
+    /* ── Tab System ── */
+    .ct-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ct-tab-btn {
+      padding: 11px 20px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      gap: 9px;
+      transition: var(--transition);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: inherit;
+    }
+
+    .ct-tab-btn:hover {
+      background: rgba(99,102,241,0.06);
+      color: var(--primary-light);
+      border-color: rgba(99,102,241,0.2);
+    }
+
+    .ct-tab-btn.active {
+      background: rgba(99,102,241,0.1);
+      color: var(--primary-light);
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 14px rgba(99,102,241,0.1);
+    }
+
+    .ct-tab-btn svg { width: 16px; height: 16px; }
+
+    .ct-tab-pane {
+      display: none;
+      animation: ctFadeIn 0.4s ease forwards;
+    }
+
+    .ct-tab-pane.active {
+      display: block;
+    }
+
+    @keyframes ctFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .ct-foundation-grid { grid-template-columns: 1fr; }
+      .ct-info-banner { grid-template-columns: 1fr; }
+      .ct-topic-card { padding: 14px; }
+      .ct-tabs { gap: 6px; }
+      .ct-tab-btn { padding: 9px 14px; font-size: 0.8rem; }
+    }
+
+    /* ── Document Embed (Bagian 4) ── */
+    .ct-doc-embed {
+      width: 100%;
+      height: 85vh;
+      min-height: 600px;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .ct-doc-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .ct-doc-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 32px;
+      text-align: center;
+      background: var(--glass-bg);
+      border: 2px dashed var(--glass-border);
+      border-radius: var(--radius);
+      min-height: 300px;
+    }
+
+    .ct-doc-placeholder-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .ct-doc-placeholder-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-light);
+    }
+
+    .ct-doc-placeholder h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .ct-doc-placeholder p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .ct-doc-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .ct-doc-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99,102,241,0.25);
+    }
+
+    .ct-doc-download svg { width: 16px; height: 16px; }
+
+    /* ── Artefak Document Viewer ── */
+    .ct-artefak-doc {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--glass-border);
+    }
+
+    .ct-doc-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: var(--radius-sm);
+      color: var(--primary-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .ct-doc-toggle:hover {
+      background: rgba(99,102,241,0.2);
+    }
+
+    .ct-doc-toggle svg { width: 16px; height: 16px; }
+
+    .ct-doc-viewer {
+      margin-top: 12px;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+      border-radius: var(--radius-sm);
+      background: var(--glass-bg);
+    }
+
+    .ct-doc-viewer.active {
+      height: 500px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .ct-doc-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── File Browser / Accordion (Bagian 5) ── */
+    .ct-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .ct-accordion-item {
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .ct-accordion-item.open {
+      border-color: rgba(99,102,241,0.2);
+      box-shadow: 0 4px 16px rgba(99,102,241,0.06);
+    }
+
+    .ct-accordion-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(99,102,241,0.03);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    .ct-accordion-header:hover {
+      background: rgba(99,102,241,0.07);
+    }
+
+    .ct-accordion-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .ct-accordion-icon svg { width: 16px; height: 16px; }
+
+    .ct-accordion-title {
+      flex: 1;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .ct-accordion-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(99,102,241,0.08);
+      color: var(--primary-light);
+    }
+
+    .ct-accordion-chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .ct-accordion-item.open .ct-accordion-chevron {
+      transform: rotate(180deg);
+    }
+
+    .ct-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .ct-accordion-item.open .ct-accordion-body {
+      max-height: 600px;
+    }
+
+    .ct-accordion-inner {
+      padding: 12px 18px 16px;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .ct-file-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ct-file-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.84rem;
+      border: 1px solid transparent;
+    }
+
+    .ct-file-item:hover {
+      background: rgba(99,102,241,0.05);
+      border-color: rgba(99,102,241,0.12);
+      color: var(--primary-light);
+    }
+
+    .ct-file-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(239,68,68,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-file-icon svg {
+      width: 14px;
+      height: 14px;
+      color: #dc2626;
+    }
+
+    .ct-file-name {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .ct-file-dl {
+      width: 22px;
+      height: 22px;
+      color: var(--text-muted);
+      opacity: 0;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .ct-file-item:hover .ct-file-dl {
+      opacity: 1;
+      color: var(--primary-light);
+    }
+
+    /* ── Section break ornament ── */
+    .ct-break {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 12px 0 28px;
+    }
+
+    .ct-break::before,
+    .ct-break::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--glass-border);
+    }
+
+    .ct-break span {
+      color: var(--primary-light);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Artefak Cards ── */
+    .ct-artefak-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ct-artefak-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .ct-artefak-card:hover {
+      border-color: rgba(99, 102, 241, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+    }
+
+    .ct-artefak-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .ct-artefak-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .ct-artefak-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ct-artefak-label svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ct-artefak-text {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.85;
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    .ct-artefak-text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Placeholder Card Styling ── */
+    .ct-placeholder-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 32px 24px;
+      text-align: center;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .ct-placeholder-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ct-placeholder-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .ct-placeholder-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .ct-placeholder-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* ── Color Accents per 4C Section ── */
+    .accent-connection .ct-icon-wrap { background: linear-gradient(135deg, #6366f1, #818cf8); }
+    .accent-connection .ct-section-divider { background: linear-gradient(90deg, #6366f1, #818cf8); }
+    .accent-connection .ct-section-tag { background: rgba(99, 102, 241, 0.1); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.2); }
+
+    .accent-challenge .ct-icon-wrap { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .accent-challenge .ct-section-divider { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+    .accent-challenge .ct-section-tag { background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.2); }
+
+    .accent-concept .ct-icon-wrap { background: linear-gradient(135deg, #10b981, #34d399); }
+    .accent-concept .ct-section-divider { background: linear-gradient(90deg, #10b981, #34d399); }
+    .accent-concept .ct-section-tag { background: rgba(16, 185, 129, 0.1); color: #059669; border: 1px solid rgba(16, 185, 129, 0.2); }
+
+    .accent-change .ct-icon-wrap { background: linear-gradient(135deg, #ec4899, #f472b6); }
+    .accent-change .ct-section-divider { background: linear-gradient(90deg, #ec4899, #f472b6); }
+    .accent-change .ct-section-tag { background: rgba(236, 72, 153, 0.1); color: #db2777; border: 1px solid rgba(236, 72, 153, 0.2); }
+
+    .accent-analisis .ct-icon-wrap { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+    .accent-analisis .ct-section-divider { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .accent-analisis .ct-section-tag { background: rgba(139, 92, 246, 0.1); color: #7c3aed; border: 1px solid rgba(139, 92, 246, 0.2); }
+
+    .accent-rumusan .ct-icon-wrap { background: linear-gradient(135deg, #06b6d4, #22d3ee); }
+    .accent-rumusan .ct-section-divider { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+    .accent-rumusan .ct-section-tag { background: rgba(6, 182, 212, 0.1); color: #0891b2; border: 1px solid rgba(6, 182, 212, 0.2); }
+
+    .accent-refleksi .ct-icon-wrap { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .accent-refleksi .ct-section-divider { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
+    .accent-refleksi .ct-section-tag { background: rgba(99, 102, 241, 0.1); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.2); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .ct-layout {
+        grid-template-columns: 1fr;
+      }
+      .ct-toc {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .ct-toc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+      }
+      .ct-toc-divider {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .ct-section {
+        padding: 24px 20px;
+      }
+      .ct-section-header h2 {
+        font-size: 1.1rem;
+      }
+      .ct-section-body p.drop-cap::first-letter {
+        font-size: 2.2em;
+      }
+      .ct-artefak-card {
+        padding: 20px 20px 20px 24px;
+      }
+      .ct-toc-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="model-guru.html">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html" class="active">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="sec-header fade-in">
+          <span class="sec-tag">Refleksi Pengalaman Belajar</span>
+          <h1 class="sec-title">Pemahaman tentang Peserta Didik dan Pembelajarannya</h1>
+          <p class="sec-desc">
+            Refleksi pengalaman belajar mata kuliah Pemahaman tentang Peserta Didik dan Pembelajarannya melalui
+            kerangka 4C (Connection, Challenge, Concept, Change), analisis artefak
+            pembelajaran, serta perumusan hasil refleksi.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div class="ct-tabs fade-in">
+          <button class="ct-tab-btn active" data-tab="tab-refleksi">
+            <i data-lucide="book-open"></i> Refleksi 4C
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-analisis">
+            <i data-lucide="search"></i> Analisis Artefak
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-rumusan">
+            <i data-lucide="file-text"></i> Hasil Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-lembar">
+            <i data-lucide="file-down"></i> Lembar Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-tugas">
+            <i data-lucide="folder-open"></i> Tugas Perkuliahan
+          </button>
+        </div>
+
+        <!-- Layout: Sidebar + Main -->
+        <div class="ct-layout">
+
+          <!-- Sidebar TOC -->
+          <aside class="ct-toc fade-in">
+            <div class="ct-toc-title">
+              <i data-lucide="list"></i> Daftar Isi
+            </div>
+            <ul class="ct-toc-list" id="ctTocList">
+              <!-- Populated dynamically by JS per active tab -->
+            </ul>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="ct-main">
+
+            <!-- ═══ TAB 1: Refleksi 4C ═══ -->
+            <div class="ct-tab-pane active" id="tab-refleksi">
+
+              <!-- 1. REFLEKSI PENGANTAR -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-refleksi">
+                <span class="ct-section-tag">Bagian 1</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="book-open"></i>
+                  </div>
+                  <h2>Refleksi Pengalaman Belajar</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <p class="drop-cap">Selama mengikuti perkuliahan PPG, saya mendapatkan berbagai pengalaman yang membantu saya memahami bahwa menjadi guru tidak hanya membutuhkan penguasaan materi, tetapi juga kemampuan memahami peserta didik, memilih strategi yang tepat, dan melakukan refleksi terhadap pembelajaran. Beberapa pengalaman yang saya peroleh melalui studi kasus, diskusi, perancangan pembelajaran, dan asesmen memberikan perubahan dalam cara pandang saya sebagai calon guru.</p>
+                  </div>
+              </div>
+
+              <!-- A. CONNECTION -->
+              <div class="ct-section accent-connection fade-in" id="sec-connection">
+                <span class="ct-section-tag">Tahap A · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="link"></i>
+                  </div>
+                  <h2>Connection</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <div class="ct-topic-grid">
+                      <div class="ct-topic-card">
+                        <div class="ct-topic-num n1">1</div>
+                        <div class="ct-topic-body">
+                          <h3 class="ct-topic-title">Mempelajari Karakteristik Peserta Didik</h3>
+                          <p class="ct-topic-desc">Pengalaman yang paling bermakna bagi saya adalah ketika mempelajari karakteristik peserta didik melalui teori Piaget, Vygotsky, dan Erikson. Saya memahami bahwa setiap peserta didik memiliki kemampuan, kebutuhan, dan karakteristik yang berbeda sehingga guru perlu menyesuaikan pembelajaran dengan kondisi mereka.</p>
+                        </div>
+                      </div>
+                      <div class="ct-topic-card">
+                        <div class="ct-topic-num n2">2</div>
+                        <div class="ct-topic-body">
+                          <h3 class="ct-topic-title">Analisis Kasus Pembelajaran</h3>
+                          <p class="ct-topic-desc">Saya juga mendapatkan pengalaman melalui analisis kasus pembelajaran yang menunjukkan bahwa pembelajaran yang terlalu berpusat pada guru dapat membuat peserta didik kurang aktif. Dari sini saya memahami pentingnya konstruktivisme, humanisme, dan teori belajar sosial dalam menciptakan pembelajaran yang aktif dan bermakna.</p>
+                        </div>
+                      </div>
+                      <div class="ct-topic-card">
+                        <div class="ct-topic-num n3">3</div>
+                        <div class="ct-topic-body">
+                          <h3 class="ct-topic-title">Perancangan Pembelajaran Informatika</h3>
+                          <p class="ct-topic-desc">Selain itu, melalui perancangan pembelajaran Informatika, saya belajar menghubungkan materi dengan kehidupan nyata. Contohnya, konsep variabel dalam Scratch diterapkan melalui pembuatan kalkulator sederhana sehingga peserta didik dapat memahami manfaat materi secara lebih konkret.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- B. CHALLENGE -->
+              <div class="ct-section accent-challenge fade-in" id="sec-challenge">
+                <span class="ct-section-tag">Tahap B · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="zap"></i>
+                  </div>
+                  <h2>Challenge</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <div class="ct-challenge-box cb-1">
+                      <div class="ct-challenge-icon"><i data-lucide="alert-circle"></i></div>
+                      <div class="ct-challenge-body">
+                        <div class="ct-challenge-label">Tantangan Praktik</div>
+                        <p class="ct-challenge-text">Tantangan utama yang saya alami adalah menerapkan teori ke dalam praktik pembelajaran. Memahami teori secara konsep lebih mudah dibandingkan menentukan teori yang tepat untuk karakter peserta didik dan menerapkannya dalam kegiatan pembelajaran.</p>
+                      </div>
+                    </div>
+                    <div class="ct-challenge-box cb-2">
+                      <div class="ct-challenge-icon"><i data-lucide="help-circle"></i></div>
+                      <div class="ct-challenge-body">
+                        <div class="ct-challenge-label">Tantangan Analisis</div>
+                        <p class="ct-challenge-text">Dalam menganalisis kasus, saya juga mengalami kesulitan menentukan tahap perkembangan peserta didik dan menghubungkannya dengan teori secara tepat. Tantangan tersebut saya atasi melalui membaca kembali materi, berdiskusi, dan membandingkan pendapat dengan anggota kelompok.</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- C. CONCEPT -->
+              <div class="ct-section accent-concept fade-in" id="sec-concept">
+                <span class="ct-section-tag">Tahap C · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="lightbulb"></i>
+                  </div>
+                  <h2>Concept</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <div class="ct-foundation-grid">
+                      <div class="ct-foundation-card">
+                        <div class="ct-foundation-icon"><i data-lucide="users"></i></div>
+                        <div class="ct-foundation-name">Berpusat pada Peserta Didik</div>
+                        <p class="ct-foundation-desc">Konsep utama yang saya peroleh adalah bahwa pembelajaran harus berpusat pada peserta didik. Guru perlu memahami karakteristik peserta didik sebelum menentukan strategi pembelajaran.</p>
+                      </div>
+                      <div class="ct-foundation-card">
+                        <div class="ct-foundation-icon"><i data-lucide="move-up"></i></div>
+                        <div class="ct-foundation-name">ZPD dan Scaffolding</div>
+                        <p class="ct-foundation-desc">Saya memahami pentingnya ZPD dan scaffolding dari Vygotsky, yaitu memberikan bantuan secara bertahap hingga peserta didik mampu belajar secara mandiri.</p>
+                      </div>
+                      <div class="ct-foundation-card" style="grid-column: 1 / -1;">
+                        <div class="ct-foundation-icon"><i data-lucide="clipboard-check"></i></div>
+                        <div class="ct-foundation-name">Asesmen Awal</div>
+                        <p class="ct-foundation-desc">Saya juga memahami bahwa asesmen awal penting untuk mengetahui kemampuan, kesiapan, karakteristik, gaya belajar, dan kebutuhan peserta didik sehingga pembelajaran dapat dirancang dengan lebih tepat.</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- D. CHANGE -->
+              <div class="ct-section accent-change fade-in" id="sec-change">
+                <span class="ct-section-tag">Tahap D · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="refresh-cw"></i>
+                  </div>
+                  <h2>Change</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <div class="ct-change-cards">
+                      <div class="ct-change-card">
+                        <div class="ct-change-icon"><i data-lucide="user-check"></i></div>
+                        <div class="ct-change-body">
+                          <div class="ct-change-label">Perubahan Orientasi</div>
+                          <p class="ct-change-text">Perubahan yang ingin saya lakukan adalah menjadi guru yang lebih berpusat pada peserta didik, bukan hanya berfokus pada penyampaian materi.</p>
+                        </div>
+                      </div>
+                      <div class="ct-change-card">
+                        <div class="ct-change-icon"><i data-lucide="activity"></i></div>
+                        <div class="ct-change-body">
+                          <div class="ct-change-label">Perubahan Praktik Pembelajaran</div>
+                          <p class="ct-change-text">Dalam pembelajaran, saya akan mengurangi dominasi ceramah dan menggunakan diskusi, praktik, proyek, kerja kelompok, serta kegiatan yang kontekstual. Saya juga akan memberikan scaffolding, melakukan asesmen awal, menciptakan suasana kelas yang nyaman, memberikan apresiasi, dan menyediakan waktu untuk refleksi.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div><!-- /tab-refleksi -->
+
+            <!-- ═══ TAB 2: Analisis Artefak ═══ -->
+            <div class="ct-tab-pane" id="tab-analisis">
+
+              <!-- Pengantar -->
+              <div class="ct-section accent-analisis fade-in" id="sec-analisis">
+                <span class="ct-section-tag">A · Pemilihan Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="search"></i></div>
+                  <h2>Analisis Artefak Pembelajaran</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Berikut adalah artefak-artefak pilihan yang saya jadikan bukti otentik dalam proses belajar mata kuliah Pemahaman tentang Peserta Didik dan Pembelajarannya. Setiap artefak dipilih karena merepresentasikan tahap pemahaman tertentu — dari analisis karakteristik, refleksi kasus, perencanaan tindak lanjut, rancangan proyek, hingga penyusunan asesmen awal.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Artefak 1 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-1">
+                <span class="ct-artefak-num">1</span>
+                <h3>Tugas 1.C – Analisis Karakteristik Peserta Didik</h3>
+                <div class="ct-artefak-label"><i data-lucide="help-circle"></i> Alasan Pemilihan</div>
+                <p class="ct-artefak-text">
+                  Artefak ini berisi analisis karakteristik peserta didik berdasarkan teori perkembangan. Saya memilihnya karena membantu saya memahami bahwa setiap peserta didik memiliki kebutuhan yang berbeda dan guru perlu menyesuaikan pembelajaran dengan kondisi tersebut.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/1.C_Muhammad Fajrul Fahmi_253153743937.pdf" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Artefak 2 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-2">
+                <span class="ct-artefak-num">2</span>
+                <h3>Tugas 3.C – Refleksi Proses Penyelesaian Kasus</h3>
+                <div class="ct-artefak-label"><i data-lucide="help-circle"></i> Alasan Pemilihan</div>
+                <p class="ct-artefak-text">
+                  Artefak ini menunjukkan pemahaman saya terhadap konstruktivisme, humanisme, dan teori belajar sosial. Artefak ini mendukung refleksi bahwa pembelajaran perlu melibatkan peserta didik secara aktif dan menciptakan lingkungan belajar yang aman dan nyaman.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/3.C_Muhammad Fajrul Fahmi_253153743937.pdf" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Artefak 3 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-3">
+                <span class="ct-artefak-num">3</span>
+                <h3>Tugas 3.D – Rencana Tindak Lanjut</h3>
+                <div class="ct-artefak-label"><i data-lucide="help-circle"></i> Alasan Pemilihan</div>
+                <p class="ct-artefak-text">
+                  Artefak ini menunjukkan perubahan yang ingin saya lakukan dalam pembelajaran, seperti menggunakan diskusi, aktivitas kelompok, scaffolding, pembelajaran kontekstual, dan refleksi. Artefak ini menjadi bukti bahwa pemahaman yang saya peroleh mulai saya terapkan dalam rencana pembelajaran.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/3.D_Muhammad Fajrul Fahmi_253153743937.pdf" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Artefak 4 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-4">
+                <span class="ct-artefak-num">4</span>
+                <h3>Tugas 2.B – Rancangan PjBL</h3>
+                <div class="ct-artefak-label"><i data-lucide="help-circle"></i> Alasan Pemilihan</div>
+                <p class="ct-artefak-text">
+                  Artefak ini menunjukkan penerapan pembelajaran berbasis proyek dengan mempertimbangkan perbedaan kemampuan, minat, dan gaya belajar peserta didik. PjBL memberikan kesempatan kepada peserta didik untuk bekerja sama dan mengambil peran sesuai potensinya.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/2.B_Muhammad Fajrul Fahmi_253153743937.pdf" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Artefak 5 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-5">
+                <span class="ct-artefak-num">5</span>
+                <h3>Tugas 4.A – Asesmen Awal</h3>
+                <div class="ct-artefak-label"><i data-lucide="help-circle"></i> Alasan Pemilihan</div>
+                <p class="ct-artefak-text">
+                  Artefak ini berisi rancangan asesmen awal untuk memetakan kemampuan dan karakteristik peserta didik, termasuk kemampuan berpikir komputasional, literasi digital, gaya belajar, dan akses teknologi. Artefak ini mendukung pemahaman saya bahwa guru perlu mengenal peserta didik sebelum merancang pembelajaran.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/4.A_Muhammad Fajrul Fahmi_253153743937.pdf" loading="lazy"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B. Keterkaitan Artefak -->
+              <div class="ct-section accent-analisis fade-in" id="sec-artefak-keterkaitan">
+                <span class="ct-section-tag">B · Keterkaitan Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="check-circle-2"></i></div>
+                  <h2>Mengapa Artefak Tersebut Mendukung Hasil Refleksi?</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Kelima artefak secara bersama membentuk narasi perkembangan yang utuh. Tugas 1.C memberikan fondasi analitis tentang keberagaman peserta didik; Tugas 3.C dan 3.D merekam proses refleksi dan rencana perubahan nyata; Tugas 2.B membuktikan penerapan strategi yang berpusat pada peserta didik; dan Tugas 4.A menunjukkan kesadaran akan pentingnya asesmen awal sebagai titik tolak perancangan pembelajaran.
+                  </p>
+                  <p>
+                    Artefak-artefak ini mendukung setiap elemen 4C: Connection (keterkaitan teori dan praktik), Challenge (identifikasi hambatan), Concept (konsep kunci yang diperoleh), dan Change (perubahan yang direncanakan).
+                  </p>
+                </div>
+              </div>
+
+            </div><!-- /tab-analisis -->
+
+
+            <!-- ═══ TAB 3: Hasil Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-rumusan">
+
+              <div class="ct-section accent-rumusan fade-in" id="sec-rumusan">
+                <span class="ct-section-tag">Bagian 3</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="file-text"></i>
+                  </div>
+                  <h2>Merumuskan Hasil Refleksi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Setelah mengikuti perkuliahan dan menganalisis berbagai artefak, saya menyadari bahwa perubahan terbesar dalam diri saya adalah cara memandang peserta didik dan peran guru. Saya memahami bahwa setiap peserta didik memiliki karakteristik, kemampuan, kebutuhan, dan cara belajar yang berbeda.
+                  </p>
+                  <p>
+                    Oleh karena itu, guru tidak dapat menggunakan satu strategi yang sama untuk semua kelas. Teori pembelajaran bukan sekadar wacana konseptual, melainkan alat kerja nyata. Scaffolding, pembelajaran kolaboratif, PjBL, dan pembelajaran kontekstual harus diintegrasikan dengan asesmen awal untuk merancang pengalaman belajar yang benar-benar bermakna.
+                  </p>
+
+                  <div class="ct-progress">
+                    <div class="ct-progress-step">
+                      <p><strong>Komitmen 1 · Guru yang Adaptif &amp; Reflektif:</strong> Ke depan, saya akan berusaha secara konsisten menciptakan lingkungan belajar yang aktif dan kontekstual, serta memberikan ruang bagi setiap peserta didik untuk berkembang sesuai dengan profil belajarnya.</p>
+                    </div>
+                    <div class="ct-progress-step">
+                      <p><strong>Komitmen 2 · Pergeseran Paradigma:</strong> Inti perubahan yang saya rasakan dan akan terus saya pegang adalah bergeser dari sekadar <em>“mengajar materi”</em> menjadi <em>“memahami peserta didik dan merancang pembelajaran sesuai kebutuhan mereka”</em>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-rumusan -->
+
+            <!-- ═══ TAB 4: Lembar Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-lembar">
+
+              <div class="ct-section accent-refleksi fade-in" id="sec-lembar">
+                <span class="ct-section-tag">Bagian 4</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="file-down"></i>
+                  </div>
+                  <h2>Lembar Refleksi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <div class="ct-artefak-doc">
+                    <button class="ct-doc-toggle active" onclick="this.nextElementSibling.classList.toggle('active')">
+                      <i data-lucide="eye"></i> Lihat Dokumen LK 2
+                    </button>
+                    <div class="ct-doc-viewer active">
+                      <iframe src="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/LK2_Pemahaman tentang Peserta Didik dan Pembelajarannya.pdf"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-lembar -->
+
+            <!-- ═══ TAB 5: Tugas Perkuliahan ═══ -->
+            <div class="ct-tab-pane" id="tab-tugas">
+
+              <div class="ct-section accent-concept fade-in" id="sec-tugas">
+                <span class="ct-section-tag">Bagian 5</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="folder-open"></i>
+                  </div>
+                  <h2>Tugas Perkuliahan</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                    <div class="ct-accordion">
+                      
+                      <!-- Topik 1 -->
+                      <div class="ct-accordion-item">
+                        <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                          <div class="ct-accordion-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
+                            <i data-lucide="folder"></i>
+                          </div>
+                          <span class="ct-accordion-title">Topik 1: Mengenal Peserta Didik</span>
+                          <span class="ct-accordion-badge">3 File</span>
+                          <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                        </button>
+                        <div class="ct-accordion-body">
+                          <div class="ct-accordion-inner">
+                            <ul class="ct-file-list">
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/1.C_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 1.C - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/1.D_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 1.D - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/1.E_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 1.E - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Topik 2 -->
+                      <div class="ct-accordion-item">
+                        <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                          <div class="ct-accordion-icon" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                            <i data-lucide="folder"></i>
+                          </div>
+                          <span class="ct-accordion-title">Topik 2: Perkembangan Kognitif dan Bahasa</span>
+                          <span class="ct-accordion-badge">3 File</span>
+                          <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                        </button>
+                        <div class="ct-accordion-body">
+                          <div class="ct-accordion-inner">
+                            <ul class="ct-file-list">
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/2.C_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 2.C - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/2.D_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 2.D - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/2.E_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 2.E - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Topik 3 -->
+                      <div class="ct-accordion-item">
+                        <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                          <div class="ct-accordion-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                            <i data-lucide="folder"></i>
+                          </div>
+                          <span class="ct-accordion-title">Topik 3: Perkembangan Sosio-Emosional dan Moral</span>
+                          <span class="ct-accordion-badge">3 File</span>
+                          <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                        </button>
+                        <div class="ct-accordion-body">
+                          <div class="ct-accordion-inner">
+                            <ul class="ct-file-list">
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/3.C_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 3.C - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/3.D_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 3.D - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/3.E_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 3.E - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Topik 4 -->
+                      <div class="ct-accordion-item">
+                        <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                          <div class="ct-accordion-icon" style="background: linear-gradient(135deg, #10b981, #34d399);">
+                            <i data-lucide="folder"></i>
+                          </div>
+                          <span class="ct-accordion-title">Topik 4: Keragaman Peserta Didik</span>
+                          <span class="ct-accordion-badge">3 File</span>
+                          <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                        </button>
+                        <div class="ct-accordion-body">
+                          <div class="ct-accordion-inner">
+                            <ul class="ct-file-list">
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/4.C_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 4.C - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/4.D_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 4.D - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="files/dokumen/Pemahaman tentang Peserta Didik dan Pembelajaran/4.E_Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank" class="ct-file-item">
+                                  <div class="ct-file-icon"><i data-lucide="file-text"></i></div>
+                                  <span class="ct-file-name">Tugas 4.E - Muhammad Fajrul Fahmi</span>
+                                  <i data-lucide="download" class="ct-file-dl"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+              </div>
+
+            </div><!-- /tab-tugas -->
+
+          </div><!-- /ct-main -->
+        </div><!-- /ct-layout -->
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      <a href="index.html">Beranda</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // ── Tab System ──
+    (function () {
+      const tabBtns = document.querySelectorAll('.ct-tab-btn');
+      const tabPanes = document.querySelectorAll('.ct-tab-pane');
+      const tocList = document.getElementById('ctTocList');
+
+      // TOC definitions per tab
+      const tocData = {
+        'tab-refleksi': [
+          { href: '#sec-refleksi',   icon: 'book-open',   label: 'Refleksi' },
+          { href: '#sec-connection', icon: 'link',         label: 'Connection' },
+          { href: '#sec-challenge',  icon: 'zap',          label: 'Challenge' },
+          { href: '#sec-concept',    icon: 'lightbulb',    label: 'Concept' },
+          { href: '#sec-change',     icon: 'refresh-cw',   label: 'Change' }
+        ],
+        'tab-analisis': [
+          { href: '#sec-analisis', icon: 'search', label: 'Analisis Artefak' }
+        ],
+        'tab-rumusan': [
+          { href: '#sec-rumusan', icon: 'file-text', label: 'Hasil Refleksi' }
+        ],
+        'tab-lembar': [
+          { href: '#sec-lembar', icon: 'file-down', label: 'Lembar Refleksi' }
+        ],
+        'tab-tugas': [
+          { href: '#sec-tugas', icon: 'folder-open', label: 'Tugas Perkuliahan' }
+        ]
+      };
+
+      function buildToc(tabId) {
+        const items = tocData[tabId] || [];
+        tocList.innerHTML = items.map((item, i) =>
+          `<li><a href="${item.href}"${i === 0 ? ' class="active"' : ''}><i data-lucide="${item.icon}"></i> ${item.label}</a></li>`
+        ).join('');
+        lucide.createIcons();
+        initScrollSpy();
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab');
+
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          document.getElementById(targetId).classList.add('active');
+
+          buildToc(targetId);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      // Build initial TOC
+      buildToc('tab-refleksi');
+    })();
+
+    // ── Document Viewer Toggle ──
+    function toggleDoc(btn) {
+      const viewer = btn.nextElementSibling;
+      viewer.classList.toggle('active');
+      if (viewer.classList.contains('active')) {
+        btn.innerHTML = '<i data-lucide="eye-off"></i> Tutup Dokumen';
+      } else {
+        btn.innerHTML = '<i data-lucide="eye"></i> Lihat Dokumen';
+      }
+      lucide.createIcons();
+    }
+
+    // ── Sidebar TOC Active Scroll Spy ──
+    function initScrollSpy() {
+      const tocLinks = document.querySelectorAll('#ctTocList a');
+      const sections = [];
+
+      tocLinks.forEach(link => {
+        const id = link.getAttribute('href');
+        if (id && id.startsWith('#')) {
+          const el = document.querySelector(id);
+          if (el) sections.push({ el, link });
+        }
+      });
+
+      function setActive() {
+        let current = sections[0];
+        const scrollY = window.scrollY + 140;
+
+        for (const sec of sections) {
+          if (sec.el.offsetTop <= scrollY) {
+            current = sec;
+          }
+        }
+
+        tocLinks.forEach(l => l.classList.remove('active'));
+        if (current) current.link.classList.add('active');
+      }
+
+      window.removeEventListener('scroll', window._ctScrollSpy);
+      window._ctScrollSpy = setActive;
+      window.addEventListener('scroll', setActive, { passive: true });
+      setActive();
+    }
+    initScrollSpy();
+  </script>
+</body>
+
+</html>
+

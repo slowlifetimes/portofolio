@@ -10,14 +10,14 @@ const PPL_DATA = {
       files: [
         {
           name: "RPP Siklus 1",
-          filename: "dokumen/rpp/RPP_Siklus1.pdf",
+          filename: "dokumen/ppl1/rpp/RPP_Siklus1.pdf",
           type: "pdf",
           size: "597 KB",
           date: "2026-04-21",
         },
         {
           name: "Modul Praktikum Siklus 1",
-          filename: "dokumen/rpp/Modul_Praktik_Siklus1.pdf",
+          filename: "dokumen/ppl1/rpp/Modul_Praktik_Siklus1.pdf",
           type: "pdf",
           size: "3.1 MB",
           date: "2026-04-21",
@@ -26,14 +26,14 @@ const PPL_DATA = {
       penilaian: [
         {
           name: "Lampiran 7 Siklus 1",
-          filename: "dokumen/penilaian/Lampiran 7 siklus 1.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 1.pdf",
           type: "pdf",
           size: "2.0 MB",
           date: "2026-04-21",
         },
         {
           name: "Lampiran 8 Siklus 1",
-          filename: "dokumen/penilaian/Lampiran 8 siklus 1.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 1.pdf",
           type: "pdf",
           size: "1.6 MB",
           date: "2026-04-21",
@@ -47,7 +47,7 @@ const PPL_DATA = {
         },
       ],
       konteks:
-        "RPP dirancang menggunakan pendekatan kontekstual berbasis Project-Based Learning (PjBL) untuk membuat dokumen kreatif.",
+        "RPP dirancang menggunakan model Problem-Based Learning (PBL) mengacu Kurikulum Merdeka dengan orientasi pemecahan masalah nyata.",
       tujuan:
         "Siswa mampu menyisipkan gambar (Insert Picture), bentuk geometris (Shapes), dan seni tulisan (Word Art) secara estetik dalam dokumen.",
       kelebihan:
@@ -55,7 +55,7 @@ const PPL_DATA = {
       kekurangan:
         "Sebagian siswa lambat dalam mengoperasikan mouse/keyboard; diperlukan bimbingan personal (scaffolding).",
       teori: [
-        "Project-Based Learning",
+        "Problem-Based Learning (PBL)",
         "TPACK Framework",
         "Teori Kognitivisme Piaget",
       ],
@@ -66,18 +66,18 @@ const PPL_DATA = {
       tanggal: "28 April 2026",
       mapel: "Informatika Kelas VII",
       deskripsi:
-        "Siklus kedua mengembangkan pemahaman penyisipan tabel, pemformatan kolom dan baris, serta penataan data secara terstruktur.",
+        "Siklus kedua mengembangkan pemahaman penyisipan tabel, pemformatan kolom dan baris, serta penataan data secara terstruktur menggunakan model Problem-Based Learning (PBL).",
       files: [
         {
           name: "RPP Siklus 2",
-          filename: "dokumen/rpp/RPP_Siklus2.pdf",
+          filename: "dokumen/ppl1/rpp/RPP_Siklus2.pdf",
           type: "pdf",
           size: "595 KB",
           date: "2026-04-28",
         },
         {
           name: "Modul Praktikum Siklus 2",
-          filename: "dokumen/rpp/Modul_Praktik_Siklus2.pdf",
+          filename: "dokumen/ppl1/rpp/Modul_Praktik_Siklus2.pdf",
           type: "pdf",
           size: "456 KB",
           date: "2026-04-28",
@@ -86,14 +86,14 @@ const PPL_DATA = {
       penilaian: [
         {
           name: "Lampiran 7 Siklus 2",
-          filename: "dokumen/penilaian/Lampiran 7 siklus 2.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 2.pdf",
           type: "pdf",
           size: "1.8 MB",
           date: "2026-04-28",
         },
         {
           name: "Lampiran 8 Siklus 2",
-          filename: "dokumen/penilaian/Lampiran 8 siklus 2.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 2.pdf",
           type: "pdf",
           size: "1.6 MB",
           date: "2026-04-28",
@@ -107,16 +107,17 @@ const PPL_DATA = {
         },
       ],
       konteks:
-        "Pembelajaran mengintegrasikan pembuatan tabel untuk jadwal pelajaran atau jadwal piket kelas secara mandiri.",
+        "Penerapan sintaks Problem-Based Learning (PBL) dalam pemecahan masalah pembuatan tabel jadwal pelajaran atau jadwal piket kelas secara mandiri.",
       tujuan:
         "Siswa mampu menyisipkan tabel (Insert Table), memformat sel, serta menata data teks dan angka secara rapi.",
       kelebihan:
-        "Praktik pembuatan jadwal pelajaran nyata sangat relevan dengan kebutuhan sehari-hari siswa kelas VII.",
+        "Praktik pemecahan masalah jadwal pelajaran nyata sangat relevan dengan kebutuhan sehari-hari siswa kelas VII.",
       kekurangan:
         "Keterbatasan waktu saat pemformatan border dan warna sel; perlu panduan langkah-demi-langkah (cheat sheet) yang dicetak.",
       teori: [
+        "Problem-Based Learning (Barrows)",
         "Multimedia Learning Mayer",
-        "Discovery Learning Bruner",
+        "Teori Belajar Bermakna Ausubel",
       ],
     },
     {
@@ -125,18 +126,18 @@ const PPL_DATA = {
       tanggal: "5 Mei 2026",
       mapel: "Informatika Kelas VII",
       deskripsi:
-        "Siklus ketiga berfokus pada pengenalan penyisipan simbol-simbol khusus dan formula matematika menggunakan fitur Symbol dan Equation di Ms. Word.",
+        "Siklus ketiga berfokus pada pemecahan masalah penyisipan simbol-simbol khusus dan formula matematika menggunakan fitur Symbol dan Equation di Ms. Word dengan model Problem-Based Learning (PBL).",
       files: [
         {
           name: "RPP Siklus 3",
-          filename: "dokumen/rpp/RPP_Siklus3.pdf",
+          filename: "dokumen/ppl1/rpp/RPP_Siklus3.pdf",
           type: "pdf",
           size: "544 KB",
           date: "2026-05-05",
         },
         {
           name: "Modul Praktikum Siklus 3",
-          filename: "dokumen/rpp/Modul_Praktik_Siklus3.pdf",
+          filename: "dokumen/ppl1/rpp/Modul_Praktik_Siklus3.pdf",
           type: "pdf",
           size: "421 KB",
           date: "2026-05-05",
@@ -145,14 +146,14 @@ const PPL_DATA = {
       penilaian: [
         {
           name: "Lampiran 7 Siklus 3",
-          filename: "dokumen/penilaian/Lampiran 7 siklus 3.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 3.pdf",
           type: "pdf",
           size: "1.9 MB",
           date: "2026-05-05",
         },
         {
           name: "Lampiran 8 Siklus 3",
-          filename: "dokumen/penilaian/Lampiran 8 siklus 3.pdf",
+          filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 3.pdf",
           type: "pdf",
           size: "1.6 MB",
           date: "2026-05-05",
@@ -166,7 +167,7 @@ const PPL_DATA = {
         },
       ],
       konteks:
-        "Siklus final dengan penekanan pada pembuatan lembar soal matematika sederhana menggunakan Word.",
+        "Siklus final dengan penekanan pada pemecahan masalah pembuatan lembar soal matematika sederhana menggunakan Word berbasis Problem-Based Learning (PBL).",
       tujuan:
         "Siswa mampu menggunakan fitur Symbol dan Equation untuk menyisipkan rumus matematika dan karakter khusus pada dokumen.",
       kelebihan:
@@ -174,6 +175,7 @@ const PPL_DATA = {
       kekurangan:
         "Beberapa siswa kesulitan mencari letak simbol khusus; diperlukan pendampingan ekstra untuk menemukan menu simbol.",
       teori: [
+        "Problem-Based Learning (PBL)",
         "Assessment for Learning",
         "Scaffolding Vygotsky",
         "Reflective Practice",
@@ -184,21 +186,21 @@ const PPL_DATA = {
     lampiran7: [
       {
         name: "Lampiran 7 Siklus 1",
-        filename: "dokumen/penilaian/Lampiran 7 siklus 1.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 1.pdf",
         type: "pdf",
         size: "2.0 MB",
         date: "2026-04-21",
       },
       {
         name: "Lampiran 7 Siklus 2",
-        filename: "dokumen/penilaian/Lampiran 7 siklus 2.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 2.pdf",
         type: "pdf",
         size: "1.8 MB",
         date: "2026-04-28",
       },
       {
         name: "Lampiran 7 Siklus 3",
-        filename: "dokumen/penilaian/Lampiran 7 siklus 3.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 7 siklus 3.pdf",
         type: "pdf",
         size: "1.9 MB",
         date: "2026-05-05",
@@ -207,21 +209,21 @@ const PPL_DATA = {
     lampiran8: [
       {
         name: "Lampiran 8 Siklus 1",
-        filename: "dokumen/penilaian/Lampiran 8 siklus 1.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 1.pdf",
         type: "pdf",
         size: "1.6 MB",
         date: "2026-04-21",
       },
       {
         name: "Lampiran 8 Siklus 2",
-        filename: "dokumen/penilaian/Lampiran 8 siklus 2.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 2.pdf",
         type: "pdf",
         size: "1.6 MB",
         date: "2026-04-28",
       },
       {
         name: "Lampiran 8 Siklus 3",
-        filename: "dokumen/penilaian/Lampiran 8 siklus 3.pdf",
+        filename: "dokumen/ppl1/penilaian/Lampiran 8 siklus 3.pdf",
         type: "pdf",
         size: "1.6 MB",
         date: "2026-05-05",

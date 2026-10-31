@@ -976,3 +976,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(autoAnimate, 80);
   if (typeof pageInit === "function") pageInit();
 });
+
+
+// Play YouTube video inside facade container
+function playVideo(containerId, videoId, title) {
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = 
+    '<iframe ' +
+    'src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&enablejsapi=1" ' +
+    'title="' + title + '" ' +
+    'style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" ' +
+    'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+    'referrerpolicy="strict-origin-when-cross-origin" ' +
+    'allowfullscreen>' +
+    '</iframe>';
+  container.style.cursor = 'default';
+  container.onclick = null;
+}
+window.playVideo = playVideo;

@@ -1,0 +1,3834 @@
+﻿<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Praktik Pengalaman Lapangan (PPL) Mandiri | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <meta name="description"
+    content="E-Portfolio PPL PPG - Muhammad Fajrul Fahmi, Praktik Pengalaman Lapangan (PPL) Mandiri (Semester 2)" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <style>
+    /* ── Siklus Navigation Cards ── */
+    .siklus-nav-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .siklus-nav-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .siklus-nav-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .siklus-nav-meta h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0 0 2px;
+    }
+
+    .siklus-nav-meta p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .siklus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .siklus-card {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+    }
+
+    .siklus-card:hover {
+      background: var(--glass-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(99, 102, 241, 0.1);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .siklus-card-number {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary-light), #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .siklus-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .siklus-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+      flex: 1;
+    }
+
+    .siklus-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 50px;
+      width: fit-content;
+    }
+
+    .siklus-card-status svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .siklus-card-status.ready {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    .siklus-card-status.soon {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--text-muted);
+    }
+
+    .siklus-card-arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .siklus-card-arrow svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .siklus-card:hover .siklus-card-arrow {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: var(--primary-light);
+      transform: translateX(2px);
+    }
+
+    /* ── CT Layout (same as PSE page) ── */
+    .ct-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* Sidebar TOC */
+    .ct-toc {
+      position: sticky;
+      top: 100px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .ct-toc-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ct-toc-title svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ct-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ct-toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      border-left: 2px solid transparent;
+    }
+
+    .ct-toc-list li a:hover,
+    .ct-toc-list li a.active {
+      background: rgba(99, 102, 241, 0.08);
+      color: var(--primary-light);
+      border-left-color: var(--primary-light);
+    }
+
+    .ct-toc-list li a svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+
+    .ct-toc-list li a:hover svg,
+    .ct-toc-list li a.active svg {
+      opacity: 1;
+    }
+
+    /* Main Content */
+    .ct-main {
+      min-width: 0;
+    }
+
+    /* Section Cards */
+    .ct-section {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+
+    .ct-section:hover {
+      border-color: rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 24px rgba(99, 102, 241, 0.06);
+    }
+
+    .ct-section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .ct-section-header .ct-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ct-section-header .ct-icon-wrap svg {
+      width: 20px;
+      height: 20px;
+      color: #fff;
+    }
+
+    .ct-section-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      font-family: "Playfair Display", serif;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .ct-section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 6px;
+    }
+
+    .ct-section-divider {
+      width: 50px;
+      height: 2.5px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      margin-top: 4px;
+    }
+
+    .ct-section-body {
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-size: 0.92rem;
+    }
+
+    .ct-section-body p {
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .ct-section-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Tab System */
+    .ct-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ct-tab-btn {
+      padding: 11px 20px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      gap: 9px;
+      transition: var(--transition);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: inherit;
+    }
+
+    .ct-tab-btn:hover {
+      background: rgba(99, 102, 241, 0.06);
+      color: var(--primary-light);
+      border-color: rgba(99, 102, 241, 0.2);
+    }
+
+    .ct-tab-btn.active {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary-light);
+      border-color: var(--primary-light);
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.1);
+    }
+
+    .ct-tab-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ct-tab-pane {
+      display: none;
+      animation: ctFadeIn 0.4s ease forwards;
+    }
+
+    .ct-tab-pane.active {
+      display: block;
+    }
+
+    @keyframes ctFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Placeholder Card */
+    .ct-placeholder-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 32px 24px;
+      text-align: center;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .ct-placeholder-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ct-placeholder-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .ct-placeholder-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .ct-placeholder-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* Document Placeholder */
+    .ct-doc-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 32px;
+      text-align: center;
+      background: var(--glass-bg);
+      border: 2px dashed var(--glass-border);
+      border-radius: var(--radius);
+      min-height: 300px;
+    }
+
+    .ct-doc-placeholder-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.12));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .ct-doc-placeholder-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--primary-light);
+    }
+
+    .ct-doc-placeholder h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .ct-doc-placeholder p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    /* Color Accents */
+    .accent-refleksi .ct-icon-wrap {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+    }
+
+    .accent-refleksi .ct-section-divider {
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+    }
+
+    .accent-refleksi .ct-section-tag {
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366f1;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .accent-connection .ct-icon-wrap {
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+    }
+
+    .accent-connection .ct-section-divider {
+      background: linear-gradient(90deg, #6366f1, #818cf8);
+    }
+
+    .accent-connection .ct-section-tag {
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366f1;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .accent-challenge .ct-icon-wrap {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    .accent-challenge .ct-section-divider {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    .accent-challenge .ct-section-tag {
+      background: rgba(245, 158, 11, 0.1);
+      color: #d97706;
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+
+    .accent-concept .ct-icon-wrap {
+      background: linear-gradient(135deg, #10b981, #34d399);
+    }
+
+    .accent-concept .ct-section-divider {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+
+    .accent-concept .ct-section-tag {
+      background: rgba(16, 185, 129, 0.1);
+      color: #059669;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    .accent-change .ct-icon-wrap {
+      background: linear-gradient(135deg, #ec4899, #f472b6);
+    }
+
+    .accent-change .ct-section-divider {
+      background: linear-gradient(90deg, #ec4899, #f472b6);
+    }
+
+    .accent-change .ct-section-tag {
+      background: rgba(236, 72, 153, 0.1);
+      color: #db2777;
+      border: 1px solid rgba(236, 72, 153, 0.2);
+    }
+
+    .accent-analisis .ct-icon-wrap {
+      background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    }
+
+    .accent-analisis .ct-section-divider {
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+    }
+
+    .accent-analisis .ct-section-tag {
+      background: rgba(139, 92, 246, 0.1);
+      color: #7c3aed;
+      border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .accent-rumusan .ct-icon-wrap {
+      background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    }
+
+    .accent-rumusan .ct-section-divider {
+      background: linear-gradient(90deg, #06b6d4, #22d3ee);
+    }
+
+    .accent-rumusan .ct-section-tag {
+      background: rgba(6, 182, 212, 0.1);
+      color: #0891b2;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    /* ── Drop Cap & Highlight ── */
+    .drop-cap::first-letter {
+      font-size: 3.2rem;
+      float: left;
+      line-height: 0.8;
+      margin: 4px 12px 0 0;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .ct-highlight {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 24px 28px;
+      margin-top: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .ct-highlight p {
+      font-style: italic;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    /* ── Artefak Cards ── */
+    .ct-artefak-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .ct-artefak-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--secondary));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .ct-artefak-card:hover {
+      border-color: rgba(99, 102, 241, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(99, 102, 241, 0.08);
+    }
+
+    .ct-artefak-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .ct-artefak-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .ct-artefak-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ct-artefak-label svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .ct-artefak-text {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.85;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    /* ── Artefak Document Viewer & Embed ── */
+    .ct-artefak-doc {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--glass-border);
+    }
+
+    .ct-doc-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: var(--radius-sm);
+      color: var(--primary-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .ct-doc-toggle:hover {
+      background: rgba(99, 102, 241, 0.2);
+      color: #fff;
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .ct-doc-toggle svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .ct-doc-viewer {
+      margin-top: 14px;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.35s ease;
+      border-radius: var(--radius-sm);
+      background: var(--glass-bg);
+      border: 1px solid transparent;
+    }
+
+    .ct-doc-viewer.active {
+      height: 600px;
+      border-color: var(--glass-border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .ct-doc-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    .ct-doc-embed {
+      width: 100%;
+      height: 80vh;
+      min-height: 650px;
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    }
+
+    .ct-doc-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff;
+    }
+
+    /* ── File Browser / Accordion (Bagian 5) ── */
+    .ct-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .ct-accordion-item {
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+      background: var(--glass-bg);
+    }
+
+    .ct-accordion-item.open {
+      border-color: rgba(99, 102, 241, 0.25);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+    }
+
+    .ct-accordion-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: rgba(99, 102, 241, 0.03);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      color: inherit;
+    }
+
+    .ct-accordion-header:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+
+    .ct-accordion-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .ct-accordion-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      flex: 1;
+    }
+
+    .ct-accordion-badge {
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 50px;
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .ct-accordion-chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .ct-accordion-item.open .ct-accordion-chevron {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    .ct-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .ct-accordion-item.open .ct-accordion-body {
+      max-height: 800px;
+    }
+
+    .ct-accordion-inner {
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .ct-file-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ct-file-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: var(--transition);
+      font-size: 0.88rem;
+    }
+
+    .ct-file-item:hover {
+      background: rgba(99, 102, 241, 0.08);
+      border-color: rgba(99, 102, 241, 0.25);
+      transform: translateX(4px);
+    }
+
+    .ct-file-icon {
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .ct-file-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .ct-file-name {
+      flex: 1;
+      font-weight: 500;
+    }
+
+    .ct-file-dl {
+      color: var(--text-muted);
+      width: 16px;
+      height: 16px;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .ct-file-item:hover .ct-file-dl {
+      color: var(--primary);
+      transform: translateY(2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 1000px) {
+      .siklus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .ct-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ct-toc {
+        position: relative;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .ct-toc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .siklus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ct-section {
+        padding: 24px 20px;
+      }
+
+      .ct-section-header h2 {
+        font-size: 1.1rem;
+      }
+
+      .ct-toc-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ════ NON-MENGAJAR STYLES ════ */
+    .siklus-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Cycle Hero Card */
+    .siklus-hero {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg,
+          var(--glass-bg),
+          rgba(99, 102, 241, 0.05));
+    }
+
+    .siklus-hero::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--primary-light), transparent);
+      filter: blur(40px);
+      opacity: 0.15;
+    }
+
+    .siklus-hero .sec-tag {
+      margin-bottom: 12px;
+    }
+
+    .siklus-hero h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .siklus-hero .meta-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .siklus-hero .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .siklus-hero .meta-item svg {
+      color: var(--primary-light);
+      opacity: 0.8;
+    }
+
+    .siklus-hero .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 800px;
+    }
+
+
+    .files-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .file-group {
+      padding: 24px;
+    }
+
+    .file-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .file-group-head span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+
+    /* ── Documentation Image Slider ── */
+    .doc-slider-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .doc-slider-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .doc-slider-track {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    .doc-slider-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .doc-slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .doc-slider-viewport:hover .doc-slider-slide img {
+      transform: scale(1.03);
+    }
+
+    /* Counter Badge */
+    .doc-slider-counter {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(10, 15, 30, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      z-index: 5;
+    }
+
+    /* Prev / Next Buttons */
+    .doc-slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 6;
+      opacity: 0.85;
+      padding: 0;
+    }
+
+    .doc-slider-btn:hover {
+      background: rgba(99, 102, 241, 0.88);
+      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-50%) scale(1.08);
+      opacity: 1;
+    }
+
+    .doc-slider-btn.prev {
+      left: 10px;
+    }
+
+    .doc-slider-btn.next {
+      right: 10px;
+    }
+
+    .doc-slider-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Caption Overlay */
+    .doc-slider-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 14px 12px;
+      background: linear-gradient(to top, rgba(10, 15, 30, 0.9) 0%, rgba(10, 15, 30, 0.45) 60%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .doc-slider-caption-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-width: 80%;
+    }
+
+    .doc-slider-caption-text .cap-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-light);
+    }
+
+    .doc-slider-caption-text .cap-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .doc-slider-caption-text .cap-desc {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.82);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-slider-caption .cap-btn {
+      pointer-events: auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    .doc-slider-caption .cap-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      transform: scale(1.08);
+    }
+
+    .doc-slider-caption .cap-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Dots */
+    .doc-slider-dots {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .doc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      padding: 0;
+    }
+
+    .doc-dot.active {
+      width: 18px;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    /* Interactive File Row List Under Slider */
+    .doc-slider-items .file-row {
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+    }
+
+    .doc-slider-items .file-row:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateX(3px);
+    }
+
+    .doc-slider-items .file-row.active {
+      border-color: var(--primary-light);
+      background: rgba(99, 102, 241, 0.14);
+      box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3);
+    }
+
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-box {
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-2px);
+      background: var(--glass-hover);
+    }
+
+    .stat-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stat-box-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .stat-box-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .stat-box-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .stat-box-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Activity Cards Grid */
+    .activity-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .activity-card {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .activity-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .activity-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .activity-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .activity-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .activity-meta-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .activity-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+    }
+
+    .activity-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .activity-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+      opacity: 0.18;
+      font-family: var(--font-heading, "Playfair Display", serif);
+      flex-shrink: 0;
+    }
+
+    .activity-lead {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .activity-steps-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .activity-steps-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .activity-steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .activity-steps-list li {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .activity-steps-list li svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .activity-impact-box {
+      margin-top: auto;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .activity-impact-box strong {
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Activity Theme Variants */
+    .act-piket {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(16, 185, 129, 0.04));
+    }
+
+    .act-piket:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .act-piket .activity-icon-wrap {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #10b981;
+    }
+
+    .act-piket .activity-tag {
+      color: #10b981;
+    }
+
+    .act-piket .activity-steps-list li svg {
+      color: #10b981;
+    }
+
+    .act-5s {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(245, 158, 11, 0.04));
+    }
+
+    .act-5s:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    .act-5s .activity-icon-wrap {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: #f59e0b;
+    }
+
+    .act-5s .activity-tag {
+      color: #f59e0b;
+    }
+
+    .act-5s .activity-steps-list li svg {
+      color: #f59e0b;
+    }
+
+    .act-absensi {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(99, 102, 241, 0.04));
+    }
+
+    .act-absensi:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+
+    .act-absensi .activity-icon-wrap {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: #818cf8;
+    }
+
+    .act-absensi .activity-tag {
+      color: #818cf8;
+    }
+
+    .act-absensi .activity-steps-list li svg {
+      color: #818cf8;
+    }
+
+    .act-coding {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(168, 85, 247, 0.04));
+    }
+
+    .act-coding:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    .act-coding .activity-icon-wrap {
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      color: #c084fc;
+    }
+
+    .act-coding .activity-tag {
+      color: #c084fc;
+    }
+
+    .act-coding .activity-steps-list li svg {
+      color: #c084fc;
+    }
+
+    /* Competency Grid */
+    .competency-card {
+      padding: 32px;
+    }
+
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .competency-item {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .competency-item:hover {
+      background: var(--glass-hover);
+      transform: translateY(-2px);
+    }
+
+    .competency-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-light);
+    }
+
+    .competency-item h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .competency-item p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    @media (max-width: 1000px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .activity-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .competency-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .siklus-hero {
+        padding: 30px 24px;
+      }
+
+      .competency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ════ Video Analysis & Module Detail Styles (UAS Pembelajaran Pilihan) ════ */
+    .pilihan-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Hero Card */
+    .pilihan-hero {
+      padding: 36px 38px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, var(--glass-bg), rgba(99, 102, 241, 0.06));
+    }
+    .pilihan-hero h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 10px 0 14px;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+    .pilihan-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .pilihan-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+    .pilihan-meta-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--primary-light);
+    }
+    .pilihan-hero-desc {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Detail Grid (2x2 on desktop, 1 on mobile) */
+    .pilihan-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .pilihan-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pilihan-detail-card {
+      padding: 22px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition);
+    }
+    .pilihan-detail-card:hover {
+      transform: translateY(-2px);
+      background: var(--glass-hover);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+    .pilihan-detail-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .pilihan-icon-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: var(--primary-light);
+      flex-shrink: 0;
+    }
+    .pilihan-icon-circle.pro {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.25);
+      color: #22c55e;
+    }
+    .pilihan-icon-circle.con {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.25);
+      color: #f59e0b;
+    }
+    .pilihan-icon-circle svg {
+      width: 17px;
+      height: 17px;
+    }
+    .pilihan-detail-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .pilihan-detail-card ol {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    .pilihan-detail-card ol li {
+      margin-bottom: 6px;
+    }
+    .pilihan-detail-card ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Modul Section */
+    .pilihan-modul-box {
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      overflow: hidden;
+    }
+    .pilihan-modul-head {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: rgba(99, 102, 241, 0.04);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .pilihan-modul-head h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pilihan-modul-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .pilihan-theory-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pilihan-theory-chip {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pilihan-theory-chip::before {
+      content: "✦";
+      color: var(--primary-light);
+      font-size: 0.7rem;
+    }
+    .pilihan-pdf-frame {
+      width: 100%;
+      height: 520px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+    }
+
+    /* Video Player Box */
+    .pilihan-video-box {
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .pilihan-video-player {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .pilihan-video-player iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .pilihan-video-info {
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: rgba(99, 102, 241, 0.03);
+      border-top: 1px solid var(--glass-border);
+    }
+    .pilihan-video-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .pilihan-video-text h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0 0 6px;
+    }
+    .pilihan-video-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Video Action Buttons */
+    .video-action-btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .video-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      text-decoration: none !important;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .video-action-btn svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .video-action-btn:hover svg {
+      transform: scale(1.1);
+    }
+
+    .video-action-btn.primary {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35) !important;
+    }
+
+    .video-action-btn.primary:hover {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(239, 68, 68, 0.5) !important;
+    }
+
+    .video-action-btn.primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+    }
+
+    /* Tahap Pembelajaran (Sequential Progression Cards) */
+    .pilihan-stages-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .pilihan-stage-card {
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .pilihan-stage-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      background: var(--glass-hover);
+    }
+    .pilihan-stage-header {
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .pilihan-stage-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .pilihan-stage-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pilihan-stage-num.p1 {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .pilihan-stage-num.p2 {
+      background: rgba(168, 85, 247, 0.15);
+      color: #a855f7;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .pilihan-stage-num.p3 {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+    .pilihan-stage-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .pilihan-stage-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .pilihan-stage-badge.p1 {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    .pilihan-stage-badge.p2 {
+      background: rgba(168, 85, 247, 0.12);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.25);
+    }
+    .pilihan-stage-badge.p3 {
+      background: rgba(34, 197, 94, 0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+    }
+    .pilihan-stage-body {
+      padding: 22px 24px;
+    }
+
+    /* Sintaks Grid inside Tahap Inti */
+    .pilihan-sintaks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 768px) {
+      .pilihan-sintaks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pilihan-sintaks-card {
+      padding: 16px 18px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pilihan-sintaks-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .pilihan-sintaks-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(168, 85, 247, 0.14);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .pilihan-sintaks-card p {
+      font-size: 0.83rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .pilihan-sintaks-card ul {
+      margin: 4px 0 0;
+      padding-left: 18px;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+    .pilihan-sintaks-card ul li {
+      margin-bottom: 4px;
+    }
+
+    /* List items for Pendahuluan & Penutup */
+    .pilihan-items-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pilihan-items-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    .pilihan-items-list li svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary-light);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Reflection Matrix (2 columns) */
+    .pilihan-matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 768px) {
+      .pilihan-matrix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pilihan-matrix-card {
+      padding: 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .pilihan-matrix-card.strength {
+      border-left: 4px solid #22c55e;
+      background: linear-gradient(135deg, var(--glass-bg), rgba(34, 197, 94, 0.03));
+    }
+    .pilihan-matrix-card.growth {
+      border-left: 4px solid #f59e0b;
+      background: linear-gradient(135deg, var(--glass-bg), rgba(245, 158, 11, 0.03));
+    }
+    .pilihan-matrix-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .pilihan-matrix-card.strength .pilihan-matrix-head {
+      color: #22c55e;
+    }
+    .pilihan-matrix-card.growth .pilihan-matrix-head {
+      color: #f59e0b;
+    }
+    .pilihan-matrix-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pilihan-matrix-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    .pilihan-matrix-card.strength .pilihan-matrix-list li svg {
+      color: #22c55e;
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+    }
+    .pilihan-matrix-card.growth .pilihan-matrix-list li svg {
+      color: #f59e0b;
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+    }
+</style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img
+          src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="model-guru.html">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i
+              data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn active" style="display:flex; align-items:center; gap:4px;">Semester 2 <i
+              data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html" class="active">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+        <!-- Page Header -->
+        <div class="sec-header fade-in">
+          <span class="sec-tag">Produk Pembelajaran · Semester 2</span>
+          <h1 class="sec-title">Artefak PPL Mandiri</h1>
+          <p class="sec-desc">
+            Dokumentasi perangkat pembelajaran, modul ajar, dan analisis reflektif pelaksanaan Praktik Pengalaman
+            Lapangan (PPL) Mandiri.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- ═══ SIKLUS NAVIGATION ═══ -->
+        <div class="fade-in">
+          <div class="siklus-nav-header">
+            <div class="siklus-nav-icon"><i data-lucide="layers"></i></div>
+            <div class="siklus-nav-meta">
+              <h2>Siklus Pembelajaran</h2>
+              <p>Pilih siklus untuk melihat modul ajar, dokumentasi, dan analisis pembelajaran</p>
+            </div>
+          </div>
+
+          <div class="siklus-grid">
+            <a href="ppl-mandiri-siklus1.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">01</div>
+              <div>
+                <h3>Siklus 1</h3>
+                <p>Algoritma, Optimasi Penjadwalan, dan Representasi Data</p>
+              </div>
+
+            </a>
+
+            <a href="ppl-mandiri-siklus2.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">02</div>
+              <div>
+                <h3>Siklus 2</h3>
+                <p>Modul Struktur Data &amp; Sistem Komputer</p>
+              </div>
+
+            </a>
+
+            <a href="ppl-mandiri-siklus3.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">03</div>
+              <div>
+                <h3>Siklus 3</h3>
+                <p>Modul Hardware &amp; Praktik Laboratorium</p>
+              </div>
+
+            </a>
+
+            <a href="ppl-mandiri-siklus4.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">04</div>
+              <div>
+                <h3>Siklus 4</h3>
+                <p>Modul Praktik Lab &amp; Software Komputer</p>
+              </div>
+
+            </a>
+          </div>
+        </div>
+
+        <!-- ═══ DOKUMEN & REFLEKSI (PSE-style layout) ═══ -->
+
+        <!-- Tab Buttons -->
+        <div class="ct-tabs fade-in">
+          <button class="ct-tab-btn active" data-tab="tab-refleksi">
+            <i data-lucide="book-open"></i> Refleksi 4C
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-analisis">
+            <i data-lucide="search"></i> Analisis Artefak
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-rumusan">
+            <i data-lucide="file-text"></i> Hasil Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-lembar">
+            <i data-lucide="file-down"></i> Lembar Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-tugas">
+            <i data-lucide="folder-open"></i> Tugas Perkuliahan
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-non-mengajar">
+            <i data-lucide="clipboard-list"></i> Kegiatan Non Mengajar
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-pilihan">
+            <i data-lucide="award"></i> Pembelajaran Pilihan (UAS PPL Mandiri)
+          </button>
+        </div>
+
+        <!-- Layout: Sidebar + Main -->
+        <div class="ct-layout">
+
+          <!-- Sidebar TOC -->
+          <aside class="ct-toc fade-in">
+            <div class="ct-toc-title">
+              <i data-lucide="list"></i> Daftar Isi
+            </div>
+            <ul class="ct-toc-list" id="ctTocList">
+              <!-- Populated dynamically by JS per active tab -->
+            </ul>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="ct-main">
+
+            <!-- ═══ TAB 1: Refleksi 4C ═══ -->
+            <div class="ct-tab-pane active" id="tab-refleksi">
+
+              <!-- A. CONNECTION -->
+              <div class="ct-section accent-connection fade-in" id="sec-connection">
+                <span class="ct-section-tag">Tahap A · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="link"></i>
+                  </div>
+                  <h2>Connection</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Sebagai calon guru Informatika, PPL Mandiri di SMP Negeri 18 Malang adalah tempat saya menerapkan
+                    teori pedagogi modern di ruang kelas yang sebenarnya. Materi ini berkaitan langsung dengan peran
+                    saya sebagai perancang pembelajaran yang berpusat pada peserta didik, sebagai guru yang membaca
+                    kondisi kelas dan karakteristik murid sebelum mengajar, dan sebagai pendidik yang menyesuaikan
+                    strategi serta merefleksikan praktiknya.
+                  </p>
+                </div>
+              </div>
+
+              <!-- B. CHALLENGE -->
+              <div class="ct-section accent-challenge fade-in" id="sec-challenge">
+                <span class="ct-section-tag">Tahap B · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="zap"></i>
+                  </div>
+                  <h2>Challenge</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Hal yang berbeda dari praktik saya selama ini: (1) merancang dan melaksanakan pembelajaran dengan
+                    model yang jelas, yaitu Problem-Based Learning (PBL), Discovery Learning, dan pendekatan kontekstual
+                    (CTL), dengan alur memahami, mengaplikasi, dan merefleksi; (2) memulai dengan observasi lingkungan
+                    belajar untuk mengetahui kondisi sarana kelas dan interaksi guru dengan murid; (3) memakai media
+                    konkret seperti papan sekat dan sticky notes pada pembelajaran berbasis studi kasus; (4)
+                    mengevaluasi praktik mengajar secara terstruktur bersama Guru Pamong.
+                  </p>
+                  <p>
+                    Dalam praktiknya, saya juga harus menyesuaikan rancangan dengan kondisi nyata, seperti proyektor
+                    yang rusak, ventilasi kelas yang kurang baik, dan waktu kegiatan inti yang terbatas.
+                  </p>
+                </div>
+              </div>
+
+              <!-- C. CONCEPT -->
+              <div class="ct-section accent-concept fade-in" id="sec-concept">
+                <span class="ct-section-tag">Tahap C · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="lightbulb"></i>
+                  </div>
+                  <h2>Concept</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Konsep utama yang saya pelajari dan terapkan:
+                  </p>
+                  <ol>
+                    <li><strong>Problem-Based Learning (PBL):</strong> pembelajaran dimulai dari masalah atau studi
+                      kasus yang diselesaikan peserta didik.</li>
+                    <li><strong>Discovery Learning:</strong> peserta didik menemukan konsep sendiri melalui kegiatan
+                      yang dirancang guru.</li>
+                    <li><strong>Contextual Teaching and Learning (CTL):</strong> materi dikaitkan dengan konteks nyata
+                      peserta didik.</li>
+                    <li><strong>Pembelajaran mendalam (deep learning):</strong> siklus memahami, mengaplikasi, dan
+                      merefleksi agar pembelajaran bermakna.</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- D. CHANGE -->
+              <div class="ct-section accent-change fade-in" id="sec-change">
+                <span class="ct-section-tag">Tahap D · 4C Framework</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="refresh-cw"></i>
+                  </div>
+                  <h2>Change</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Perubahan yang ingin saya lakukan:
+                  </p>
+                  <ol>
+                    <li>Lebih adaptif mengelola keterbatasan fasilitas, misalnya dengan menyiapkan media alternatif.
+                    </li>
+                    <li>Mengatur waktu mengajar lebih tepat, terutama pada kegiatan inti.</li>
+                    <li>Memantau kolaborasi kelompok secara merata agar semua murid terlibat.</li>
+                    <li>Melakukan refleksi berkelanjutan dengan memanfaatkan umpan balik Guru Pamong untuk memperbaiki
+                      praktik mengajar berikutnya.</li>
+                  </ol>
+                </div>
+              </div>
+
+            </div><!-- /tab-refleksi -->
+
+            <!-- ═══ TAB 2: Analisis Artefak ═══ -->
+            <div class="ct-tab-pane" id="tab-analisis">
+
+              <div class="ct-section accent-analisis fade-in" id="sec-analisis">
+                <span class="ct-section-tag">Bagian 2 · Analisis Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="search"></i>
+                  </div>
+                  <h2>Analisis Artefak Pembelajaran</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini:
+                  </p>
+                  <ol>
+                    <li><strong>Artefak 1:</strong> Lembar Kerja (LK) 2 – Observasi Lingkungan Belajar, yang merekam
+                      hasil pengamatan saya di SMP Negeri 18 Malang.</li>
+                    <li><strong>Artefak 2:</strong> Lembar Kerja (LK) 4 – Refleksi Praktik Pembelajaran Mandiri (Siklus
+                      4), yang mendokumentasikan evaluasi praktik mengajar saya.</li>
+                  </ol>
+                </div>
+              </div>
+
+              <!-- Artefak 1 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-1">
+                <span class="ct-artefak-num">1</span>
+                <h3>Artefak 1: Lembar Kerja (LK) 2 – Observasi Lingkungan Belajar (SMP Negeri 18 Malang)</h3>
+
+                <div class="ct-artefak-label">
+                  <i data-lucide="help-circle"></i> Alasan Pemilihan Artefak
+                </div>
+                <p class="ct-artefak-text">
+                  Saya memilih Artefak 1 karena merekam pengamatan langsung saya tentang kondisi nyata sarana fisik
+                  kelas VII A, interaksi guru dengan murid, dan pemanfaatan sumber belajar. Artefak ini mendukung
+                  refleksi saya tentang tantangan sarana dan pentingnya membaca kondisi kelas.
+                </p>
+
+                <div class="ct-artefak-label">
+                  <i data-lucide="check-circle"></i> Bagian yang Mendukung Refleksi
+                </div>
+                <p class="ct-artefak-text">
+                  Artefak 1: bagian analisis interaksi pembelajaran dan catatan fasilitas kelas (seperti proyektor yang
+                  rusak) menunjukkan bahwa guru tetap bisa menyesuaikan strategi pembelajaran secara efektif di tengah
+                  keterbatasan sarana.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle active" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen LK 2 — Observasi Lingkungan Belajar
+                  </button>
+                  <div class="ct-doc-viewer active">
+                    <iframe src="files/dokumen/ppl2/Tugas/LK2_ Muhammad Fajrul Fahmi_253153743937.pdf"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Artefak 2 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-2">
+                <span class="ct-artefak-num">2</span>
+                <h3>Artefak 2: Lembar Kerja (LK) 4 – Refleksi Praktik Pembelajaran Mandiri (Siklus 4)</h3>
+
+                <div class="ct-artefak-label">
+                  <i data-lucide="help-circle"></i> Alasan Pemilihan Artefak
+                </div>
+                <p class="ct-artefak-text">
+                  Saya memilih Artefak 2 karena mendokumentasikan evaluasi nyata dari praktik mengajar saya berbasis
+                  studi kasus dan media konkret (papan sekat dan sticky notes). Artefak ini mendukung refleksi saya
+                  tentang model pembelajaran, manajemen waktu, dan perbaikan praktik.
+                </p>
+
+                <div class="ct-artefak-label">
+                  <i data-lucide="check-circle"></i> Bagian yang Mendukung Refleksi
+                </div>
+                <p class="ct-artefak-text">
+                  Artefak 2: bagian evaluasi keefektifan media, respons peserta didik terhadap kegiatan inti, dan umpan
+                  balik (feedback) dari Guru Pamong menjadi bahan perbaikan praktik mengajar saya berikutnya.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle active" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen LK 4 — Refleksi Praktik Mandiri Siklus 4
+                  </button>
+                  <div class="ct-doc-viewer active">
+                    <iframe
+                      src="files/dokumen/ppl2/Tugas/LK4_Siklus 4_ Muhammad Fajrul Fahmi_253153743937.pdf"></iframe>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-analisis -->
+
+            <!-- ═══ TAB 3: Hasil Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-rumusan">
+
+              <div class="ct-section accent-rumusan fade-in" id="sec-rumusan">
+                <span class="ct-section-tag">Bagian 3 · Rumusan Refleksi</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="file-text"></i>
+                  </div>
+                  <h2>Merumuskan Hasil Refleksi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p style="margin-bottom: 1.25rem; color: var(--text-secondary); font-weight: 500;">
+                    <strong>Refleksi pengalaman belajar mata kuliah PPL Mandiri:</strong>
+                  </p>
+                  <div class="ct-highlight">
+                    <p>
+                      "Hasil refleksi PPL Mandiri menunjukkan bahwa keberhasilan pembelajaran sangat dipengaruhi oleh
+                      kesiapan guru membaca kondisi lingkungan belajar melalui observasi awal serta ketepatan memilih
+                      model dan media yang adaptif. Pemahaman karakteristik sarana kelas dan evaluasi praktik mandiri
+                      menegaskan bahwa refleksi berkelanjutan adalah kunci bagi saya untuk menghadirkan pembelajaran
+                      Informatika yang bermakna, mendalam, dan berpihak pada kebutuhan peserta didik."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-rumusan -->
+
+            <!-- ═══ TAB 4: Lembar Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-lembar">
+
+              <div class="ct-section accent-refleksi fade-in" id="sec-lembar">
+                <span class="ct-section-tag">Bagian 4 · Dokumen Asli</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="file-down"></i>
+                  </div>
+                  <h2>Lembar Refleksi (LK 2 PPL Mandiri)</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p style="margin-bottom: 1.25rem; color: var(--text-secondary);">
+                    Berikut adalah dokumen asli <strong>Lembar Kerja 2 (LK 2) — Refleksi Pengalaman Belajar Setiap Mata
+                      Kuliah: PPL Mandiri</strong>:
+                  </p>
+                  <div class="ct-artefak-doc">
+                    <button class="ct-doc-toggle active" onclick="this.nextElementSibling.classList.toggle('active')">
+                      <i data-lucide="eye"></i> Lihat Dokumen LK 2 (Refleksi Pengalaman Belajar PPL Mandiri)
+                    </button>
+                    <div class="ct-doc-viewer active">
+                      <iframe src="files/dokumen/ppl2/Tugas/LK2_PPL_Mandiri.pdf"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-lembar -->
+
+            <!-- ═══ TAB 5: Tugas Perkuliahan ═══ -->
+            <div class="ct-tab-pane" id="tab-tugas">
+
+              <div class="ct-section accent-concept fade-in" id="sec-tugas">
+                <span class="ct-section-tag">Bagian 5</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="folder-open"></i>
+                  </div>
+                  <h2>Tugas Perkuliahan</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Berikut adalah kumpulan berkas tugas perkuliahan Praktik Pengalaman Lapangan (PPL) Mandiri yang
+                    dikelompokkan berdasarkan Lembar Kerja (LK):
+                  </p>
+                </div>
+              </div>
+
+              <!-- Accordion File Browser -->
+              <div class="ct-accordion fade-in">
+
+                <!-- LK 1 -->
+                <div class="ct-accordion-item" id="topik-1">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#6366f1,#818cf8);">1</div>
+                    <div class="ct-accordion-title">LK 1 — Orientasi PPL Mandiri</div>
+                    <span class="ct-accordion-badge">1 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK1 Orientasi PPLM_Muhammad Fajrul Fahmi_253153743937.pdf"
+                            target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 1 — Orientasi PPL Mandiri SMP Negeri 18 Malang</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- LK 2 -->
+                <div class="ct-accordion-item" id="topik-2">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">2</div>
+                    <div class="ct-accordion-title">LK 2 — Observasi Lingkungan Belajar &amp; Refleksi PPL Mandiri</div>
+                    <span class="ct-accordion-badge">2 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK2_ Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 2 — Observasi Lingkungan Belajar (SMP Negeri 18 Malang)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl2/Tugas/LK2_PPL_Mandiri.pdf" target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 2 — Lembar Refleksi PPL Mandiri (4C &amp; Analisis
+                              Artefak)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- LK 3 -->
+                <div class="ct-accordion-item" id="topik-3">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#06b6d4,#38bdf8);">3</div>
+                    <div class="ct-accordion-title">LK 3 — Penelaahan Perangkat Pembelajaran</div>
+                    <span class="ct-accordion-badge">1 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK3_ Muhammad Fajrul Fahmi_253153743937.pdf" target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 3 — Penelaahan Perangkat Pembelajaran Guru Pamong</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- LK 4 -->
+                <div class="ct-accordion-item" id="topik-4">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#10b981,#34d399);">4</div>
+                    <div class="ct-accordion-title">LK 4 — Refleksi Praktik Pembelajaran Mandiri (Siklus 1–4)</div>
+                    <span class="ct-accordion-badge">4 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK4_ Muhammad Fajrul Fahmi_253153743937-1.pdf"
+                            target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 4 — Refleksi Pembelajaran Siklus 1 (Optimasi
+                              Penjadwalan)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK4_Siklus_2_Muhammad_Fajrul_Fahmi_253153743937.pdf"
+                            target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 4 — Refleksi Pembelajaran Siklus 2 (Sistem Komputer)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK4_Siklus 3_ Muhammad Fajrul Fahmi_253153743937.pdf"
+                            target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 4 — Refleksi Pembelajaran Siklus 3 (Hardware Komputer)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                        <li><a class="ct-file-item"
+                            href="files/dokumen/ppl2/Tugas/LK4_Siklus 4_ Muhammad Fajrul Fahmi_253153743937.pdf"
+                            target="_blank">
+                            <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                            <span class="ct-file-name">LK 4 — Refleksi Pembelajaran Siklus 4 (Software Komputer)</span>
+                            <i data-lucide="download" class="ct-file-dl"></i>
+                          </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div><!-- /tab-tugas -->
+
+            <!-- ═══ TAB 6: Kegiatan Non Mengajar ═══ -->
+            <div class="ct-tab-pane" id="tab-non-mengajar">
+              <div class="siklus-container">
+                <!-- Hero Card -->
+                <div class="glass siklus-hero fade-in" id="sec-hero-nm">
+                  <span class="sec-tag">Aktivitas Non Mengajar · PPL Mandiri</span>
+                  <h2 class="siklus-title">
+                    Kegiatan Non Mengajar &amp; Pembudayaan Lingkungan Sekolah
+                  </h2>
+                  <div class="meta-row">
+                    <div class="meta-item">
+                      <i data-lucide="calendar"></i> Semester 2 (2026)
+                    </div>
+                    <div class="meta-item">
+                      <i data-lucide="building-2"></i> SMPN 18 Malang
+                    </div>
+                    <div class="meta-item">
+                      <i data-lucide="users"></i> Kolaborasi Warga Sekolah
+                    </div>
+                    <div class="meta-item">
+                      <i data-lucide="check-circle-2"></i> 4 Program Terlaksana
+                    </div>
+                  </div>
+                  <p class="hero-desc">
+                    Pelaksanaan Praktik Pengalaman Lapangan (PPL) Mandiri mencakup penguatan peran calon pendidik secara
+                    komprehensif, tidak hanya berfokus pada pengajaran intrakurikuler di ruang kelas, tetapi juga
+                    partisipasi aktif dalam penegakan ketertiban operasional sekolah, internalisasi budaya positif,
+                    serta pembinaan minat dan bakat peserta didik.
+                  </p>
+                </div>
+
+                <!-- Stat Strip -->
+                <div class="stat-strip fade-in">
+                  <div class="glass stat-box">
+                    <div class="stat-box-icon"
+                      style="background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.25);">
+                      <i data-lucide="shield-check"></i>
+                    </div>
+                    <div class="stat-box-info">
+                      <span class="stat-box-label">Piket Sekolah</span>
+                      <span class="stat-box-val">Ketertiban &amp; Gerbang</span>
+                    </div>
+                  </div>
+                  <div class="glass stat-box">
+                    <div class="stat-box-icon"
+                      style="background: rgba(245, 158, 11, 0.12); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.25);">
+                      <i data-lucide="heart-handshake"></i>
+                    </div>
+                    <div class="stat-box-info">
+                      <span class="stat-box-label">Budaya Sekolah</span>
+                      <span class="stat-box-val">Internalisasi 5S</span>
+                    </div>
+                  </div>
+                  <div class="glass stat-box">
+                    <div class="stat-box-icon"
+                      style="background: rgba(99, 102, 241, 0.12); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.25);">
+                      <i data-lucide="clipboard-check"></i>
+                    </div>
+                    <div class="stat-box-info">
+                      <span class="stat-box-label">Absensi Kelas</span>
+                      <span class="stat-box-val">Monitoring Presensi</span>
+                    </div>
+                  </div>
+                  <div class="glass stat-box">
+                    <div class="stat-box-icon"
+                      style="background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.25);">
+                      <i data-lucide="code-2"></i>
+                    </div>
+                    <div class="stat-box-info">
+                      <span class="stat-box-label">Bimbingan Coding</span>
+                      <span class="stat-box-val">Lomba PictoBlox</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Activity Cards Grid (4 Kegiatan) -->
+                <div class="activity-cards-grid fade-in" id="sec-program-nm">
+                  <!-- Kegiatan 1: Piket Sekolah -->
+                  <div class="glass activity-card act-piket">
+                    <div class="activity-card-header">
+                      <div class="activity-header-left">
+                        <div class="activity-icon-wrap">
+                          <i data-lucide="shield-check"></i>
+                        </div>
+                        <div class="activity-meta-title">
+                          <span class="activity-tag">Ketertiban &amp; Kedisiplinan</span>
+                          <h3 class="activity-title">1. Kegiatan Piket Sekolah</h3>
+                        </div>
+                      </div>
+                      <span class="activity-num">01</span>
+                    </div>
+                    <p class="activity-lead">
+                      Menjalankan tugas piket harian sekolah di pintu gerbang dan ruang piket untuk memastikan
+                      kelancaran kegiatan sekolah, pengawalan tata tertib, serta pelayanan perizinan peserta didik.
+                    </p>
+                    <div class="activity-steps-box">
+                      <span class="activity-steps-label"><i data-lucide="list-checks"
+                          style="width: 14px; height: 14px;"></i> Uraian Pelaksanaan Tugas:</span>
+                      <ul class="activity-steps-list">
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Penyambutan Gerbang Pagi:</strong> Berjaga di gerbang utama sejak pukul 06.30
+                            WIB untuk menyambut kehadiran siswa dan memeriksa kerapian atribut seragam.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Pengelolaan Perizinan:</strong> Menangani administrasi keterlambatan siswa,
+                            surat izin keluar lingkungan sekolah, serta pendampingan siswa menuju ruang UKS.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="activity-impact-box">
+                      <strong><i data-lucide="sparkles" style="width: 13px; height: 13px;"></i> Nilai Karakter &amp;
+                        Refleksi:</strong>
+                      Menumbuhkan kepemimpinan manajerial, ketegasan yang ramah dan humanis, serta kepekaan terhadap
+                      ritme operasional sekolah sehari-hari.
+                    </div>
+                  </div>
+
+                  <!-- Kegiatan 2: 5S -->
+                  <div class="glass activity-card act-5s">
+                    <div class="activity-card-header">
+                      <div class="activity-header-left">
+                        <div class="activity-icon-wrap">
+                          <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <div class="activity-meta-title">
+                          <span class="activity-tag">Budaya Positif &amp; Karakter</span>
+                          <h3 class="activity-title">2. Pembiasaan Budaya 5S</h3>
+                        </div>
+                      </div>
+                      <span class="activity-num">02</span>
+                    </div>
+                    <p class="activity-lead">
+                      Membudayakan dan meneladankan nilai 5S (Senyum, Salam, Sapa, Sopan, dan Santun) dalam setiap
+                      interaksi harian untuk menciptakan iklim sekolah yang inklusif, hangat, dan ramah anak.
+                    </p>
+                    <div class="activity-steps-box">
+                      <span class="activity-steps-label"><i data-lucide="list-checks"
+                          style="width: 14px; height: 14px;"></i> Uraian Pelaksanaan Tugas:</span>
+                      <ul class="activity-steps-list">
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Senyum (S1):</strong> Menghadirkan ekspresi wajah yang ceria, ramah, dan terbuka
+                            saat berinteraksi dengan seluruh ekosistem sekolah.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Salam (S2):</strong> Membiasakan salam penghormatan saat berpapasan dengan
+                            kepala sekolah, guru pamong, tenaga pendidik, dan siswa.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Sapa (S3):</strong> Menyapa peserta didik dengan menyebut nama dan menanyakan
+                            kabar secara hangat untuk membangun rasa kepemilikan.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Sopan &amp; Santun (S4 &amp; S5):</strong> Menjaga etika perilaku dan tutur
+                            bahasa santun, bebas sarkasme, serta menjadi teladan moral (<em>role model</em>) bagi
+                            peserta didik.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="activity-impact-box">
+                      <strong><i data-lucide="sparkles" style="width: 13px; height: 13px;"></i> Nilai Karakter &amp;
+                        Refleksi:</strong>
+                      Membangun kedekatan emosional guru-murid yang sehat, mencegah aksi perundungan (anti-bullying),
+                      dan membentuk lingkungan sekolah yang aman secara psikologis.
+                    </div>
+                  </div>
+
+                  <!-- Kegiatan 3: Keliling Mencatat Absensi Kelas -->
+                  <div class="glass activity-card act-absensi">
+                    <div class="activity-card-header">
+                      <div class="activity-header-left">
+                        <div class="activity-icon-wrap">
+                          <i data-lucide="clipboard-check"></i>
+                        </div>
+                        <div class="activity-meta-title">
+                          <span class="activity-tag">Administrasi &amp; Monitoring</span>
+                          <h3 class="activity-title">3. Keliling Mencatat Absensi Kelas</h3>
+                        </div>
+                      </div>
+                      <span class="activity-num">03</span>
+                    </div>
+                    <p class="activity-lead">
+                      Melakukan monitoring presensi kehadiran peserta didik secara berkala dari kelas ke kelas guna
+                      menjaga keakuratan data administrasi dan ketertiban proses pembelajaran.
+                    </p>
+                    <div class="activity-steps-box">
+                      <span class="activity-steps-label"><i data-lucide="list-checks"
+                          style="width: 14px; height: 14px;"></i> Uraian Pelaksanaan Tugas:</span>
+                      <ul class="activity-steps-list">
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Keliling Ruang Kelas:</strong> Mendatangi setiap kelas pada jam pelajaran
+                            pertama untuk mengumpulkan informasi kehadiran peserta didik secara faktual.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Klarifikasi Keterangan Siswa:</strong> Memverifikasi surat keterangan sakit
+                            dokter, perizinan orang tua, atau siswa tanpa keterangan (alpha) bersama ketua kelas dan
+                            guru mapel.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Rekapitulasi Buku Piket:</strong> Membukukan data presensi ke dalam buku kendali
+                            absensi harian dan lembar rekapitulasi sekolah secara cermat dan rapi.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="activity-impact-box">
+                      <strong><i data-lucide="sparkles" style="width: 13px; height: 13px;"></i> Nilai Karakter &amp;
+                        Refleksi:</strong>
+                      Mengasah integritas pendidik dalam tata kelola administrasi, keterampilan komunikasi antar-guru,
+                      serta kepedulian terhadap kondisi sosio-emosional murid.
+                    </div>
+                  </div>
+
+                  <!-- Kegiatan 4: Bimbingan Lomba Coding Pictoblox -->
+                  <div class="glass activity-card act-coding">
+                    <div class="activity-card-header">
+                      <div class="activity-header-left">
+                        <div class="activity-icon-wrap">
+                          <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="activity-meta-title">
+                          <span class="activity-tag">Pembinaan Prestasi &amp; IT</span>
+                          <h3 class="activity-title">4. Bimbingan Lomba Coding PictoBlox</h3>
+                        </div>
+                      </div>
+                      <span class="activity-num">04</span>
+                    </div>
+                    <p class="activity-lead">
+                      Memberikan pembinaan intensif dan bimbingan teknis kepada peserta didik dalam pembuatan proyek
+                      pemrograman visual berbasis PictoBlox untuk persiapan ajang lomba coding.
+                    </p>
+                    <div class="activity-steps-box">
+                      <span class="activity-steps-label"><i data-lucide="list-checks"
+                          style="width: 14px; height: 14px;"></i> Uraian Pelaksanaan Tugas:</span>
+                      <ul class="activity-steps-list">
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Pendalaman Logika Algoritma:</strong> Membimbing pemahaman logika blok kode
+                            (perulangan, variabel, sensor, dan logika kondisional) dalam platform PictoBlox.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Integrasi AI &amp; Computer Vision:</strong> Melatih pemanfaatan ekstensi cerdas
+                            PictoBlox seperti deteksi wajah, pengenalan gesture tangan, dan pemrosesan citra
+                            sederhana.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Pengembangan Proyek Kreatif:</strong> Mendampingi siswa merancang konsep proyek
+                            lomba (game edukasi interaktif, animasi logika, atau solusi lingkungan berbasis CT).</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check"></i>
+                          <span><strong>Debugging &amp; Simulasi Presentasi:</strong> Melatih siswa mengatasi kendala
+                            kode (<em>debugging</em>) serta percaya diri dalam memaparkan karya inovasinya.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="activity-impact-box">
+                      <strong><i data-lucide="sparkles" style="width: 13px; height: 13px;"></i> Nilai Karakter &amp;
+                        Refleksi:</strong>
+                      Mengaplikasikan keahlian keilmuan Informatika ke pembinaan talenta muda, menanamkan <em>growth
+                        mindset</em>, serta melatih daya nalar kritis (HOTS) tingkat tinggi.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Kompetensi Guru Integration Card -->
+                <div class="glass competency-card fade-in" id="sec-kompetensi-nm">
+                  <div class="detail-card-head" style="margin-bottom: 6px;">
+                    <div class="icon-circle" style="background: rgba(99, 102, 241, 0.12); color: var(--primary-light);">
+                      <i data-lucide="award"></i>
+                    </div>
+                    Integrasi 4 Pilar Kompetensi Guru Profesional
+                  </div>
+                  <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin: 0;">
+                    Kontribusi Kegiatan Non Mengajar terhadap Penguatan Standar Kompetensi Pendidik
+                  </h4>
+                  <div class="competency-grid">
+                    <div class="competency-item">
+                      <span class="competency-pill">Pilar 1</span>
+                      <h5>Kompetensi Kepribadian</h5>
+                      <p>Integritas keteladanan waktu saat piket gerbang dan konsistensi sikap santun dalam membudayakan
+                        5S mencerminkan kedewasaan moral pendidik.</p>
+                    </div>
+                    <div class="competency-item">
+                      <span class="competency-pill">Pilar 2</span>
+                      <h5>Kompetensi Sosial</h5>
+                      <p>Interaksi komunikatif dan empatik dengan kepala sekolah, rekan guru, staf TU, siswa, dan wali
+                        murid selama piket serta pencatatan absensi.</p>
+                    </div>
+                    <div class="competency-item">
+                      <span class="competency-pill">Pilar 3</span>
+                      <h5>Kompetensi Pedagogik</h5>
+                      <p>Menerapkan diferensiasi pembelajaran dan <em>scaffolding</em> teknis dalam mendampingi peserta
+                        didik berbakat pada bimbingan coding PictoBlox.</p>
+                    </div>
+                    <div class="competency-item">
+                      <span class="competency-pill">Pilar 4</span>
+                      <h5>Kompetensi Profesional</h5>
+                      <p>Kemampuan penguasaan teknologi digital mutakhir (block coding &amp; AI) serta akuntabilitas
+                        manajemen data presensi kelas yang valid.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Dokumentasi Praktik Non Mengajar Slider -->
+                <div class="files-container fade-in" id="sec-dokumentasi-nm">
+                  <div class="glass file-group">
+                    <div class="file-group-head">
+                      <span><i data-lucide="camera"
+                          style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> Dokumentasi
+                        Praktik Non Mengajar</span>
+                    </div>
+
+                    <div class="doc-slider-wrap" data-slider="non-mengajar">
+                      <!-- Slider Viewport -->
+                      <div class="doc-slider-viewport">
+                        <div class="doc-slider-track">
+                          <div class="doc-slider-slide" data-index="0"
+                            data-src="files/foto/Kegiatan Non Mengajar/Kegiatan Piket Sekolah.jpeg"
+                            data-title="Pelaksanaan Piket Sekolah &amp; Kedisiplinan Siswa"
+                            data-desc="Piket Sekolah · Pengawalan Ketertiban, Pelayanan Perizinan &amp; Penyambutan Gerbang Pagi"
+                            data-tag="DOKUMEN 1">
+                            <img src="files/foto/Kegiatan Non Mengajar/Kegiatan Piket Sekolah.jpeg"
+                              alt="Pelaksanaan Piket Sekolah &amp; Kedisiplinan Siswa" loading="lazy">
+                          </div>
+                          <div class="doc-slider-slide" data-index="1"
+                            data-src="files/foto/Kegiatan Non Mengajar/Pembiasaan Budaya 5S.jpeg"
+                            data-title="Pembiasaan Budaya 5S (Senyum, Salam, Sapa, Sopan, Santun)"
+                            data-desc="Budaya 5S · Internalisasi Nilai Karakter Positif &amp; Iklim Sekolah Ramah Anak"
+                            data-tag="DOKUMEN 2">
+                            <img src="files/foto/Kegiatan Non Mengajar/Pembiasaan Budaya 5S.jpeg"
+                              alt="Pembiasaan Budaya 5S" loading="lazy">
+                          </div>
+                          <div class="doc-slider-slide" data-index="2"
+                            data-src="files/foto/Kegiatan Non Mengajar/Keliling Mencatat Absensi.jpeg"
+                            data-title="Monitoring Keliling &amp; Pencatatan Presensi Kelas"
+                            data-desc="Absensi Harian · Pendataan Kehadiran Kelas, Validasi Administrasi &amp; Koordinasi Siswa"
+                            data-tag="DOKUMEN 3">
+                            <img src="files/foto/Kegiatan Non Mengajar/Keliling Mencatat Absensi.jpeg"
+                              alt="Monitoring Keliling &amp; Pencatatan Presensi Kelas" loading="lazy">
+                          </div>
+                          <div class="doc-slider-slide" data-index="3"
+                            data-src="files/foto/Kegiatan Non Mengajar/Bimbingan Lomba Coding.jpeg"
+                            data-title="Bimbingan Intensif Lomba Coding PictoBlox"
+                            data-desc="Bimbingan Prestasi · Pelatihan Logika Algoritma, Block Programming &amp; Integrasi AI Siswa"
+                            data-tag="DOKUMEN 4">
+                            <img src="files/foto/Kegiatan Non Mengajar/Bimbingan Lomba Coding.jpeg"
+                              alt="Bimbingan Intensif Lomba Coding PictoBlox" loading="lazy">
+                          </div>
+                          <div class="doc-slider-slide" data-index="4"
+                            data-src="files/foto/Kegiatan Non Mengajar/Juara 2 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg"
+                            data-title="Penerimaan Juara 2 Malang Young Coder Competition 2026 Kategori AI"
+                            data-desc="Prestasi Siswa · Apresiasi Kejuaraan Coding Inovasi AI Tingkat Kota Malang"
+                            data-tag="DOKUMEN 5">
+                            <img
+                              src="files/foto/Kegiatan Non Mengajar/Juara 2 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg"
+                              alt="Juara 2 Malang Young Coder Competition 2026 Kategori AI" loading="lazy">
+                          </div>
+                          <div class="doc-slider-slide" data-index="5"
+                            data-src="files/foto/Kegiatan Non Mengajar/Juara 3 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg"
+                            data-title="Penerimaan Juara 3 Malang Young Coder Competition 2026 Kategori AI"
+                            data-desc="Prestasi Siswa · Apresiasi Kejuaraan Coding Inovasi AI Tingkat Kota Malang"
+                            data-tag="DOKUMEN 6">
+                            <img
+                              src="files/foto/Kegiatan Non Mengajar/Juara 3 Lomba Pictoblox Malang Young Coder Competition 2026 Kategori AI.jpeg"
+                              alt="Juara 3 Malang Young Coder Competition 2026 Kategori AI" loading="lazy">
+                          </div>
+                        </div>
+
+                        <!-- Counter Badge -->
+                        <div class="doc-slider-counter"><span class="cur-num">1</span> / <span
+                            class="total-num">6</span></div>
+
+                        <!-- Nav Arrows -->
+                        <button class="doc-slider-btn prev" type="button" aria-label="Foto Sebelumnya">
+                          <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button class="doc-slider-btn next" type="button" aria-label="Foto Berikutnya">
+                          <i data-lucide="chevron-right"></i>
+                        </button>
+
+                        <!-- Caption Overlay -->
+                        <div class="doc-slider-caption">
+                          <div class="doc-slider-caption-text">
+                            <span class="cap-tag">DOKUMEN 1</span>
+                            <strong class="cap-title">Pelaksanaan Piket Sekolah &amp; Kedisiplinan Siswa</strong>
+                            <span class="cap-desc">Piket Sekolah · Pengawalan Ketertiban, Pelayanan Perizinan &amp;
+                              Penyambutan Gerbang Pagi</span>
+                          </div>
+                          <button type="button" class="cap-btn" title="Perbesar Foto (Lightbox)">
+                            <i data-lucide="maximize-2"></i>
+                          </button>
+                        </div>
+
+                        <!-- Dots Indicator -->
+                        <div class="doc-slider-dots">
+                          <button class="doc-dot active" type="button" aria-label="Slide 1"></button>
+                          <button class="doc-dot" type="button" aria-label="Slide 2"></button>
+                          <button class="doc-dot" type="button" aria-label="Slide 3"></button>
+                          <button class="doc-dot" type="button" aria-label="Slide 4"></button>
+                          <button class="doc-dot" type="button" aria-label="Slide 5"></button>
+                          <button class="doc-dot" type="button" aria-label="Slide 6"></button>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- /tab-non-mengajar -->
+
+            <!-- ============================================== -->
+            <!-- TAB 7: PEMBELAJARAN PILIHAN (UAS PPL MANDIRI) -->
+            <!-- ============================================== -->
+            <div class="ct-tab-pane" id="tab-pilihan">
+              <div class="pilihan-container">
+
+                <!-- 1. Hero Card -->
+                <div class="glass pilihan-hero fade-in" id="sec-pilihan-hero">
+                  <span class="sec-tag">UAS PPL Mandiri · Pembelajaran Pilihan</span>
+                  <h2>
+                    Pembelajaran Pilihan: Software Komputer (Sistem Operasi &amp; Perangkat Lunak Aplikasi)
+                  </h2>
+                  <div class="pilihan-meta-row">
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="award"></i> Ujian Akhir Semester (UAS) PPL Mandiri
+                    </span>
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="calendar"></i> 1 Pertemuan (2 × 40 menit / 80 menit)
+                    </span>
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="building-2"></i> SMP Negeri 18 Malang
+                    </span>
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="book-open"></i> Informatika Fase D (Kelas VII A)
+                    </span>
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="layers"></i> Discovery Learning &amp; Kontekstual (CTL)
+                    </span>
+                    <span class="pilihan-meta-item">
+                      <i data-lucide="sticky-note"></i> Media: SIAP TEMPEL (Papan Bersekat)
+                    </span>
+                  </div>
+                  <p class="pilihan-hero-desc">
+                    Praktik pembelajaran pilihan untuk Ujian Akhir Semester (UAS) PPL Mandiri di SMP Negeri 18 Malang pada materi Software Komputer. Pembelajaran memadukan pendekatan Kontekstual (CTL) dan model Discovery Learning melalui stimulus studi kasus kebutuhan Raka dalam memilih perangkat lunak, dipadukan metode partisipatif interaktif <em>sticky notes</em> pada sekat papan tulis kelas untuk mengelompokkan ragam <em>software</em> sistem dan aplikasi secara kolaboratif.
+                  </p>
+                </div>
+
+                <!-- 2. Detail Konteks & Sasaran Belajar (2x2 Grid) -->
+                <div class="pilihan-detail-grid fade-in" id="sec-pilihan-detail">
+                  <div class="pilihan-detail-card">
+                    <div class="pilihan-detail-head">
+                      <div class="pilihan-icon-circle"><i data-lucide="map-pin"></i></div>
+                      <span>Konteks Pembelajaran</span>
+                    </div>
+                    <p>
+                      Studi kasus kontekstual kebutuhan Raka yang baru memperoleh komputer untuk tugas sekolah (mengetik, browsing materi, desain poster Canva, komunikasi via WhatsApp). Murid menganalisis hierarki perangkat lunak, membedakan peran OS dan aplikasi, serta memetakan fungsi software pada sekat papan tulis kelas.
+                    </p>
+                  </div>
+
+                  <div class="pilihan-detail-card">
+                    <div class="pilihan-detail-head">
+                      <div class="pilihan-icon-circle"><i data-lucide="target"></i></div>
+                      <span>Tujuan Pembelajaran</span>
+                    </div>
+                    <ol>
+                      <li><strong>Pemahaman Konseptual (C1):</strong> Murid mampu menjelaskan pengertian software beserta contoh penggunaannya dalam kehidupan sehari-hari secara tepat.</li>
+                      <li><strong>Klasifikasi Fungsional (C2):</strong> Murid mampu membedakan software sistem dan software aplikasi beserta contoh dan fungsinya melalui diskusi kelompok.</li>
+                    </ol>
+                  </div>
+
+                  <div class="pilihan-detail-card">
+                    <div class="pilihan-detail-head">
+                      <div class="pilihan-icon-circle pro"><i data-lucide="check-circle-2"></i></div>
+                      <span>Kelebihan &amp; Dampak Positif</span>
+                    </div>
+                    <p>
+                      Aktivitas partisipatif <em>sticky notes</em> di papan bersekat menciptakan iklim belajar yang kinetik dan kolaboratif (<em>learning community</em>), memfasilitasi visualisasi klasifikasi software secara komprehensif, serta melatih kecakapan murid memilih alat digital yang efisien dan bijak.
+                    </p>
+                  </div>
+
+                  <div class="pilihan-detail-card">
+                    <div class="pilihan-detail-head">
+                      <div class="pilihan-icon-circle con"><i data-lucide="alert-triangle"></i></div>
+                      <span>Tantangan &amp; Solusi Evaluasi</span>
+                    </div>
+                    <p>
+                      Tantangan berupa misklasifikasi antara utilitas bawaan OS dengan aplikasi pihak ketiga diatasi dengan pertanyaan penuntun (<em>scaffolding</em>). Evaluasi formatif dinilai transparan dari keaktifan diskusi, ketepatan penempatan kategori <em>sticky notes</em>, dan presentasi kelompok.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 3. Modul Ajar Software Komputer & Kajian Teori -->
+                <div class="pilihan-modul-box fade-in" id="sec-pilihan-modul">
+                  <div class="pilihan-modul-head">
+                    <h3>
+                      <i data-lucide="folder-open" style="width: 20px; height: 20px; color: var(--primary-light);"></i>
+                      Perangkat Pembelajaran Pilihan (Modul Ajar Pertemuan 13)
+                    </h3>
+                    <a href="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 13 - Software Komputer.pdf" class="file-row-tag" style="text-decoration:none; padding:6px 14px; font-size:0.78rem;" target="_blank">
+                      <i data-lucide="external-link" style="width:13px; height:13px; margin-right:4px;"></i> Buka Tab Baru (PDF)
+                    </a>
+                  </div>
+                  <div class="pilihan-modul-body">
+                    <!-- Theory Chips -->
+                    <div>
+                      <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); display:block; margin-bottom:8px;">
+                        Kajian Teori Pedagogik &amp; Landasan Kurikulum:
+                      </span>
+                      <div class="pilihan-theory-chips">
+                        <span class="pilihan-theory-chip">Contextual Teaching &amp; Learning (CTL)</span>
+                        <span class="pilihan-theory-chip">Discovery Learning Model (Jerome Bruner)</span>
+                        <span class="pilihan-theory-chip">Kinesthetic Collaborative Sticky-Note Mapping</span>
+                        <span class="pilihan-theory-chip">Software Hierarchy (OS, Application, Utility)</span>
+                        <span class="pilihan-theory-chip">Capaian Pembelajaran Fase D Sistem Komputer</span>
+                      </div>
+                    </div>
+
+                    <!-- PDF Viewer Frame -->
+                    <div class="pilihan-pdf-frame">
+                      <iframe src="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 13 - Software Komputer.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. Video Showcase Card -->
+                <div class="pilihan-video-box fade-in" id="sec-pilihan-video">
+                  <div class="pilihan-video-player">
+                    <iframe 
+                      src="https://www.youtube-nocookie.com/embed/W_Dim2gjz1A?rel=0&amp;enablejsapi=1" 
+                      title="Video Praktik Mengajar Siklus 4: Discovery Learning Software Komputer &amp; Media Sticky Notes" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerpolicy="strict-origin-when-cross-origin" 
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                  <div class="pilihan-video-info">
+                    <div class="pilihan-video-text">
+                      <span class="sec-tag" style="margin-bottom: 6px;">Rekaman Video Praktik Mengajar 24 Menit</span>
+                      <h3>Video Praktik Pembelajaran: Discovery Learning Software Komputer</h3>
+                      <p>Rekaman pelaksanaan pembelajaran materi Software Komputer di SMP Negeri 18 Malang berbasis sintaks Discovery Learning, menampilkan studi kasus Raka, penugasan kelompok dengan sticky notes pada papan tulis bersekat, eksplorasi gawai, verifikasi presentasi kelompok, dan generalisasi konsep.</p>
+                    </div>
+                    <div class="video-action-btns">
+                      <a href="https://youtu.be/W_Dim2gjz1A" target="_blank" class="video-action-btn primary">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: middle; margin-right: 4px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Tonton di YouTube
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5. Detail Evaluasi 3 Tahap Pembelajaran (Sequential Progression Cards) -->
+                <div class="pilihan-stages-wrap fade-in" id="sec-pilihan-tahapan">
+                  <!-- Tahap 1: Pendahuluan -->
+                  <div class="pilihan-stage-card">
+                    <div class="pilihan-stage-header">
+                      <div class="pilihan-stage-title-wrap">
+                        <span class="pilihan-stage-num p1">01</span>
+                        <h4 class="pilihan-stage-title">Tahap Pendahuluan (Apersepsi &amp; Pengondisian Kelas)</h4>
+                      </div>
+                      <span class="pilihan-stage-badge p1">Pendahuluan · 10 Menit</span>
+                    </div>
+                    <div class="pilihan-stage-body">
+                      <ul class="pilihan-items-list">
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Pembukaan &amp; Pengondisian Kelas:</strong> Guru memulai pembelajaran dengan memberikan salam, menyapa peserta didik, mengajak berdoa bersama, melakukan absensi, serta mengecek kesiapan fisik dan psikologis belajar.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Apersepsi Kontekstual (Studi Kasus Raka):</strong> Guru memberikan stimulus berupa studi kasus nyata mengenai kebingungan tokoh Raka yang baru memperoleh laptop dan smartphone tetapi belum mengetahui software apa saja yang cocok untuk mengetik tugas, mencari materi, berkomunikasi, dan mendesain poster.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Pertanyaan Pemantik Kritis:</strong> Guru memantik nalar kritis siswa melalui pertanyaan pemantik: <em>"Apa yang terjadi jika laptop hardware-nya sangat canggih namun tidak dipasang software sama sekali?"</em> dan <em>"Apa perbedaan mendasar antara sistem operasi (Windows/Android) dengan program aplikasi (WhatsApp/Word)?"</em></span>
+                        </li>
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Penyampaian Tujuan &amp; Alur Belajar:</strong> Guru menguraikan tujuan pembelajaran agar siswa mampu memahami pengertian software, mengklasifikasikan jenis software sistem dan aplikasi, serta mengerti mekanisme kerja kolaboratif dengan media SIAP TEMPEL.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Tahap 2: Kegiatan Inti (6 Sintaks Discovery Learning) -->
+                  <div class="pilihan-stage-card">
+                    <div class="pilihan-stage-header">
+                      <div class="pilihan-stage-title-wrap">
+                        <span class="pilihan-stage-num p2">02</span>
+                        <h4 class="pilihan-stage-title">Tahap Inti (Implementasi 6 Sintaks Discovery Learning &amp; Media SIAP TEMPEL)</h4>
+                      </div>
+                      <span class="pilihan-stage-badge p2">Kegiatan Inti · 60 Menit</span>
+                    </div>
+                    <div class="pilihan-stage-body">
+                      <div class="pilihan-sintaks-grid">
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 1</span>
+                            <span>Stimulation (Stimulus)</span>
+                          </div>
+                          <p>Guru mengarahkan siswa mencermati narasi kebutuhan software Raka dan menjelaskan kedudukan software sebagai jembatan interaksi antara hardware dan brainware (pengguna).</p>
+                        </div>
+
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 2</span>
+                            <span>Problem Statement</span>
+                          </div>
+                          <p>Siswa mengidentifikasi masalah utama: bagaimana mengelompokkan software yang beragam menjadi kategori sistem operasi dan aplikasi, lalu menyusun hipotesis kelompok.</p>
+                        </div>
+
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 3</span>
+                            <span>Data Collection</span>
+                          </div>
+                          <p>Siswa dibagi ke dalam kelompok (4–5 orang), menempati sekat khusus papan tulis, mengunduh PDF materi via WhatsApp Group kelas, serta menerima paket sticky notes dan spidol.</p>
+                        </div>
+
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 4</span>
+                            <span>Data Processing</span>
+                          </div>
+                          <p>Kelompok aktif berdiskusi mengeksplorasi gawai dan bahan ajar, menuliskan nama software dan fungsinya pada sticky notes, lalu menempelkannya ke kategori yang sesuai di sekat papan tulis.</p>
+                        </div>
+
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 5</span>
+                            <span>Verification (Pembuktian)</span>
+                          </div>
+                          <p>Perwakilan kelompok mempresentasikan hasil tempelan sticky note di papan tulis. Kelompok lain memverifikasi dan memberikan tanggapan, didampingi penguatan konsep dari guru.</p>
+                        </div>
+
+                        <div class="pilihan-sintaks-card">
+                          <div class="pilihan-sintaks-head">
+                            <span class="pilihan-sintaks-tag">SINTAKS 6</span>
+                            <span>Generalization (Kesimpulan)</span>
+                          </div>
+                          <p>Guru bersama seluruh siswa menarik benang merah kesimpulan tentang klasifikasi hierarki software komputer dan solusi rekomendasi software yang paling efisien bagi kasus Raka.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Tahap 3: Penutup -->
+                  <div class="pilihan-stage-card">
+                    <div class="pilihan-stage-header">
+                      <div class="pilihan-stage-title-wrap">
+                        <span class="pilihan-stage-num p3">03</span>
+                        <h4 class="pilihan-stage-title">Tahap Penutup (Refleksi &amp; Rencana Tindak Lanjut)</h4>
+                      </div>
+                      <span class="pilihan-stage-badge p3">Penutup · 10 Menit</span>
+                    </div>
+                    <div class="pilihan-stage-body">
+                      <ul class="pilihan-items-list">
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Rangkuman Bersama:</strong> Guru membimbing siswa menyimpulkan kembali poin-poin utama materi: pengertian software, peran sistem operasi, serta ragam aplikasi penunjang produktivitas.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Refleksi Makna Pembelajaran:</strong> Siswa diajak merefleksikan bagaimana wawasan software membantu mereka memilih aplikasi yang aman, resmi, dan sesuai kebutuhan saat menggunakan smartphone maupun komputer sekolah.</span>
+                        </li>
+                        <li>
+                          <i data-lucide="check-circle-2"></i>
+                          <span><strong>Apresiasi &amp; Doa Penutup:</strong> Guru mengapresiasi keaktifan partisipasi setiap kelompok di sekat papan tulis, menyampaikan kisi-kisi pertemuan berikutnya, dan menutup pembelajaran dengan doa bersama.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 6. Matriks Evaluasi & Refleksi Kritis Video -->
+                <div class="pilihan-matrix-grid fade-in" id="sec-pilihan-matriks">
+                  <div class="pilihan-matrix-card strength">
+                    <div class="pilihan-matrix-head">
+                      <i data-lucide="thumbs-up"></i>
+                      <span>Kelebihan &amp; Praktik Baik yang Teramati (Strengths)</span>
+                    </div>
+                    <ul class="pilihan-matrix-list">
+                      <li>
+                        <i data-lucide="check"></i>
+                        <span><strong>Media Interaktif SIAP TEMPEL:</strong> Penggunaan papan bersekat dan <em>sticky notes</em> terbukti sangat efektif membangkitkan keaktifan kinestetik dan rasa kepemilikan kelompok (<em>sense of ownership</em>).</span>
+                      </li>
+                      <li>
+                        <i data-lucide="check"></i>
+                        <span><strong>Asesmen Formatif Visual Terbuka:</strong> Sekat bernomor di papan tulis memungkinkan guru memantau progres pemahaman seluruh kelompok secara visual dalam sekali pandang (*assessment at a glance*).</span>
+                      </li>
+                      <li>
+                        <i data-lucide="check"></i>
+                        <span><strong>Kontekstual &amp; Relevan:</strong> Mengaitkan konsep dengan studi kasus Raka dan aplikasi harian (WhatsApp, Canva, Word, Android) membuat teori komputer abstrak menjadi sangat aplikatif.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pilihan-matrix-card growth">
+                    <div class="pilihan-matrix-head">
+                      <i data-lucide="trending-up"></i>
+                      <span>Catatan Evaluasi Diri &amp; Rencana Tindak Lanjut (Growth Areas)</span>
+                    </div>
+                    <ul class="pilihan-matrix-list">
+                      <li>
+                        <i data-lucide="arrow-up-right"></i>
+                        <span><strong>Manajemen Mobilitas Kelas:</strong> Perlu pembagian giliran maju ke depan kelas yang lebih terjadwal agar pergerakan siswa menempelkan <em>sticky notes</em> berlangsung lebih tertib tanpa penumpukan.</span>
+                      </li>
+                      <li>
+                        <i data-lucide="arrow-up-right"></i>
+                        <span><strong>Variasi Kode Warna Sticky Notes:</strong> Pada siklus mendatang, dapat ditentukan warna spesifik (misal kuning untuk OS, hijau untuk aplikasi) guna memudahkan verifikasi visual dan analisis kategori di papan tulis.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- /tab-pilihan -->
+
+
+          </div><!-- /ct-main -->
+        </div><!-- /ct-layout -->
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      <a href="index.html">Beranda</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // ── Tab System ──
+    (function () {
+      const tabBtns = document.querySelectorAll('.ct-tab-btn');
+      const tabPanes = document.querySelectorAll('.ct-tab-pane');
+      const tocList = document.getElementById('ctTocList');
+
+      // TOC definitions per tab
+      const tocData = {
+        'tab-refleksi': [
+          { href: '#sec-connection', icon: 'link', label: 'Connection' },
+          { href: '#sec-challenge', icon: 'zap', label: 'Challenge' },
+          { href: '#sec-concept', icon: 'lightbulb', label: 'Concept' },
+          { href: '#sec-change', icon: 'refresh-cw', label: 'Change' }
+        ],
+        'tab-analisis': [
+          { href: '#sec-analisis', icon: 'search', label: 'Analisis Artefak' },
+          { href: '#sec-artefak-1', icon: 'file-text', label: 'Artefak 1' },
+          { href: '#sec-artefak-2', icon: 'file-text', label: 'Artefak 2' }
+        ],
+        'tab-rumusan': [
+          { href: '#sec-rumusan', icon: 'file-text', label: 'Hasil Refleksi' }
+        ],
+        'tab-lembar': [
+          { href: '#sec-lembar', icon: 'file-down', label: 'Lembar Refleksi' }
+        ],
+        'tab-tugas': [
+          { href: '#sec-tugas', icon: 'folder-open', label: 'Tugas Perkuliahan' },
+          { href: '#topik-1', icon: 'folder', label: 'LK 1 — Orientasi' },
+          { href: '#topik-2', icon: 'folder', label: 'LK 2 — Observasi & Refleksi' },
+          { href: '#topik-3', icon: 'folder', label: 'LK 3 — Telaah Perangkat' },
+          { href: '#topik-4', icon: 'folder', label: 'LK 4 — Refleksi Mengajar' }
+        ],
+        'tab-non-mengajar': [
+          { href: '#sec-hero-nm', icon: 'info', label: 'Ringkasan' },
+          { href: '#sec-program-nm', icon: 'clipboard-list', label: 'Program Utama' },
+          { href: '#sec-kompetensi-nm', icon: 'award', label: 'Kompetensi Guru' },
+          { href: '#sec-dokumentasi-nm', icon: 'camera', label: 'Dokumentasi' }
+        ],
+        'tab-pilihan': [
+          { href: '#sec-pilihan-hero', icon: 'award', label: 'Ringkasan UAS' },
+          { href: '#sec-pilihan-detail', icon: 'layers', label: 'Konteks & Sasaran' },
+          { href: '#sec-pilihan-modul', icon: 'book-open', label: 'Modul Software' },
+          { href: '#sec-pilihan-video', icon: 'video', label: 'Video Pembelajaran' },
+          { href: '#sec-pilihan-tahapan', icon: 'compass', label: 'Analisis 3 Tahap' },
+          { href: '#sec-pilihan-matriks', icon: 'check-circle', label: 'Matriks Evaluasi' }
+        ]
+      };
+
+      function buildToc(tabId) {
+        const items = tocData[tabId] || [];
+        tocList.innerHTML = items.map((item, i) =>
+          `<li><a href="${item.href}"${i === 0 ? ' class="active"' : ''}><i data-lucide="${item.icon}"></i> ${item.label}</a></li>`
+        ).join('');
+        if (window.lucide) lucide.createIcons();
+        initScrollSpy();
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab');
+
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          document.getElementById(targetId).classList.add('active');
+
+          buildToc(targetId);
+          if (window.lucide) lucide.createIcons();
+          if (targetId === 'tab-non-mengajar' && typeof initDocSliders === 'function') {
+            initDocSliders();
+          }
+        });
+      });
+
+      // Build initial TOC
+      buildToc('tab-refleksi');
+    })();
+
+    // ── Sidebar TOC Active Scroll Spy ──
+    function initScrollSpy() {
+      const tocLinks = document.querySelectorAll('#ctTocList a');
+      const sections = [];
+
+      tocLinks.forEach(link => {
+        const id = link.getAttribute('href');
+        if (id && id.startsWith('#')) {
+          const el = document.querySelector(id);
+          if (el) sections.push({ el, link });
+        }
+      });
+
+      function setActive() {
+        let current = sections[0];
+        const scrollY = window.scrollY + 140;
+
+        for (const sec of sections) {
+          if (sec.el.offsetTop <= scrollY) {
+            current = sec;
+          }
+        }
+
+        tocLinks.forEach(l => l.classList.remove('active'));
+        if (current) current.link.classList.add('active');
+      }
+
+      window.removeEventListener('scroll', window._ctScrollSpy);
+      window._ctScrollSpy = setActive;
+      window.addEventListener('scroll', setActive, { passive: true });
+      setActive();
+    }
+    initScrollSpy();
+
+    // ── Documentation Image Slider Controller ──
+    function initDocSliders() {
+      document.querySelectorAll('.doc-slider-wrap').forEach(wrap => {
+        if (wrap._sliderInited) return;
+        wrap._sliderInited = true;
+
+        const track = wrap.querySelector('.doc-slider-track');
+        const slides = wrap.querySelectorAll('.doc-slider-slide');
+        const prevBtn = wrap.querySelector('.doc-slider-btn.prev');
+        const nextBtn = wrap.querySelector('.doc-slider-btn.next');
+        const dots = wrap.querySelectorAll('.doc-dot');
+        const curNum = wrap.querySelector('.cur-num');
+        const capTag = wrap.querySelector('.cap-tag');
+        const capTitle = wrap.querySelector('.cap-title');
+        const capDesc = wrap.querySelector('.cap-desc');
+        const capBtn = wrap.querySelector('.cap-btn');
+        const rows = wrap.querySelectorAll('.doc-slider-items .file-row');
+        const viewport = wrap.querySelector('.doc-slider-viewport');
+
+        if (!track || slides.length === 0) return;
+
+        let current = 0;
+        const total = slides.length;
+
+        function updateSlide(idx) {
+          current = (idx + total) % total;
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          if (curNum) curNum.textContent = current + 1;
+
+          // Dots
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+
+          // Active row
+          rows.forEach((row, i) => row.classList.toggle('active', i === current));
+
+          // Caption update
+          const curSlide = slides[current];
+          if (curSlide) {
+            if (capTag) capTag.textContent = curSlide.dataset.tag || `FOTO ${current + 1}`;
+            if (capTitle) capTitle.textContent = curSlide.dataset.title || '';
+            if (capDesc) capDesc.textContent = curSlide.dataset.desc || '';
+          }
+        }
+
+        function triggerLightbox(index) {
+          const slide = slides[index];
+          if (!slide) return;
+          const src = slide.dataset.src;
+          const title = slide.dataset.title;
+          if (typeof openLightbox === 'function') {
+            openLightbox(src, title);
+          } else {
+            window.open(src, '_blank');
+          }
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(current - 1);
+            resetAuto();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(current + 1);
+            resetAuto();
+          });
+        }
+
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(i);
+            resetAuto();
+          });
+        });
+
+        rows.forEach((row, i) => {
+          row.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSlide(i);
+            resetAuto();
+          });
+        });
+
+        slides.forEach((slide, i) => {
+          slide.addEventListener('click', () => {
+            triggerLightbox(i);
+          });
+        });
+
+        if (capBtn) {
+          capBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            triggerLightbox(current);
+          });
+        }
+
+        let startX = 0;
+        if (viewport) {
+          viewport.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+          }, { passive: true });
+
+          viewport.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 35) {
+              updateSlide(current + (dx < 0 ? 1 : -1));
+              resetAuto();
+            }
+          }, { passive: true });
+
+          viewport.addEventListener('mouseenter', stopAuto);
+          viewport.addEventListener('mouseleave', startAuto);
+        }
+
+        let timer = null;
+        function startAuto() {
+          if (timer) clearInterval(timer);
+          timer = setInterval(() => {
+            updateSlide(current + 1);
+          }, 5000);
+        }
+
+        function stopAuto() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function resetAuto() {
+          stopAuto();
+          startAuto();
+        }
+
+        startAuto();
+        updateSlide(0);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initDocSliders();
+    });
+
+  </script>
+</body>
+
+</html>

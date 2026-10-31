@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -142,14 +142,33 @@
 
     <nav id="navbar">
       <div class="container nav-inner">
-        <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
-        <ul class="nav-links" id="navList">
+        <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+                                                <ul class="nav-links" id="navList">
           <li><a href="index.html">Beranda</a></li>
           <li><a href="profil.html">Profil</a></li>
-          <li><a href="artefak.html">Artefak</a></li>
-          <li><a href="penilaian.html">Penilaian</a></li>
           <li><a href="model-guru.html">Model Guru</a></li>
-          <li><a href="refleksi.html">Refleksi</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+              <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+              <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+              <a href="artefak.html" class="active">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+              <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+              <a href="computational-thinking.html">Computational Thinking</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+              <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+              <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+              <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+              <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+              <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+            </div>
+          </li>
           <li><a href="berkas.html">Berkas</a></li>
         </ul>
         <div class="nav-right">
@@ -166,7 +185,18 @@
     <div class="page-wrap">
       <section>
         <div class="container">
-          <div class="sec-header fade-in">
+                  <div class="tab-nav fade-in" style="justify-content: center; margin-bottom: 40px; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px;">
+          <a href="artefak.html" class="tab-btn " style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="clipboard-list" style="width: 14px; height: 14px; margin-right: 6px;"></i> Artefak
+          </a>
+          <a href="penilaian.html" class="tab-btn active" style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="bar-chart-2" style="width: 14px; height: 14px; margin-right: 6px;"></i> Penilaian
+          </a>
+          <a href="refleksi.html" class="tab-btn " style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="book-open" style="width: 14px; height: 14px; margin-right: 6px;"></i> Refleksi
+          </a>
+        </div>
+        <div class="sec-header fade-in">
             <span class="sec-tag">Lampiran 7 &amp; 8</span>
             <h1 class="sec-title">Instrumen Penilaian PPL</h1>
             <p class="sec-desc">
@@ -469,7 +499,7 @@
       <div class="pdf-frame-wrap">
         <div class="pdf-unavail">
           <i data-lucide="file-x" style="width:44px;height:44px"></i>
-          <p>File belum tersedia.<br>Tambahkan ke folder<br><code>files/dokumen/penilaian/</code></p>
+          <p>File belum tersedia.<br>Tambahkan ke folder<br><code>files/dokumen/ppl1/penilaian/</code></p>
         </div>
       </div>`;
         }

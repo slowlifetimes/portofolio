@@ -1,0 +1,259 @@
+html_content = '''<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Model Guru | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <style>
+    @media (max-width: 768px) {
+      .misi-card .image-slot {
+        margin: 20px auto 0 !important;
+        width: 100% !important;
+        max-width: 240px;
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="model-guru.html" class="active">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+        <div class="sec-header fade-in">
+          <span class="sec-tag">Arah &amp; Komitmen</span>
+          <h1 class="sec-title">Model Guru yang Dituju</h1>
+          <p class="sec-desc">
+            Pernyataan misi dan pilar visi profesional dalam perjalanan menuju guru Informatika yang adaptif, inspiratif, dan transformatif.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Misi Profesional -->
+        <div class="glass misi-card fade-in" style="text-align: left">
+          <div style="
+                display: flex;
+                gap: 36px;
+                align-items: flex-start;
+                flex-wrap: wrap;
+              ">
+            <!-- Teks -->
+            <div style="flex: 1; min-width: 260px">
+              <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    margin-bottom: 16px;
+                  ">
+                <i data-lucide="target" style="
+                      width: 32px;
+                      height: 32px;
+                      color: var(--primary-light);
+                      flex-shrink: 0;
+                    "></i>
+                <div>
+                  <div style="
+                        font-size: 0.72rem;
+                        color: var(--primary-light);
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 1.2px;
+                        margin-bottom: 2px;
+                      ">
+                    Misi Profesional
+                  </div>
+                  <h3 style="
+                        font-size: 1.25rem;
+                        margin: 0;
+                        font-family: &quot;Playfair Display&quot;, serif;
+                      ">
+                    Pernyataan Misi
+                  </h3>
+                </div>
+              </div>
+              <div style="
+                    width: 40px;
+                    height: 2px;
+                    background: linear-gradient(
+                      90deg,
+                      var(--primary),
+                      var(--accent)
+                    );
+                    border-radius: 2px;
+                    margin-bottom: 18px;
+                  "></div>
+              <p style="
+                    color: var(--text-secondary);
+                    line-height: 1.85;
+                    font-size: 0.95rem;
+                  ">
+                Saya ingin menjadi guru Informatika yang <strong style="color: var(--text-primary)">adaptif, inspiratif, dan transformatif</strong>: guru yang tidak berhenti pada pelatihan keterampilan teknis komputer, tetapi menumbuhkan cara berpikir komputasional siswa, membentuk mereka menjadi warga digital yang beretika, dan terus berefleksi agar pembelajaran Informatika tetap relevan dengan perkembangan zaman.
+              </p>
+            </div>
+
+            <!-- Foto -->
+            <div class="image-slot" style="width: 180px; margin-bottom: 0; flex-shrink: 0">
+              <img src="files/foto/foto%20model%20guru.jpeg" alt="Model Guru" class="img-frame"
+                style="aspect-ratio: 3/4" />
+              <div class="img-label">Model Guru</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visi Profesional Header -->
+        <div class="sec-header fade-in" style="margin-top: 48px; margin-bottom: 24px;">
+          <span class="sec-tag">3 Pilar Utama</span>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin: 6px 0;">Visi Profesional</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 620px; margin: 0 auto;">
+            Arah dan fokus pengembangan kompetensi serta pembelajaran informatika yang bermakna bagi peserta didik.
+          </p>
+        </div>
+
+        <!-- Visi Profesional Grid -->
+        <div class="guru-grid fade-in">
+          <!-- 1. Penumbuh Berpikir Komputasional -->
+          <div class="glass guru-card">
+            <div class="guru-icon"><i data-lucide="brain"></i></div>
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">1. Penumbuh Berpikir Komputasional</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin siswa terbiasa berpikir kritis dan menyelesaikan masalah dengan cara berpikir informatika.
+            </p>
+            <ul>
+              <li>
+                <span>Membelajarkan dekomposisi, pengenalan pola, abstraksi, dan algoritma lewat contoh yang dekat dengan keseharian siswa.</span>
+              </li>
+              <li>
+                <span>Merancang aktivitas unplugged maupun plugged yang bisa diikuti semua siswa.</span>
+              </li>
+              <li>
+                <span>Mendampingi siswa belajar logika pemrograman lewat Scratch atau Blockly agar kreativitasnya berkembang.</span>
+              </li>
+              <li>
+                <span>Membiasakan siswa memecah masalah rumit menjadi langkah-langkah yang tertata dan menyelesaikannya secara sistematis.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 2. Perancang Pembelajaran Digital Berbasis TPACK -->
+          <div class="glass guru-card">
+            <div class="guru-icon"><i data-lucide="cpu"></i></div>
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">2. Perancang Pembelajaran Digital Berbasis TPACK</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin memadukan teknologi dengan materi dan pedagogi agar belajar terasa bermakna.
+            </p>
+            <ul>
+              <li>
+                <span>Memadukan materi informatika, pedagogi aktif, dan teknologi terkini dalam satu pembelajaran yang utuh.</span>
+              </li>
+              <li>
+                <span>Membangun kelas yang interaktif dan menyenangkan, termasuk lewat gamifikasi.</span>
+              </li>
+              <li>
+                <span>Membimbing siswa memakai AI dan alat kolaborasi digital dengan cerdas dan bertanggung jawab.</span>
+              </li>
+              <li>
+                <span>Membuat sendiri media belajar yang berkualitas, seperti visual, video interaktif, dan simulasi.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Pemandu Literasi dan Etika Digital -->
+          <div class="glass guru-card">
+            <div class="guru-icon"><i data-lucide="shield-check"></i></div>
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">3. Pemandu Literasi dan Etika Digital</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin siswa menjadi warga digital yang beretika dan tangguh.
+            </p>
+            <ul>
+              <li>
+                <span>Menanamkan kewaspadaan keamanan siber dan pentingnya menjaga data pribadi.</span>
+              </li>
+              <li>
+                <span>Melatih siswa berdiskusi, berkolaborasi, dan berbagi dengan sopan di ruang digital.</span>
+              </li>
+              <li>
+                <span>Membiasakan siswa memeriksa kebenaran informasi supaya tidak mudah termakan hoaks.</span>
+              </li>
+              <li>
+                <span>Mendorong siswa beralih dari sekadar penikmat konten menjadi pencipta karya digital yang kreatif.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2026 <strong>Muhammad Fajrul Fahmi</strong> &middot; E-Portfolio PPL PPG &middot;
+      <a href="index.html">Beranda</a>
+    </p>
+  </footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+'''
+
+with open('model-guru.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("model-guru.html written successfully!")
+

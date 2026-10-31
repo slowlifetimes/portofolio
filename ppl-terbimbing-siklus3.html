@@ -1,0 +1,562 @@
+﻿<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Siklus 3 · PPL Terbimbing | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <meta
+    name="description"
+    content="Siklus 3 PPL Terbimbing - Ms. Word (Insert Symbol dan Equation)"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <style>
+    /* -- Artefak PPL Layout -- */
+    .siklus-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Cycle Hero Card */
+    .siklus-hero {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg,
+          var(--glass-bg),
+          rgba(99, 102, 241, 0.05));
+    }
+
+    .siklus-hero::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--primary-light), transparent);
+      filter: blur(40px);
+      opacity: 0.15;
+    }
+
+    .siklus-hero .sec-tag {
+      margin-bottom: 12px;
+    }
+
+    .siklus-hero h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .siklus-hero .meta-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .siklus-hero .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .siklus-hero .meta-item svg {
+      color: var(--primary-light);
+      opacity: 0.8;
+    }
+
+    .siklus-hero .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 800px;
+    }
+
+    /* 4-Column Detail Grid */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .detail-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition);
+    }
+
+    .detail-card:hover {
+      background: var(--glass-hover);
+      transform: translateY(-3px);
+    }
+
+    .detail-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .detail-card-head .icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+    }
+
+    .detail-card-head svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary-light);
+    }
+
+    .detail-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Status Accents */
+    .detail-card.pro .icon-circle {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .detail-card.pro svg {
+      color: #22c55e;
+    }
+
+    .detail-card.con .icon-circle {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+
+    .detail-card.con svg {
+      color: #f59e0b;
+    }
+
+    /* Theory & Files Section */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 24px;
+    }
+
+    .theory-card {
+      padding: 32px;
+    }
+
+    .theory-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary-light);
+    }
+
+    .theory-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .theory-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .theory-item {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theory-item::before {
+      content: "✦";
+      color: var(--primary-light);
+      font-size: 0.7rem;
+    }
+
+    .files-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .file-group {
+      padding: 24px;
+    }
+
+    .file-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .file-group-head span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* -- Back Link -- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      transition: var(--transition);
+      margin-bottom: 24px;
+    }
+
+    .back-link:hover {
+      background: rgba(99, 102, 241, 0.12);
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* -- Analisis Section -- */
+    .analisis-section {
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    .analisis-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .analisis-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .analisis-content p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .analisis-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 1000px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .siklus-hero {
+        padding: 30px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="model-guru.html">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn active" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html" class="active">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+        <!-- Back Link -->
+        <a href="artefak.html" class="back-link fade-in">
+          <i data-lucide="arrow-left"></i> Kembali ke PPL Terbimbing
+        </a>
+
+        <!-- Page Header -->
+        <div class="sec-header fade-in">
+          <span class="sec-tag">PPL Terbimbing · Siklus 3</span>
+          <h1 class="sec-title">Siklus 3</h1>
+          <p class="sec-desc">
+            Dokumentasi modul ajar penulisan simbol dan rumus ilmiah, serta evaluasi Siklus 3 PPL Terbimbing: Ms. Word (Insert Symbol dan Equation).
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- --- SIKLUS 3 CONTENT --- -->
+        <div class="siklus-container">
+          <!-- Hero Card -->
+          <div class="glass siklus-hero fade-in">
+            <span class="sec-tag">Siklus 3 · PPG PPL 1</span>
+            <h2 class="siklus-title">
+              Ms. Word (Insert Symbol dan Equation)
+            </h2>
+            <div class="meta-row">
+              <div class="meta-item">
+                <i data-lucide="calendar"></i> 5 Mei 2026
+              </div>
+              <div class="meta-item">
+                <i data-lucide="building-2"></i> SMPN 18 Malang
+              </div>
+              <div class="meta-item">
+                <i data-lucide="book-open"></i> Kelas VII
+              </div>
+              <div class="meta-item">
+                <i data-lucide="layers"></i> Problem-Based Learning (PBL)
+              </div>
+            </div>
+            <p class="hero-desc">
+              Siklus ketiga berfokus pada pemecahan masalah penyisipan simbol-simbol khusus dan formula matematika menggunakan fitur Symbol dan Equation di Ms. Word melalui model <em>Problem-Based Learning (PBL)</em> dan asesmen formatif berkelanjutan. Siswa mempraktikkan pengetikan naskah soal sains matematis.
+            </p>
+          </div>
+
+          <!-- Detail Grid -->
+          <div class="detail-grid fade-in">
+            <div class="glass detail-card">
+              <div class="detail-card-head">
+                <div class="icon-circle"><i data-lucide="map-pin"></i></div>
+                Konteks
+              </div>
+              <p>
+                Siklus final dengan penekanan pada pemecahan masalah pembuatan lembar soal matematika sederhana menggunakan Word berbasis PBL, menerapkan perbaikan pengelolaan waktu dari siklus 1 &amp; 2.
+              </p>
+            </div>
+            <div class="glass detail-card">
+              <div class="detail-card-head">
+                <div class="icon-circle"><i data-lucide="target"></i></div>
+                Tujuan
+              </div>
+              <p>
+                Siswa mampu menggunakan fitur Symbol dan Equation untuk menyisipkan rumus matematika dan karakter khusus pada dokumen secara tepat.
+              </p>
+            </div>
+            <div class="glass detail-card pro">
+              <div class="detail-card-head">
+                <div class="icon-circle">
+                  <i data-lucide="check-circle-2"></i>
+                </div>
+                Kelebihan
+              </div>
+              <p>
+                Siswa memahami bahwa Ms. Word dapat digunakan untuk menulis dokumen ilmiah dan matematis secara profesional.
+              </p>
+            </div>
+            <div class="glass detail-card con">
+              <div class="detail-card-head">
+                <div class="icon-circle">
+                  <i data-lucide="alert-triangle"></i>
+                </div>
+                Kekurangan
+              </div>
+              <p>
+                Beberapa siswa kesulitan mencari letak simbol khusus; diperlukan pendampingan ekstra untuk menemukan menu simbol.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Layout -->
+          <div class="bottom-grid fade-in">
+            <div class="glass theory-card">
+              <h4><i data-lucide="scroll-text"></i> Kajian Teori</h4>
+              <p>
+                Analisis berbasis mata kuliah <em>Evaluasi Pembelajaran</em> &amp; <em>Etika Profesi</em>:
+              </p>
+              <div class="theory-list">
+                <div class="theory-item">Problem-Based Learning (PBL)</div>
+                <div class="theory-item">Assessment for Learning (Black &amp; Wiliam)</div>
+                <div class="theory-item">Taksonomi Bloom Revisi</div>
+                <div class="theory-item">Reflective Practice (Schön)</div>
+                <div class="theory-item">Scaffolding Vygotsky</div>
+              </div>
+            </div>
+            <div class="files-container">
+              <div class="glass file-group">
+                <div class="file-group-head">
+                  <span><i data-lucide="folder-open" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> File Pembelajaran</span>
+                </div>
+                <div class="file-list">
+                  <a href="files/dokumen/ppl1/rpp/RPP_Siklus3.pdf" class="file-row" target="_blank">
+                    <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                    <span class="file-row-info">
+                      <strong>RPP Siklus 3 · Symbol &amp; Equation</strong>
+                      <span>544 KB · Modul Ajar Penulisan Rumus Ilmiah</span>
+                    </span>
+                    <span class="file-row-tag">BUKA PDF</span>
+                  </a>
+                  <a href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus3.pdf" class="file-row" target="_blank">
+                    <span class="file-row-icon"><i data-lucide="book-open"></i></span>
+                    <span class="file-row-info">
+                      <strong>Modul Praktikum Siswa Siklus 3</strong>
+                      <span>422 KB · Panduan Praktikum Simbol &amp; Persamaan</span>
+                    </span>
+                    <span class="file-row-tag">BUKA PDF</span>
+                  </a>
+                </div>
+              </div>
+              <div class="glass file-group">
+                <div class="file-group-head">
+                  <span><i data-lucide="camera" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> Dokumentasi Praktik</span>
+                </div>
+                <div class="file-list">
+                  <img src="files/foto/siklus3/foto1.jpeg" alt="Dokumentasi" style="width: 100%; border-radius: 8px; margin-bottom: 12px; object-fit: cover; aspect-ratio: 16/9; box-shadow: var(--shadow); border: 1px solid var(--glass-border);"><a href="files/foto/siklus3/foto1.jpeg" class="file-row" target="_blank">
+                    <span class="file-row-icon"><i data-lucide="image"></i></span>
+                    <span class="file-row-info">
+                      <strong>Dokumentasi Pembelajaran Siklus 3</strong>
+                      <span>Foto Kelas · Praktik Penulisan Rumus &amp; Evaluasi Siklus</span>
+                    </span>
+                    <span class="file-row-tag">FOTO</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analisis Pelaksanaan Siklus 3 -->
+          <div class="glass analisis-section fade-in">
+            <div class="analisis-header">
+              <i data-lucide="sigma" style="color: var(--primary-light); width: 22px; height: 22px;"></i>
+              <h3>Analisis Pelaksanaan &amp; Evaluasi Siklus 3</h3>
+            </div>
+            <div class="analisis-content">
+              <p>
+                Siklus 3 menjadi puncak kematangan dari rangkaian PPL Terbimbing. Penerapan model PBL yang terstruktur membuat alur pengenalan Equation Editor, pecahan (fraction), dan akar (radical) berjalan runtut dan efektif.
+              </p>
+              <p>
+                Ketuntasan klasikal mencapai 94%. Siswa merasa bangga dapat mengetik lembar soal matematika sendiri yang tampak rapi layaknya buku cetak sekolah. Keberhasilan ini menegaskan bahwa kombinasi model PBL kontekstual dan scaffolding yang tepat mampu meningkatkan efikasi diri siswa dalam belajar informatika.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      · 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      <a href="index.html">Beranda</a>
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

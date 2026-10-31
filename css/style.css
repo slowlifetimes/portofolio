@@ -24,6 +24,7 @@ body {
   --text-muted: #9ca3af;
   --shadow: 0 8px 32px rgba(99, 102, 241, 0.12);
   --bg: #eef2ff;
+  --pattern-color: rgba(99, 102, 241, 0.06);
   --orb-opacity: 0.18;
   --table-stripe: rgba(99, 102, 241, 0.05);
   --code-bg: rgba(99, 102, 241, 0.08);
@@ -52,6 +53,7 @@ body.dark {
   --text-muted: #64748b;
   --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   --bg: #0f0c29;
+  --pattern-color: rgba(255, 255, 255, 0.04);
   --orb-opacity: 0.25;
   --table-stripe: rgba(255, 255, 255, 0.03);
   --code-bg: rgba(99, 102, 241, 0.15);
@@ -109,6 +111,18 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+}
+.bg-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--pattern-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--pattern-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+  mask-image: radial-gradient(ellipse at top, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at top, black 20%, transparent 70%);
 }
 body:not(.dark) .bg-wrap {
   background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 50%, #fdf2f8 100%);
@@ -227,6 +241,7 @@ section {
 }
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 4px;
   list-style: none;
 }
@@ -238,6 +253,8 @@ section {
   font-size: 0.85rem;
   font-weight: 500;
   transition: var(--transition);
+  display: flex;
+  align-items: center;
 }
 .nav-links a:hover,
 .nav-links a.active {
@@ -435,6 +452,7 @@ section {
   box-shadow: 0 0 60px rgba(99, 102, 241, 0.28);
   overflow: hidden;
   border: 4px solid var(--glass-bg);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hero-avatar::after {
   content: "";
@@ -450,6 +468,26 @@ section {
   }
 }
 
+.hero-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-profile-img:hover {
+  transform: scale(1.3);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.hero-avatar:hover .hero-profile-img {
+  box-shadow: 0 0 100px rgba(99, 102, 241, 0.45);
+}
+
+.hero-avatar:hover {
+  transform: scale(1.25);
+}
 /* ── Nav Cards (index) ── */
 .nav-cards {
   display: flex;
@@ -1884,4 +1922,220 @@ svg[data-lucide] {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--glass-bg);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  top: 100%;
+  left: 0;
+  padding: 8px 0;
+}
+.dropdown-content a {
+  padding: 8px 16px;
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+.dropdown-content a:hover {
+  background-color: var(--glass-hover);
+  color: var(--primary-light);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Nested Dropdown */
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-content {
+  top: 0;
+  left: 100%;
+  margin-top: -5px;
+  border-radius: var(--radius);
+}
+.dropdown-submenu:hover > .dropdown-content {
+  display: block;
+}
+
+/* ==========================================================================
+   HD YOUTUBE VIDEO FACADE COMPONENT
+   Provides crystal clear 1080p/720p thumbnails without default iframe blur
+   ========================================================================== */
+.video-facade {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-sm, 12px);
+  overflow: hidden;
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.12));
+  background: #000;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+}
+
+.video-thumb-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.video-facade:hover .video-thumb-img {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.video-facade-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.4) 100%);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.video-facade:hover .video-facade-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.video-facade-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-play-button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 32px rgba(255, 0, 0, 0.65), 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.video-facade:hover .video-play-button {
+  transform: scale(1.15);
+  box-shadow: 0 0 45px rgba(255, 0, 0, 0.9), 0 6px 22px rgba(0, 0, 0, 0.6);
+}
+
+.video-hd-pill {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.video-facade:hover .video-hd-pill {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* ── Video Action Buttons ── */
+.video-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.video-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.video-action-btn svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.video-action-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.video-action-btn.primary {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35) !important;
+}
+
+.video-action-btn.primary:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(239, 68, 68, 0.5) !important;
+}
+
+.video-action-btn.primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+.video-action-btn.secondary {
+  background: var(--badge-bg);
+  color: var(--text-primary) !important;
+  border: 1px solid var(--badge-border);
+}
+
+.video-action-btn.secondary:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }

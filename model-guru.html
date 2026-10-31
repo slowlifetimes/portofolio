@@ -31,14 +31,33 @@
 
   <nav id="navbar">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
       <ul class="nav-links" id="navList">
         <li><a href="index.html">Beranda</a></li>
         <li><a href="profil.html">Profil</a></li>
-        <li><a href="artefak.html">Artefak</a></li>
-        <li><a href="penilaian.html">Penilaian</a></li>
-        <li><a href="model-guru.html">Model Guru</a></li>
-        <li><a href="refleksi.html">Refleksi</a></li>
+        <li><a href="model-guru.html" class="active">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
         <li><a href="berkas.html">Berkas</a></li>
       </ul>
       <div class="nav-right">
@@ -56,16 +75,15 @@
     <section>
       <div class="container">
         <div class="sec-header fade-in">
-          <span class="sec-tag">Visi Profesional</span>
+          <span class="sec-tag">Arah &amp; Komitmen</span>
           <h1 class="sec-title">Model Guru yang Dituju</h1>
           <p class="sec-desc">
-            Misi, kompetensi, dan karakter yang dibangun dalam perjalanan
-            menuju guru informatika yang profesional dan berdampak.
+            Pernyataan misi dan pilar visi profesional dalam perjalanan menuju guru Informatika yang adaptif, inspiratif, dan transformatif.
           </p>
           <div class="divider"></div>
         </div>
 
-        <!-- Misi -->
+        <!-- Misi Profesional -->
         <div class="glass misi-card fade-in" style="text-align: left">
           <div style="
                 display: flex;
@@ -99,7 +117,7 @@
                     Misi Profesional
                   </div>
                   <h3 style="
-                        font-size: 1.2rem;
+                        font-size: 1.25rem;
                         margin: 0;
                         font-family: &quot;Playfair Display&quot;, serif;
                       ">
@@ -121,15 +139,9 @@
               <p style="
                     color: var(--text-secondary);
                     line-height: 1.85;
-                    font-size: 0.93rem;
+                    font-size: 0.95rem;
                   ">
-                Model guru yang ingin dicapai melalui PPL dan PPG ini adalah sosok
-                <strong style="color: var(--text-primary)">Pendidik Informatika yang Adaptif, Inspiratif, dan
-                  Transformatif</strong>.
-                Yaitu pendidik yang tidak sekadar melatih keterampilan teknis operasional komputer, melainkan mampu
-                menumbuhkan daya pikir komputasional (computational thinking) yang mendalam pada siswa, menyiapkan
-                mereka menjadi warga digital yang beretika, serta berkomitmen melakukan refleksi berkelanjutan demi
-                mendorong kualitas pendidikan informatika yang dinamis dan relevan dengan tantangan zaman.
+                Saya ingin menjadi guru Informatika yang <strong style="color: var(--text-primary)">adaptif, inspiratif, dan transformatif</strong>: guru yang tidak berhenti pada pelatihan keterampilan teknis komputer, tetapi menumbuhkan cara berpikir komputasional siswa, membentuk mereka menjadi warga digital yang beretika, dan terus berefleksi agar pembelajaran Informatika tetap relevan dengan perkembangan zaman.
               </p>
             </div>
 
@@ -137,88 +149,83 @@
             <div class="image-slot" style="width: 180px; margin-bottom: 0; flex-shrink: 0">
               <img src="files/foto/foto%20model%20guru.jpeg" alt="Model Guru" class="img-frame"
                 style="aspect-ratio: 3/4" />
-              <div class="img-label">Visi Profesional</div>
+              <div class="img-label">Model Guru</div>
             </div>
           </div>
         </div>
 
-        <!-- Kompetensi Grid -->
+        <!-- Visi Profesional Header -->
+        <div class="sec-header fade-in" style="margin-top: 48px; margin-bottom: 24px;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin: 6px 0;">Visi Profesional</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 620px; margin: 0 auto;">
+            Arah dan fokus pengembangan kompetensi serta pembelajaran informatika yang bermakna bagi peserta didik.
+          </p>
+        </div>
+
+        <!-- Visi Profesional Grid -->
         <div class="guru-grid fade-in">
+          <!-- 1. Penumbuh Berpikir Komputasional -->
           <div class="glass guru-card">
-            <div class="guru-icon"><i data-lucide="brain"></i></div>
-            <h4>Katalisator Berpikir Komputasional</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-              Target model guru yang mampu menanamkan cara berpikir kritis dan pemecahan masalah menggunakan konsep
-              informatika.
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">1. Penumbuh Berpikir Komputasional</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin siswa terbiasa berpikir kritis dan menyelesaikan masalah dengan cara berpikir informatika.
             </p>
             <ul>
               <li>
-                <strong>Penerap Computational Thinking:</strong> Mampu membelajarkan dekomposisi, pengenalan pola,
-                abstraksi, dan perancangan algoritma pada kehidupan sehari-hari siswa.
+                <span>Membelajarkan dekomposisi, pengenalan pola, abstraksi, dan algoritma lewat contoh yang dekat dengan keseharian siswa.</span>
               </li>
               <li>
-                <strong>Inovator Metode Unplugged & Plugged:</strong> Ahli merancang aktivitas seru non-komputer
-                (unplugged) maupun berbasis komputer (plugged) yang inklusif untuk semua siswa.
+                <span>Merancang aktivitas unplugged maupun plugged yang bisa diikuti semua siswa.</span>
               </li>
               <li>
-                <strong>Fasilitator Pemrograman Kreatif:</strong> Mampu memandu logika pemrograman anak-anak
-                (Scratch/Blockly) untuk memicu kreativitas dan computational thinking.
+                <span>Mendampingi siswa belajar logika pemrograman lewat Scratch atau Blockly agar kreativitasnya berkembang.</span>
               </li>
               <li>
-                <strong>Problem Solving Guide:</strong> Terampil membiasakan siswa menganalisis masalah kompleks menjadi
-                terstruktur dan menyelesaikannya secara sistematis.
+                <span>Membiasakan siswa memecah masalah rumit menjadi langkah-langkah yang tertata dan menyelesaikannya secara sistematis.</span>
               </li>
             </ul>
           </div>
+
+          <!-- 2. Perancang Pembelajaran Digital Berbasis TPACK -->
           <div class="glass guru-card">
-            <div class="guru-icon"><i data-lucide="cpu"></i></div>
-            <h4>Arsitek Pembelajaran Digital & TPACK</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-              Target model guru yang menguasai integrasi teknologi modern untuk menciptakan ekosistem belajar masa
-              depan.
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">2. Perancang Pembelajaran Digital Berbasis TPACK</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin memadukan teknologi dengan materi dan pedagogi agar belajar terasa bermakna.
             </p>
             <ul>
               <li>
-                <strong>Master Integrasi TPACK:</strong> Mampu meramu materi informatika, pedagogi aktif, dan teknologi
-                terkini menjadi kesatuan pembelajaran yang bermakna.
+                <span>Memadukan materi informatika, pedagogi aktif, dan teknologi terkini dalam satu pembelajaran yang utuh.</span>
               </li>
               <li>
-                <strong>Desainer Kelas Interaktif & Gamifikasi:</strong> Terampil membangun lingkungan belajar digital
-                yang memanfaatkan gamifikasi dan interaktivitas tingkat tinggi.
+                <span>Membangun kelas yang interaktif dan menyenangkan, termasuk lewat gamifikasi.</span>
               </li>
               <li>
-                <strong>Pemanfaat AI & Alat Kolaboratif:</strong> Mampu mengarahkan siswa memanfaatkan AI (Artificial
-                Intelligence) dan tools kolaboratif kerja digital secara cerdas dan tepat.
+                <span>Membimbing siswa memakai AI dan alat kolaborasi digital dengan cerdas dan bertanggung jawab.</span>
               </li>
               <li>
-                <strong>Pengembang Media Belajar Digital:</strong> Berkomitmen memproduksi media pembelajaran visual,
-                video interaktif, dan simulasi komputer mandiri yang berkualitas.
+                <span>Membuat sendiri media belajar yang berkualitas, seperti visual, video interaktif, dan simulasi.</span>
               </li>
             </ul>
           </div>
+
+          <!-- 3. Pemandu Literasi dan Etika Digital -->
           <div class="glass guru-card">
-            <div class="guru-icon"><i data-lucide="shield-check"></i></div>
-            <h4>Pandu Literasi & Etika Digital</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.5;">
-              Target model guru yang membentuk karakter kewarganegaraan digital (digital citizenship) yang beretika dan
-              tangguh.
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">3. Pemandu Literasi dan Etika Digital</h4>
+            <p style="font-size: 0.85rem; color: var(--primary-light); font-weight: 600; margin-bottom: 16px; line-height: 1.5;">
+              Saya ingin siswa menjadi warga digital yang beretika dan tangguh.
             </p>
             <ul>
               <li>
-                <strong>Cyber Security & Privacy Advocate:</strong> Mampu menanamkan kewaspadaan keamanan siber dan
-                perlindungan privasi data pribadi di kalangan siswa SMP.
+                <span>Menanamkan kewaspadaan keamanan siber dan pentingnya menjaga data pribadi.</span>
               </li>
               <li>
-                <strong>Promotor Etika Komunikasi Digital:</strong> Terampil melatih siswa berkolaborasi, berdiskusi,
-                dan berbagi secara sehat dan sopan di ruang digital.
+                <span>Melatih siswa berdiskusi, berkolaborasi, dan berbagi dengan sopan di ruang digital.</span>
               </li>
               <li>
-                <strong>Penyaring Disinformasi (Anti-Hoax):</strong> Mampu melatih berpikir kritis dalam menyaring,
-                mengevaluasi kebenaran, dan memanfaatkan informasi dari internet.
+                <span>Membiasakan siswa memeriksa kebenaran informasi supaya tidak mudah termakan hoaks.</span>
               </li>
               <li>
-                <strong>Inspirator Produktivitas Teknologi:</strong> Mendorong siswa menggeser kebiasaan dari sekadar
-                konsumen konten digital menjadi pencipta karya digital kreatif dan berdaya.
+                <span>Mendorong siswa beralih dari sekadar penikmat konten menjadi pencipta karya digital yang kreatif.</span>
               </li>
             </ul>
           </div>
@@ -229,7 +236,7 @@
 
   <footer>
     <p>
-      © 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      &copy; 2026 <strong>Muhammad Fajrul Fahmi</strong> &middot; E-Portfolio PPL PPG &middot;
       <a href="index.html">Beranda</a>
     </p>
   </footer>

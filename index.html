@@ -6,7 +6,7 @@
     <title>E-Portfolio PPL | Muhammad Fajrul Fahmi</title>
     <meta
       name="description"
-      content="E-Portfolio PPL PPG – Muhammad Fajrul Fahmi, PPG Informatika Universitas Negeri Malang"
+      content="E-Portfolio PPL PPG - Muhammad Fajrul Fahmi, PPG Informatika Universitas Negeri Malang"
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/animate.css" />
@@ -24,14 +24,33 @@
 
     <nav id="navbar">
       <div class="container nav-inner">
-        <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
-        <ul class="nav-links" id="navList">
-          <li><a href="index.html">Beranda</a></li>
+        <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+                                                <ul class="nav-links" id="navList">
+          <li><a href="index.html" class="active">Beranda</a></li>
           <li><a href="profil.html">Profil</a></li>
-          <li><a href="artefak.html">Artefak</a></li>
-          <li><a href="penilaian.html">Penilaian</a></li>
           <li><a href="model-guru.html">Model Guru</a></li>
-          <li><a href="refleksi.html">Refleksi</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+              <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+              <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+              <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+              <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+              <a href="computational-thinking.html">Computational Thinking</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+              <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+              <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+              <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+              <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+              <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+            </div>
+          </li>
           <li><a href="berkas.html">Berkas</a></li>
         </ul>
         <div class="nav-right">
@@ -59,12 +78,11 @@
               <p class="hero-sub">Mahasiswa PPG Informatika</p>
               <p class="hero-desc">
                 Universitas Negeri Malang<br />
-                Menempuh PPL di SMPN 18 Malang — membangun fondasi
+                Menempuh PPL di SMPN 18 Malang - membangun fondasi
                 menjadi guru informatika profesional, kreatif, dan berdampak.
               </p>
               <div class="hero-cta">
-                <a href="artefak.html" class="btn-primary"
-                  >Lihat Artefak
+                <a href="profil.html" class="btn-primary">Lihat Profil
                   <i
                     data-lucide="arrow-right"
                     style="
@@ -77,7 +95,7 @@
                 ></a>
                 <a href="berkas.html" class="btn-outline"
                   ><i
-                    data-lucide="download"
+                    data-lucide="folder"
                     style="
                       width: 15px;
                       height: 15px;
@@ -85,25 +103,13 @@
                       margin-right: 6px;
                     "
                   ></i
-                  >Unduh Berkas</a
+                  >Berkas</a
                 >
               </div>
             </div>
-            <div
-              class="hero-img"
-              style="display: flex; justify-content: center"
-            >
+            <div class="hero-img">
               <div class="hero-avatar">
-                <img
-                  src="files/foto/profil.jpg"
-                  alt="Muhammad Fajrul Fahmi"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 50%;
-                  "
-                />
+                <img src="files/foto/profil.jpg" alt="Muhammad Fajrul Fahmi" class="hero-profile-img" />
               </div>
             </div>
           </div>
@@ -131,7 +137,7 @@
               <div class="nav-card-icon"><i data-lucide="bar-chart-2"></i></div>
               <h3>Penilaian GP & DPL</h3>
               <p>
-                Lampiran 7 & 8 — instrumen penilaian dan catatan umpan balik per
+                Lampiran 7 & 8 - instrumen penilaian dan catatan umpan balik per
                 siklus.
               </p>
             </a>
@@ -261,7 +267,7 @@
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
     <script>
-      /* ── Photo Slider ── */
+      /* â”€â”€ Photo Slider â”€â”€ */
       (function () {
         const track = document.getElementById("sliderTrack");
         const caption = document.getElementById("sliderCaption");
@@ -415,7 +421,7 @@
       })();
     </script>
     <style>
-      /* ── Photo Slider Styles ── */
+      /* â”€â”€ Photo Slider Styles â”€â”€ */
       .photo-slider {
         position: relative;
         overflow: hidden;
@@ -579,3 +585,7 @@
     </style>
   </body>
 </html>
+
+
+
+

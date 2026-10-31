@@ -1,0 +1,2136 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Siklus 4 · PPL Mandiri | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <meta
+    name="description"
+    content="Siklus 4 PPL Mandiri - Modul Praktik Pengenalan Komputer dan Software Komputer"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <style>
+
+    /* -- Artefak PPL Layout -- */
+    .siklus-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Cycle Hero Card */
+    .siklus-hero {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: linear-gradient(135deg,
+          var(--glass-bg),
+          rgba(99, 102, 241, 0.05));
+    }
+
+    .siklus-hero::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--primary-light), transparent);
+      filter: blur(40px);
+      opacity: 0.15;
+    }
+
+    .siklus-hero .sec-tag {
+      margin-bottom: 12px;
+    }
+
+    .siklus-hero h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .siklus-hero .meta-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .siklus-hero .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .siklus-hero .meta-item svg {
+      color: var(--primary-light);
+      opacity: 0.8;
+    }
+
+    .siklus-hero .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 800px;
+    }
+
+    /* 4-Column Detail Grid */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .detail-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition);
+    }
+
+    .detail-card:hover {
+      background: var(--glass-hover);
+      transform: translateY(-3px);
+    }
+
+    .detail-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .detail-card-head .icon-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+    }
+
+    .detail-card-head svg {
+      width: 16px;
+      height: 16px;
+      color: var(--primary-light);
+    }
+
+    .detail-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Status Accents */
+    .detail-card.pro .icon-circle {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .detail-card.pro svg {
+      color: #22c55e;
+    }
+
+    .detail-card.con .icon-circle {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+
+    .detail-card.con svg {
+      color: #f59e0b;
+    }
+
+    /* Theory & Files Section */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 24px;
+    }
+
+    .theory-card {
+      padding: 32px;
+    }
+
+    .theory-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary-light);
+    }
+
+    .theory-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .theory-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .theory-item {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .theory-item::before {
+      content: "✦";
+      color: var(--primary-light);
+      font-size: 0.7rem;
+    }
+
+    .files-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .file-group {
+      padding: 24px;
+    }
+
+    .file-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .file-group-head span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* -- Back Link -- */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      transition: var(--transition);
+      margin-bottom: 24px;
+    }
+
+    .back-link:hover {
+      background: rgba(99, 102, 241, 0.12);
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+        /* -- Analisis Section -- */
+    .analisis-section {
+      padding: 32px;
+      margin-top: 24px;
+    }
+
+    .analisis-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .analisis-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .analisis-content p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+
+    .analisis-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .analisis-content ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .analisis-content ul li {
+      margin-bottom: 8px;
+    }
+
+    .analisis-content ul li strong {
+      color: var(--text-primary);
+    }
+
+    /* ── Documentation Image Slider ── */
+    .doc-slider-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .doc-slider-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .doc-slider-track {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    .doc-slider-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .doc-slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .doc-slider-viewport:hover .doc-slider-slide img {
+      transform: scale(1.03);
+    }
+
+    /* Counter Badge */
+    .doc-slider-counter {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(10, 15, 30, 0.65);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      z-index: 5;
+    }
+
+    /* Prev / Next Buttons */
+    .doc-slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 6;
+      opacity: 0.85;
+      padding: 0;
+    }
+
+    .doc-slider-btn:hover {
+      background: rgba(99, 102, 241, 0.88);
+      border-color: rgba(99, 102, 241, 0.5);
+      transform: translateY(-50%) scale(1.08);
+      opacity: 1;
+    }
+
+    .doc-slider-btn.prev { left: 10px; }
+    .doc-slider-btn.next { right: 10px; }
+    .doc-slider-btn svg { width: 18px; height: 18px; }
+
+    /* Caption Overlay */
+    .doc-slider-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 14px 12px;
+      background: linear-gradient(to top, rgba(10, 15, 30, 0.9) 0%, rgba(10, 15, 30, 0.45) 60%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .doc-slider-caption-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-width: 80%;
+    }
+
+    .doc-slider-caption-text .cap-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-light);
+    }
+
+    .doc-slider-caption-text .cap-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .doc-slider-caption-text .cap-desc {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.82);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-slider-caption .cap-btn {
+      pointer-events: auto;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      padding: 0;
+    }
+
+    .doc-slider-caption .cap-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary-light);
+      transform: scale(1.08);
+    }
+
+    .doc-slider-caption .cap-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Dots */
+    .doc-slider-dots {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .doc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      padding: 0;
+    }
+
+    .doc-dot.active {
+      width: 18px;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    /* Interactive File Row List Under Slider */
+    .doc-slider-items .file-row {
+      cursor: pointer;
+      user-select: none;
+      transition: var(--transition);
+    }
+
+    .doc-slider-items .file-row:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateX(3px);
+    }
+
+    .doc-slider-items .file-row.active {
+      border-color: var(--primary-light);
+      background: rgba(99, 102, 241, 0.14);
+      box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3);
+    }
+
+    /* -- Placeholder card -- */
+    .placeholder-card {
+      padding: 48px 32px;
+      text-align: center;
+      border: 2px dashed var(--glass-border);
+      border-radius: var(--radius);
+      background: var(--glass-bg);
+    }
+
+    .placeholder-card .ph-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--text-muted);
+    }
+
+    .placeholder-card .ph-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .placeholder-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .placeholder-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ── Kegiatan Non Mengajar Styles ── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-box {
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-2px);
+      background: var(--glass-hover);
+    }
+
+    .stat-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stat-box-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .stat-box-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .stat-box-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .stat-box-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Activity Cards Grid */
+    .activity-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .activity-card {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid var(--glass-border);
+    }
+
+    .activity-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .activity-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .activity-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .activity-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .activity-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .activity-meta-title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .activity-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+    }
+
+    .activity-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .activity-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+      opacity: 0.18;
+      font-family: var(--font-heading, "Playfair Display", serif);
+      flex-shrink: 0;
+    }
+
+    .activity-lead {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .activity-steps-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .activity-steps-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .activity-steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .activity-steps-list li {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .activity-steps-list li svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .activity-impact-box {
+      margin-top: auto;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .activity-impact-box strong {
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Activity Theme Variants */
+    .act-piket {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(16, 185, 129, 0.04));
+    }
+    .act-piket:hover { border-color: rgba(16, 185, 129, 0.4); }
+    .act-piket .activity-icon-wrap {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #10b981;
+    }
+    .act-piket .activity-tag { color: #10b981; }
+    .act-piket .activity-steps-list li svg { color: #10b981; }
+
+    .act-5s {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(245, 158, 11, 0.04));
+    }
+    .act-5s:hover { border-color: rgba(245, 158, 11, 0.4); }
+    .act-5s .activity-icon-wrap {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: #f59e0b;
+    }
+    .act-5s .activity-tag { color: #f59e0b; }
+    .act-5s .activity-steps-list li svg { color: #f59e0b; }
+
+    .act-absensi {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(99, 102, 241, 0.04));
+    }
+    .act-absensi:hover { border-color: rgba(99, 102, 241, 0.4); }
+    .act-absensi .activity-icon-wrap {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      color: #818cf8;
+    }
+    .act-absensi .activity-tag { color: #818cf8; }
+    .act-absensi .activity-steps-list li svg { color: #818cf8; }
+
+    .act-coding {
+      background: linear-gradient(135deg, var(--glass-bg), rgba(168, 85, 247, 0.04));
+    }
+    .act-coding:hover { border-color: rgba(168, 85, 247, 0.4); }
+    .act-coding .activity-icon-wrap {
+      background: rgba(168, 85, 247, 0.12);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      color: #c084fc;
+    }
+    .act-coding .activity-tag { color: #c084fc; }
+    .act-coding .activity-steps-list li svg { color: #c084fc; }
+
+    /* Competency Grid */
+    .competency-card {
+      padding: 32px;
+    }
+
+    .competency-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .competency-item {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .competency-item:hover {
+      background: var(--glass-hover);
+      transform: translateY(-2px);
+    }
+
+    .competency-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-light);
+    }
+
+    .competency-item h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .competency-item p {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    @media (max-width: 1000px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .activity-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .competency-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .siklus-hero {
+        padding: 30px 24px;
+      }
+
+      .competency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+  
+
+    /* ════ VIDEO ANALYSIS STYLES ════ */
+    .video-showcase-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .video-player-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+      border: 1px solid var(--glass-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .video-player-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .video-play-btn {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+
+    .video-play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 45px rgba(99, 102, 241, 0.8);
+      color: #fff;
+    }
+
+    .video-play-btn svg {
+      width: 28px;
+      height: 28px;
+      margin-left: 3px;
+    }
+
+    .video-player-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .video-player-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .video-action-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .video-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .video-action-btn.primary {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+    }
+
+    .video-action-btn.primary:hover {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(239, 68, 68, 0.5);
+    }
+
+    .video-action-btn.secondary {
+      background: var(--badge-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--badge-border);
+    }
+
+    .video-action-btn.secondary:hover {
+      background: var(--glass-hover);
+      transform: translateY(-2px);
+    }
+
+    .video-meta-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .video-meta-card {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: var(--radius-sm);
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+    }
+
+    .video-meta-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(99, 102, 241, 0.12);
+      color: var(--primary-light);
+    }
+
+    .video-meta-icon svg { width: 18px; height: 18px; }
+
+    .video-meta-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .video-meta-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .video-meta-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Video Analysis Stages Grid */
+    .analysis-stage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .stage-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid var(--glass-border);
+      min-width: 0;
+      overflow: hidden;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .stage-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--glass-border);
+      min-width: 0;
+    }
+
+    .stage-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    .stage-tag.pendahuluan {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .stage-tag.inti {
+      background: rgba(168, 85, 247, 0.12);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.25);
+    }
+
+    .stage-tag.penutup {
+      background: rgba(34, 197, 94, 0.12);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+    }
+
+    .stage-card h4 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+      flex: 1;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .stage-card h4 svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .stage-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .stage-list > li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      min-width: 0;
+    }
+
+    .stage-list > li > svg {
+      width: 15px;
+      height: 15px;
+      color: var(--primary-light);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .stage-list > li > span {
+      flex: 1;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Nested sublists inside stage-list */
+    .stage-sublist {
+      margin: 6px 0 0 16px;
+      padding-left: 4px;
+      list-style-type: disc;
+    }
+
+    .stage-sublist > li {
+      display: list-item !important;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Video Reflection Comparison Matrix */
+    .video-matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .matrix-card {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border: 1px solid var(--glass-border);
+    }
+
+    .matrix-card.strength {
+      border-left: 4px solid #22c55e;
+    }
+
+    .matrix-card.growth {
+      border-left: 4px solid #f59e0b;
+    }
+
+    .matrix-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .matrix-card.strength .matrix-card-head {
+      color: #22c55e;
+    }
+
+    .matrix-card.growth .matrix-card-head {
+      color: #f59e0b;
+    }
+
+    .matrix-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .matrix-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .matrix-card.strength .matrix-list li svg {
+      color: #22c55e;
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+    }
+
+    .matrix-card.growth .matrix-list li svg {
+      color: #f59e0b;
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 15px;
+      height: 15px;
+    }
+
+    @media (max-width: 1024px) {
+      .analysis-stage-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-matrix-grid {
+        grid-template-columns: 1fr;
+      }
+      .video-meta-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="page-loader">
+    <div class="loader-ring"></div>
+  </div>
+  <div class="bg-wrap">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+      <ul class="nav-links" id="navList">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="model-guru.html">Model Guru</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn active" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html" class="active">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
+        <li><a href="berkas.html">Berkas</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <section>
+      <div class="container">
+        <a href="ppl-mandiri.html" class="back-link fade-in">
+          <i data-lucide="arrow-left"></i> Kembali ke PPL Mandiri
+        </a>
+
+        <div class="sec-header fade-in">
+          <span class="sec-tag">PPL Mandiri · Siklus 4</span>
+          <h1 class="sec-title">Siklus 4</h1>
+          <p class="sec-desc">
+            Dokumentasi modul ajar dan artefak pembelajaran Siklus 4 PPL Mandiri.
+          </p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav fade-in">
+          <button class="tab-btn active" data-target="m1">
+            <i data-lucide="wrench" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 6px;"></i>Modul 1: Praktik Pengenalan Komputer
+          </button>
+          <button class="tab-btn" data-target="m2">
+            <i data-lucide="layers" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 6px;"></i>Modul 2: Software Komputer
+          </button>
+                  <button class="tab-btn" data-target="video">
+            <i data-lucide="video" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 6px;"></i>Analisis Video Praktik
+          </button>
+
+          <button class="tab-btn" data-target="dokumentasi">
+            <i data-lucide="camera" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 6px;"></i>Dokumentasi Praktik
+          </button>
+        </div><!-- --- MODUL 1: PRAKTIK PENGENALAN KOMPUTER --- -->
+        <div class="tab-pane active" id="m1">
+          <div class="siklus-container">
+            <!-- Hero Card -->
+            <div class="glass siklus-hero fade-in">
+              <span class="sec-tag">Modul Ajar 1 · PPL 2 Mandiri (Siklus 4)</span>
+              <h2 class="siklus-title">
+                Praktik Pengenalan Hardware Komputer di Laboratorium
+              </h2>
+              <div class="meta-row">
+                <div class="meta-item">
+                  <i data-lucide="calendar"></i> 2 Pertemuan (2 × 2 JP / 160 menit)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="building-2"></i> SMP Negeri 18 Malang
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="book-open"></i> Informatika Fase D (Kelas VII F)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="layers"></i> Problem-Based Learning (PBL) &amp; Deep Learning
+                </div>
+              </div>
+              <p class="hero-desc">
+                Modul ajar Pertemuan 10 dan 12 ini dirancang untuk mata pelajaran Informatika Kelas VII F (Fase D) dengan alokasi waktu 2 pertemuan (total 160 menit) di Laboratorium Komputer SMP Negeri 18 Malang. Pembelajaran menerapkan model Problem-Based Learning (PBL) dan pendekatan Pembelajaran Mendalam (Deep Learning) melalui penyelidikan autentik membuka casing CPU secara aman, dokumentasi visual komponen internal (Motherboard, CPU, RAM, HDD, PSU, VGA), serta validasi informasi komponen berbasis kecerdasan buatan Google Lens.
+              </p>
+            </div>
+
+            <!-- Detail Grid -->
+            <div class="detail-grid fade-in">
+              <div class="glass detail-card">
+                <div class="detail-card-head">
+                  <div class="icon-circle"><i data-lucide="map-pin"></i></div>
+                  Konteks Pembelajaran
+                </div>
+                <p>
+                  Penyelidikan autentik laboratorium komputer untuk pemecahan masalah inventarisasi perangkat keras. Murid mengamati komponen fisik luar dan dalam unit PC secara langsung, memotret komponen, memindai gambar via Google Lens untuk memverifikasi spesifikasi teknis, serta mencatat fungsinya pada LKPD Hardware.
+                </p>
+              </div>
+              <div class="glass detail-card">
+                <div class="detail-card-head">
+                  <div class="icon-circle"><i data-lucide="target"></i></div>
+                  Tujuan Pembelajaran
+                </div>
+                <ol style="padding-left: 18px; margin: 0; font-size: 0.88rem; line-height: 1.65; color: var(--text-secondary);">
+                  <li style="margin-bottom: 6px;">Murid mampu membedakan hardware bagian luar dan bagian dalam unit komputer berdasarkan bentuk fisik dan letaknya. (C2)</li>
+                  <li>Murid mampu mengidentifikasi nama, jenis (Input/Proses/Output/Storage), dan fungsi komponen hardware melalui dokumentasi foto dan penelusuran digital. (C3)</li>
+                </ol>
+              </div>
+              <div class="glass detail-card pro">
+                <div class="detail-card-head">
+                  <div class="icon-circle">
+                    <i data-lucide="check-circle-2"></i>
+                  </div>
+                  Kelebihan &amp; Dampak
+                </div>
+                <p>
+                  Pengalaman empiris langsung (hands-on) mengamati jeroan CPU dan integrasi fitur AI Google Lens mentransformasi konsep abstrak menjadi sangat konkret, mengasah literasi digital kritis, serta menumbuhkan kesadaran budaya K3 laboratorium komputer.
+                </p>
+              </div>
+              <div class="glass detail-card con">
+                <div class="detail-card-head">
+                  <div class="icon-circle">
+                    <i data-lucide="alert-triangle"></i>
+                  </div>
+                  Tantangan &amp; Evaluasi
+                </div>
+                <p>
+                  Penerapan standar keselamatan kerja (K3) menuntut pengawasan ketat guru saat casing dibuka agar kabel dan komponen sensitif tidak dilepas sembarangan. Evaluasi mencakup rubrik kerja sama, akurasi foto LKPD, dan presentasi hasil temuan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Layout -->
+            <div class="bottom-grid fade-in">
+              <div class="glass theory-card">
+                <h4><i data-lucide="scroll-text"></i> Kajian Teori Pedagogik</h4>
+                <p>
+                  Analisis perancangan modul ajar berbasis teori pembelajaran modern:
+                </p>
+                <div class="theory-list">
+                  <div class="theory-item">Deep Learning Framework (Fullan et al.)</div>
+                  <div class="theory-item">Problem-Based Learning (Barrows &amp; Tamblyn)</div>
+                  <div class="theory-item">Experiential Learning (David Kolb - Hands-on CPU Observation)</div>
+                  <div class="theory-item">Multimodal AI in Education (Google Lens Visual Search)</div>
+                  <div class="theory-item">Standar K3 Laboratorium Komputer &amp; Capaian Pembelajaran Fase D</div>
+                </div>
+              </div>
+              <div class="files-container">
+                <!-- File Pembelajaran -->
+                <div class="glass file-group">
+                  <div class="file-group-head">
+                    <span><i data-lucide="folder-open" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> File Pembelajaran</span>
+                  </div>
+                  <div class="file-list">
+                    <a href="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 10 & 12_Praktik pengenalan komputer.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                      <span class="file-row-info">
+                        <strong>Modul Ajar Pertemuan 10 &amp; 12_Praktik pengenalan komputer.pdf</strong>
+                        <span>PDF Dokumen Modul Ajar Informatika Fase D (Praktik Lab)</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+                  </div>
+
+                  <!-- Tampilkan Dokumen Modul Ajar Secara Langsung -->
+                  <div style="margin-top: 14px; width: 100%; height: 500px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: var(--glass-bg);">
+                    <iframe src="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 10 & 12_Praktik pengenalan komputer.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- --- MODUL 2: SOFTWARE KOMPUTER --- -->
+        <div class="tab-pane" id="m2">
+          <div class="siklus-container">
+            <!-- Hero Card -->
+            <div class="glass siklus-hero fade-in">
+              <span class="sec-tag">Modul Ajar 2 · PPL 2 Mandiri (Siklus 4)</span>
+              <h2 class="siklus-title">
+                Software Komputer: Sistem Operasi dan Perangkat Lunak Aplikasi
+              </h2>
+              <div class="meta-row">
+                <div class="meta-item">
+                  <i data-lucide="calendar"></i> 1 Pertemuan (2 × 40 menit / 80 menit)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="building-2"></i> SMP Negeri 18 Malang
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="book-open"></i> Informatika Fase D (Kelas VII)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="layers"></i> Discovery Learning &amp; CTL
+                </div>
+              </div>
+              <p class="hero-desc">
+                Modul ajar Pertemuan 13 ini dirancang untuk mata pelajaran Informatika Kelas VII (Fase D) dengan alokasi waktu 1 pertemuan (2 × 40 menit / 80 menit) di SMP Negeri 18 Malang. Pembelajaran memadukan pendekatan Kontekstual (CTL) dan model Discovery Learning melalui studi kasus kontekstual kebutuhan Raka dalam memilih perangkat lunak, dipadukan metode partisipatif interaktif sticky notes pada sekat papan tulis untuk mengelompokkan ragam software sistem dan aplikasi secara kolaboratif.
+              </p>
+            </div>
+
+            <!-- Detail Grid -->
+            <div class="detail-grid fade-in">
+              <div class="glass detail-card">
+                <div class="detail-card-head">
+                  <div class="icon-circle"><i data-lucide="map-pin"></i></div>
+                  Konteks Pembelajaran
+                </div>
+                <p>
+                  Studi kasus kontekstual kebutuhan Raka yang baru memperoleh komputer untuk tugas sekolah (mengetik, browsing, desain poster Canva, komunikasi via WhatsApp). Murid menganalisis hierarki perangkat lunak, membedakan peran OS dan aplikasi, serta memetakan fungsi software pada sekat papan tulis kelas.
+                </p>
+              </div>
+              <div class="glass detail-card">
+                <div class="detail-card-head">
+                  <div class="icon-circle"><i data-lucide="target"></i></div>
+                  Tujuan Pembelajaran
+                </div>
+                <ol style="padding-left: 18px; margin: 0; font-size: 0.88rem; line-height: 1.65; color: var(--text-secondary);">
+                  <li style="margin-bottom: 6px;">Murid mampu menjelaskan pengertian software beserta contoh penggunaannya dalam kehidupan sehari-hari. (C1)</li>
+                  <li>Murid mampu membedakan software sistem dan software aplikasi beserta contoh dan fungsinya. (C2)</li>
+                </ol>
+              </div>
+              <div class="glass detail-card pro">
+                <div class="detail-card-head">
+                  <div class="icon-circle">
+                    <i data-lucide="check-circle-2"></i>
+                  </div>
+                  Kelebihan &amp; Dampak
+                </div>
+                <p>
+                  Aktivitas partisipatif sticky notes di papan bersekat menciptakan iklim belajar yang kinetik dan kolaboratif (learning community), memfasilitasi visualisasi klasifikasi software secara komprehensif, serta melatih kecakapan murid memilih alat digital yang efisien.
+                </p>
+              </div>
+              <div class="glass detail-card con">
+                <div class="detail-card-head">
+                  <div class="icon-circle">
+                    <i data-lucide="alert-triangle"></i>
+                  </div>
+                  Tantangan &amp; Evaluasi
+                </div>
+                <p>
+                  Tantangan berupa misklasifikasi antara utilitas bawaan OS dengan aplikasi pihak ketiga diatasi dengan pertanyaan penuntun (scaffolding). Evaluasi formatif dinilai dari keaktifan diskusi, ketepatan kategori sticky notes, dan presentasi kelompok.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bottom Layout -->
+            <div class="bottom-grid fade-in">
+              <div class="glass theory-card">
+                <h4><i data-lucide="scroll-text"></i> Kajian Teori Pedagogik</h4>
+                <p>
+                  Analisis perancangan modul ajar berbasis teori pembelajaran modern:
+                </p>
+                <div class="theory-list">
+                  <div class="theory-item">Contextual Teaching &amp; Learning (CTL - Constructivism &amp; Inquiry)</div>
+                  <div class="theory-item">Discovery Learning Model (Jerome Bruner)</div>
+                  <div class="theory-item">Collaborative Sticky-Note Mapping (Kinesthetic Learning)</div>
+                  <div class="theory-item">Operating System &amp; Application Software Hierarchy</div>
+                  <div class="theory-item">Capaian Pembelajaran Informatika Fase D (Sistem Komputer)</div>
+                </div>
+              </div>
+              <div class="files-container">
+                <!-- File Pembelajaran -->
+                <div class="glass file-group">
+                  <div class="file-group-head">
+                    <span><i data-lucide="folder-open" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> File Pembelajaran</span>
+                  </div>
+                  <div class="file-list">
+                    <a href="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 13 - Software Komputer.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                      <span class="file-row-info">
+                        <strong>Modul Ajar Pertemuan 13 - Software Komputer.pdf</strong>
+                        <span>PDF Dokumen Modul Ajar Informatika Fase D</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+                  </div>
+
+                  <!-- Tampilkan Dokumen Modul Ajar Secara Langsung -->
+                  <div style="margin-top: 14px; width: 100%; height: 500px; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: var(--glass-bg);">
+                    <iframe src="files/dokumen/ppl2/rpp/siklus 4/Modul Ajar Pertemuan 13 - Software Komputer.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- --- TAB ANALISIS VIDEO PRAKTIK PEMBELAJARAN --- -->
+                    <div class="tab-pane" id="video">
+          <div class="siklus-container">
+            <!-- Hero Card -->
+            <div class="glass siklus-hero fade-in">
+              <span class="sec-tag">Video Praktik Mengajar — PPL Mandiri Siklus 4</span>
+              <h2 class="siklus-title">
+                Analisis Video Pelaksanaan Pembelajaran Mandiri — Siklus 4
+              </h2>
+              <div class="meta-row">
+                <div class="meta-item">
+                  <i data-lucide="video"></i> Rekaman Pembelajaran (24 Menit)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="building-2"></i> SMP Negeri 18 Malang
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="book-open"></i> Informatika Fase D (Kelas VII)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="layers"></i> Discovery Learning (6 Sintaks)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="cpu"></i> Software Komputer (Perangkat Lunak)
+                </div>
+                <div class="meta-item">
+                  <i data-lucide="sticky-note"></i> Media: Sticky Notes &amp; Papan Sekat
+                </div>
+              </div>
+              <p class="hero-desc">
+                Dokumentasi dan analisis kritis terhadap rekaman video pelaksanaan pembelajaran mandiri Siklus 4 di SMP Negeri 18 Malang. Pembelajaran berfokus pada penguasaan konsep <em>Software</em> Komputer (Perangkat Lunak) melalui model <em>Discovery Learning</em> berbantuan media interaktif <em>sticky notes</em> dan papan tulis bersekat kelompok, memadukan stimulus studi kasus kontekstual (kasus Raka) dengan eksplorasi mandiri menggunakan gawai (<em>smartphone</em>) dan file materi PDF digital.
+              </p>
+            </div>
+
+            <!-- Video Player Showcase Card -->
+            <div class="glass video-showcase-card fade-in">
+              <!-- Embedded YouTube Video Player -->
+              <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--glass-border); background: #000; box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);">
+                <iframe 
+                  src="https://www.youtube-nocookie.com/embed/W_Dim2gjz1A?rel=0&amp;enablejsapi=1" 
+                  title="Video Praktik Mengajar Siklus 4: Discovery Learning Software Komputer &amp; Media Sticky Notes" 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+
+              <!-- Video Info & Direct YouTube Link -->
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding: 4px 2px 2px;">
+                <div style="max-width: 68%;">
+                  <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--text-primary); margin: 0 0 4px;">Video Praktik Mengajar Siklus 4: Discovery Learning Software Komputer &amp; Media Sticky Notes</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.5;">Rekaman pelaksanaan pembelajaran materi Software Komputer di SMP Negeri 18 Malang berbasis sintaks Discovery Learning, menampilkan studi kasus Raka, penugasan kelompok dengan sticky notes pada papan tulis bersekat, eksplorasi gawai, verifikasi presentasi kelompok, dan generalisasi konsep.</p>
+                </div>
+                <div class="video-action-btns" style="margin: 0;">
+                  <a href="https://youtu.be/W_Dim2gjz1A" target="_blank" class="video-action-btn primary">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="vertical-align: middle; margin-right: 4px;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Tonton di YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Detail Evaluasi 3 Tahap Pembelajaran Berdasarkan Rekaman Video -->
+            <div class="analysis-stage-grid fade-in">
+              <div class="glass stage-card">
+                <div class="stage-card-head">
+                  <h4><i data-lucide="compass"></i> <span>Tahap Pendahuluan</span></h4>
+                </div>
+                <ul class="stage-list">
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Pembukaan &amp; Pengondisian Kelas:</strong> Guru memulai pembelajaran dengan memberikan salam, menyapa peserta didik, mengajak berdoa bersama, melakukan absensi, serta mengecek kesiapan belajar.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Apersepsi Kontekstual (Studi Kasus Raka):</strong> Guru memberikan stimulus berupa studi kasus tentang kebingungan Raka yang baru mendapatkan laptop dan <em>smartphone</em> namun belum tahu <em>software</em> apa saja yang tepat untuk mengetik tugas, mencari materi, berkomunikasi, dan membuat poster.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Pertanyaan Pemantik:</strong> Guru mengajukan pertanyaan kritis mengenai fungsi penting <em>software</em> (misalnya: apa yang terjadi jika laptop hardware-nya lengkap tapi tanpa <em>software</em>?, apa perbedaan Windows/Android dengan WhatsApp/Microsoft Word?).</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Penyampaian Tujuan Pembelajaran:</strong> Guru menyampaikan tujuan agar peserta didik mampu menjelaskan pengertian <em>software</em>, membedakan jenis <em>software</em> (sistem dan aplikasi), serta mengidentifikasi contoh dan fungsinya.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass stage-card">
+                <div class="stage-card-head">
+                  <h4><i data-lucide="play-circle"></i> <span>Tahap Inti (Sintaks Discovery Learning &amp; Media Sticky Notes)</span></h4>
+                </div>
+                <ul class="stage-list">
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>1. Stimulation (Pemberian Stimulus):</strong> Guru mengarahkan peserta didik mengamati permasalahan Raka dan memberikan penjelasan awal mengenai konsep <em>software</em> sebagai kumpulan program atau instruksi yang bekerja bersama <em>hardware</em> dan <em>brainware</em>.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>2. Problem Statement (Identifikasi Masalah):</strong> Peserta didik mengidentifikasi masalah terkait klasifikasi <em>software</em> sistem dan aplikasi, lalu merumuskan dugaan sementara yang akan dibuktikan melalui penugasan kelompok.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>3. Data Collection (Pengumpulan Data):</strong>
+                      <ul class="stage-sublist">
+                        <li>Guru membagi peserta didik ke dalam kelompok beranggotakan 4–5 orang.</li>
+                        <li>Setiap kelompok menempati satu sekat khusus pada papan tulis yang telah diberi pembatas/nomor kelompok.</li>
+                        <li>Peserta didik mengunduh file PDF materi via WhatsApp Group kelas menggunakan <em>smartphone</em>.</li>
+                        <li>Guru membagikan <strong>sticky note</strong> dan spidol kepada tiap kelompok untuk menuliskan nama <em>software</em>, jenis (<em>software</em> sistem atau aplikasi), dan fungsinya sebanyak-banyaknya.</li>
+                      </ul>
+                    </span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>4. Data Processing (Pengolahan Data):</strong> Peserta didik berdiskusi dalam kelompok, mengumpulkan contoh <em>software</em> dari materi dan pengalaman sehari-hari, menuliskannya secara spesifik pada <em>sticky note</em>, lalu mengelompokkannya pada sekat papan tulis kelompok masing-masing.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>5. Verification (Pembuktian):</strong>
+                      <ul class="stage-sublist">
+                        <li>Perwakilan kelompok mempresentasikan hasil <em>sticky note</em> yang tertempel di sekat papan tulis, menjelaskan jumlah temuan, pengelompokan jenis <em>software</em>, serta solusi aplikasi untuk kasus Raka.</li>
+                        <li>Kelompok lain memberikan tanggapan, dan guru memberikan umpan balik serta penguatan konsep.</li>
+                      </ul>
+                    </span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>6. Generalization (Menarik Kesimpulan):</strong> Guru bersama peserta didik menyimpulkan hubungan antara <em>hardware</em>, <em>software</em>, dan <em>brainware</em>, serta pentingnya memilih aplikasi yang tepat dalam pemecahan masalah sehari-hari.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass stage-card">
+                <div class="stage-card-head">
+                  <h4><i data-lucide="check-circle"></i> <span>Tahap Penutup</span></h4>
+                </div>
+                <ul class="stage-list">
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Rangkuman &amp; Refleksi:</strong> Guru bersama murid merangkum materi tentang pengertian, jenis, dan perbedaan <em>software</em> sistem serta aplikasi.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Refleksi Pembelajaran:</strong> Mengajak peserta didik merefleksikan bagaimana pemahaman tentang <em>software</em> membantu memilih aplikasi yang tepat dalam kehidupan sehari-hari.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i>
+                    <span><strong>Tindak Lanjut &amp; Doa:</strong> Guru menyampaikan informasi untuk pertemuan berikutnya dan menutup pembelajaran dengan doa bersama.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Matriks Evaluasi & Refleksi Pembelajaran Berdasarkan Video -->
+            <div class="video-matrix-grid fade-in">
+              <div class="glass matrix-card strength">
+                <div class="matrix-card-head">
+                  <i data-lucide="thumbs-up"></i> Kelebihan &amp; Praktik Baik yang Teramati (Strengths)
+                </div>
+                <ul class="matrix-list">
+                  <li>
+                    <i data-lucide="check"></i>
+                    <span><strong>Penggunaan Media Interaktif (<em>Sticky Notes</em> &amp; Papan Sekat):</strong> Pemanfaatan <em>sticky notes</em> pada papan tulis bersekat memberikan pengalaman belajar kinestetik yang sangat efektif membuat peserta didik aktif, antusias, dan berkolaborasi secara nyata dalam kelompok.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check"></i>
+                    <span><strong>Asesmen Visual Seketika (<em>Formative Assessment at a Glance</em>):</strong> Sekat papan tulis per kelompok memudahkan guru dan siswa melihat serta memeriksa ketepatan klasifikasi <em>software</em> (sistem vs aplikasi) secara visual dan transparan.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="check"></i>
+                    <span><strong>Pembelajaran Kontekstual:</strong> Studi kasus Raka dan penggunaan contoh aplikasi harian (<em>WhatsApp, YouTube, Canva, Windows, Android</em>) membuat konsep teoretis menjadi sangat dekat dengan keseharian remaja.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass matrix-card growth">
+                <div class="matrix-card-head">
+                  <i data-lucide="trending-up"></i> Catatan Evaluasi Diri &amp; Rencana Tindak Lanjut (Growth Areas)
+                </div>
+                <ul class="matrix-list">
+                  <li>
+                    <i data-lucide="arrow-up-right"></i>
+                    <span><strong>Manajemen Pergerakan Kelas:</strong> Perlu pengaturan giliran perwakilan kelompok saat menulis dan menempelkan <em>sticky notes</em> ke papan tulis agar mobilitas siswa lebih teratur dan tidak terjadi penumpukan di depan kelas.</span>
+                  </li>
+                  <li>
+                    <i data-lucide="arrow-up-right"></i>
+                    <span><strong>Variasi Warna <em>Sticky Notes</em>:</strong> Pada pelaksanaan berikutnya, dapat diterapkan pembagian warna <em>sticky notes</em> yang berbeda (misalnya satu warna khusus untuk <em>software</em> sistem dan warna lain untuk <em>software</em> aplikasi) guna meningkatkan kontras visual dan kecepatan analisis data di papan tulis.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- --- TAB: DOKUMENTASI PRAKTIK SIKLUS 4 --- -->
+        <div class="tab-pane" id="dokumentasi">
+          <div class="siklus-container">
+            <!-- Hero Card -->
+            <div class="glass siklus-hero fade-in">
+              <span class="sec-tag">Dokumentasi · PPL Mandiri Siklus 4</span>
+              <h2 class="siklus-title">
+                Dokumentasi Praktik Pembelajaran Siklus 4
+              </h2>
+              <div class="meta-row">
+                <span class="meta-item"><i data-lucide="calendar"></i> Fase D / Kelas VII</span>
+                <span class="meta-item"><i data-lucide="map-pin"></i> SMP Negeri 18 Malang</span>
+                <span class="meta-item"><i data-lucide="camera"></i> 3 Foto Dokumentasi</span>
+              </div>
+              <p class="hero-desc">
+                Dokumentasi visual pelaksanaan pembelajaran mandiri Siklus 4 di SMP Negeri 18 Malang, mencakup tahap pendahuluan pembelajaran kontekstual, kegiatan inti diskusi kelompok dengan media interaktif papan bersekat SIAP TEMPEL, serta hasil karya pengelompokan software komputer oleh murid.
+              </p>
+            </div>
+
+            <!-- Dokumentasi Praktik Siklus 4 Slider -->
+            <div class="files-container fade-in">
+              <div class="glass file-group">
+                <div class="file-group-head">
+                  <span><i data-lucide="camera" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px;"></i> Galeri Dokumentasi Praktik Siklus 4</span>
+                </div>
+
+                <div class="doc-slider-wrap" data-slider="siklus-4">
+                  <!-- Slider Viewport -->
+                  <div class="doc-slider-viewport">
+                    <div class="doc-slider-track">
+                      <div class="doc-slider-slide" data-index="0" data-src="files/foto/PPL Mandiri/Siklus 4/Screenshot 2026-10-31 144837.png" data-title="Tahap Pendahuluan &amp; Apersepsi Pembelajaran" data-desc="Pendahuluan Pembelajaran · Pembukaan Kelas, Presensi, Motivasi &amp; Stimulus Studi Kasus Software Komputer" data-tag="DOKUMEN 1">
+                        <img src="files/foto/PPL Mandiri/Siklus 4/Screenshot 2026-10-31 144837.png" alt="Tahap Pendahuluan &amp; Apersepsi Pembelajaran" loading="lazy">
+                      </div>
+                      <div class="doc-slider-slide" data-index="1" data-src="files/foto/PPL Mandiri/Siklus 4/Diskusi Kelompok.jpg" data-title="Kegiatan Inti &amp; Diskusi Kelompok SIAP TEMPEL" data-desc="Kegiatan Inti · Peserta Didik Berkolaborasi Mengidentifikasi dan Mengelompokkan Jenis Perangkat Lunak pada Media Papan Bersekat" data-tag="DOKUMEN 2">
+                        <img src="files/foto/PPL Mandiri/Siklus 4/Diskusi Kelompok.jpg" alt="Kegiatan Inti &amp; Diskusi Kelompok SIAP TEMPEL" loading="lazy">
+                      </div>
+                      <div class="doc-slider-slide" data-index="2" data-src="files/foto/PPL Mandiri/Siklus 4/Hasil Pembelajaran Murid.jpg" data-title="Hasil Karya Pembelajaran Murid pada Media Papan Sekat" data-desc="Penyajian Hasil · Dokumentasi Karya Kelompok Berupa Pengelompokan Kategori Software (Sistem Operasi, Aplikasi, Utilitas)" data-tag="DOKUMEN 3">
+                        <img src="files/foto/PPL Mandiri/Siklus 4/Hasil Pembelajaran Murid.jpg" alt="Hasil Karya Pembelajaran Murid pada Media Papan Sekat" loading="lazy">
+                      </div>
+                    </div>
+
+                    <!-- Counter Badge -->
+                    <div class="doc-slider-counter"><span class="cur-num">1</span> / <span class="total-num">3</span></div>
+
+                    <!-- Nav Arrows -->
+                    <button class="doc-slider-btn prev" type="button" aria-label="Foto Sebelumnya">
+                      <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="doc-slider-btn next" type="button" aria-label="Foto Berikutnya">
+                      <i data-lucide="chevron-right"></i>
+                    </button>
+
+                    <!-- Caption Overlay -->
+                    <div class="doc-slider-caption">
+                      <div class="doc-slider-caption-text">
+                        <span class="cap-tag">DOKUMEN 1</span>
+                        <strong class="cap-title">Tahap Pendahuluan &amp; Apersepsi Pembelajaran</strong>
+                        <span class="cap-desc">Pendahuluan Pembelajaran · Pembukaan Kelas, Presensi, Motivasi &amp; Stimulus Studi Kasus Software Komputer</span>
+                      </div>
+                      <button type="button" class="cap-btn" title="Perbesar Foto (Lightbox)">
+                        <i data-lucide="maximize-2"></i>
+                      </button>
+                    </div>
+
+                    <!-- Dots Indicator -->
+                    <div class="doc-slider-dots">
+                      <button class="doc-dot active" type="button" aria-label="Slide 1"></button>
+                      <button class="doc-dot" type="button" aria-label="Slide 2"></button>
+                      <button class="doc-dot" type="button" aria-label="Slide 3"></button>
+                    </div>
+                  </div>
+
+                  <!-- Clickable Items List -->
+                  <div class="doc-slider-items file-list" style="margin-top: 16px;">
+                    <a href="files/foto/PPL Mandiri/Siklus 4/Screenshot 2026-10-31 144837.png" class="file-row active" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="image"></i></span>
+                      <span class="file-row-info">
+                        <strong>1. Tahap Pendahuluan &amp; Apersepsi Pembelajaran</strong>
+                        <span>Pembukaan Kelas, Presensi Kehadiran, Apersepsi &amp; Stimulus Studi Kasus Software</span>
+                      </span>
+                      <span class="file-row-tag">DOKUMEN 1</span>
+                    </a>
+                    <a href="files/foto/PPL Mandiri/Siklus 4/Diskusi Kelompok.jpg" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="image"></i></span>
+                      <span class="file-row-info">
+                        <strong>2. Kegiatan Inti &amp; Diskusi Kelompok SIAP TEMPEL</strong>
+                        <span>Kolaborasi Antar Siswa Menyelesaikan Tantangan Pengelompokan Software dengan Papan Bersekat</span>
+                      </span>
+                      <span class="file-row-tag">DOKUMEN 2</span>
+                    </a>
+                    <a href="files/foto/PPL Mandiri/Siklus 4/Hasil Pembelajaran Murid.jpg" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="image"></i></span>
+                      <span class="file-row-info">
+                        <strong>3. Hasil Karya Pembelajaran Murid pada Media Papan Sekat</strong>
+                        <span>Dokumentasi Produk Pembelajaran Kelompok Menggunakan Sticky Notes dan Papan Bersekat SIAP TEMPEL</span>
+                      </span>
+                      <span class="file-row-tag">DOKUMEN 3</span>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      · 2026 <strong>Muhammad Fajrul Fahmi</strong> · E-Portfolio PPL PPG ·
+      <a href="index.html">Beranda</a>
+    </p>
+  </footer>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function pageInit() {
+      initTabs(".tab-btn", ".tab-pane");
+      initDocSliders();
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+          }, 60);
+        });
+      });
+    }
+
+    // ── Documentation Image Slider Controller ──
+    function initDocSliders() {
+      document.querySelectorAll('.doc-slider-wrap').forEach(wrap => {
+        const track = wrap.querySelector('.doc-slider-track');
+        const slides = wrap.querySelectorAll('.doc-slider-slide');
+        const prevBtn = wrap.querySelector('.doc-slider-btn.prev');
+        const nextBtn = wrap.querySelector('.doc-slider-btn.next');
+        const dots = wrap.querySelectorAll('.doc-dot');
+        const curNum = wrap.querySelector('.cur-num');
+        const capTag = wrap.querySelector('.cap-tag');
+        const capTitle = wrap.querySelector('.cap-title');
+        const capDesc = wrap.querySelector('.cap-desc');
+        const capBtn = wrap.querySelector('.cap-btn');
+        const rows = wrap.querySelectorAll('.doc-slider-items .file-row');
+        const viewport = wrap.querySelector('.doc-slider-viewport');
+
+        if (!track || slides.length === 0) return;
+
+        let current = 0;
+        const total = slides.length;
+
+        function updateSlide(idx) {
+          current = (idx + total) % total;
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          if (curNum) curNum.textContent = current + 1;
+
+          // Dots
+          dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+
+          // Active row
+          rows.forEach((row, i) => row.classList.toggle('active', i === current));
+
+          // Caption update
+          const curSlide = slides[current];
+          if (curSlide) {
+            if (capTag) capTag.textContent = curSlide.dataset.tag || `FOTO ${current + 1}`;
+            if (capTitle) capTitle.textContent = curSlide.dataset.title || '';
+            if (capDesc) capDesc.textContent = curSlide.dataset.desc || '';
+          }
+        }
+
+        // Open Lightbox Helper
+        function triggerLightbox(index) {
+          const slide = slides[index];
+          if (!slide) return;
+          const src = slide.dataset.src;
+          const title = slide.dataset.title;
+          if (typeof openLightbox === 'function') {
+            openLightbox(src, title);
+          } else {
+            window.open(src, '_blank');
+          }
+        }
+
+        // Prev & Next
+        if (prevBtn) {
+          prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(current - 1);
+            resetAuto();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(current + 1);
+            resetAuto();
+          });
+        }
+
+        // Dots click
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            updateSlide(i);
+            resetAuto();
+          });
+        });
+
+        // Rows click
+        rows.forEach((row, i) => {
+          row.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSlide(i);
+            resetAuto();
+          });
+        });
+
+        // Slide click & Zoom button -> Lightbox
+        slides.forEach((slide, i) => {
+          slide.addEventListener('click', () => {
+            triggerLightbox(i);
+          });
+        });
+
+        if (capBtn) {
+          capBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            triggerLightbox(current);
+          });
+        }
+
+        // Touch Swipe
+        let startX = 0;
+        viewport.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+          const dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 35) {
+            updateSlide(current + (dx < 0 ? 1 : -1));
+            resetAuto();
+          }
+        }, { passive: true });
+
+        // Auto-Play every 5s with pause on hover
+        let timer = null;
+        function startAuto() {
+          if (timer) clearInterval(timer);
+          timer = setInterval(() => {
+            updateSlide(current + 1);
+          }, 5000);
+        }
+
+        function stopAuto() {
+          if (timer) {
+            clearInterval(timer);
+            timer = null;
+          }
+        }
+
+        function resetAuto() {
+          stopAuto();
+          startAuto();
+        }
+
+        viewport.addEventListener('mouseenter', stopAuto);
+        viewport.addEventListener('mouseleave', startAuto);
+
+        startAuto();
+        updateSlide(0);
+      });
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+  </script>
+</body>
+
+</html>

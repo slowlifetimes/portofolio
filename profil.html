@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
   <title>Profil | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animate.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     .leaflet-popup-content-wrapper {
       background: #fff;
@@ -42,16 +42,35 @@
 
   <nav id="navbar">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
-      <ul class="nav-links" id="navList">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="artefak.html">Artefak</a></li>
-        <li><a href="penilaian.html">Penilaian</a></li>
-        <li><a href="model-guru.html">Model Guru</a></li>
-        <li><a href="refleksi.html">Refleksi</a></li>
-        <li><a href="berkas.html">Berkas</a></li>
-      </ul>
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+                                              <ul class="nav-links" id="navList">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html" class="active">Profil</a></li>
+          <li><a href="model-guru.html">Model Guru</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+              <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+              <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+              <a href="artefak.html">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+              <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+              <a href="computational-thinking.html">Computational Thinking</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+              <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+              <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+              <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+              <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+              <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+            </div>
+          </li>
+          <li><a href="berkas.html">Berkas</a></li>
+        </ul>
       <div class="nav-right">
         <button class="theme-btn" id="themeBtn" title="Ganti Tema">
           <i data-lucide="moon"></i>
@@ -71,7 +90,7 @@
           <h1 class="sec-title grad-text">Profil Mahasiswa</h1>
           <p class="sec-desc">
             Mengenal lebih dekat latar belakang, inspirasi, dan tujuan
-            profesional selama pelaksanaan PPL Terbimbing.
+            profesional.
           </p>
           <div class="divider"></div>
         </div>
@@ -105,20 +124,6 @@
             <div class="p-name">Muhammad Fajrul Fahmi</div>
             <span class="badge">PPG Informatika</span><br />
             <span class="badge">Universitas Negeri Malang</span>
-            <div class="p-stats">
-              <div class="stat-card">
-                <div class="stat-n" data-count="3">3</div>
-                <div class="stat-l">Siklus PPL</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-n">VII</div>
-                <div class="stat-l">Kelas</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-n" data-count="2026">2026</div>
-                <div class="stat-l">Tahun</div>
-              </div>
-            </div>
             <div style="
                   margin-top: 18px;
                   padding-top: 18px;
@@ -291,11 +296,7 @@
               <span class="grad-text">Tujuan Profesional</span>
             </h3>
             <p data-words>
-              Melalui PPL ini, saya tidak sekadar belajar mengajar
-              — saya belajar menjadi guru. Saya berlatih merancang
-              pembelajaran Informatika yang interaktif, menyenangkan, serta ramah anak, serta terus berefleksi
-              demi perbaikan berkelanjutan. Tujuan akhir saya adalah menjadi guru informatika
-              profesional yang menginspirasi siswa menemukan keindahan logika teknologi dan berpikir komputasional.
+              Melalui Program PPG, saya tidak sekadar belajar mengajar saya belajar menjadi guru. Saya berlatih merancang pembelajaran Informatika yang interaktif, menyenangkan, serta ramah anak, dan terus berefleksi demi perbaikan berkelanjutan. Tujuan akhir saya adalah menjadi guru Informatika profesional yang mampu menginspirasi siswa untuk menemukan keindahan logika teknologi dan mengembangkan kemampuan berpikir komputasional.
             </p>
 
             <div class="quote-block">
@@ -320,7 +321,15 @@
                   Lokasi Kampus (Universitas Negeri Malang)
                 </h3>
               </div>
-              <div id="map-univ" class="split-map"></div>
+              <div class="split-map">
+                <iframe
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=112.6085939%2C-7.9704093%2C112.6285939%2C-7.9504093&layer=mapnik&marker=-7.9604093%2C112.6185939"
+                  style="width:100%;height:100%;border:0;border-radius:8px;"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               <div class="map-card-footer">
                 <p>
                   Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang
@@ -336,7 +345,15 @@
                   PPL (SMPN 18 Malang)
                 </h3>
               </div>
-              <div id="map-ppl" class="split-map"></div>
+              <div class="split-map">
+                <iframe
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=112.6095131%2C-7.9492772%2C112.6295131%2C-7.9292772&layer=mapnik&marker=-7.9392772%2C112.6195131"
+                  style="width:100%;height:100%;border:0;border-radius:8px;"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               <div class="map-card-footer">
                 <p>
                   Jl. Soekarno - Hatta No.A-394, Jatimulyo, Kec. Lowokwaru,
@@ -358,61 +375,9 @@
   </footer>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    function pageInit() {
-      // Initialize University Map
-      const mapUniv = L.map("map-univ").setView(
-        [-7.9604093, 112.6185939],
-        15,
-      );
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
-      }).addTo(mapUniv);
 
-      // Initialize PPL Map
-      const mapPPL = L.map("map-ppl").setView([-7.9392772, 112.6195131], 15);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution:
-          '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
-      }).addTo(mapPPL);
-
-      const mkUniv =
-        "<div style=\"background:#6366f1;color:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(99,102,241,0.5);border:2px solid #fff\"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg></div>";
-      const mkPPL =
-        "<div style=\"background:#ec4899;color:#fff;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(236,72,153,0.5);border:2px solid #fff\"><svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z'/><path d='M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2'/><path d='M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2'/><path d='M10 6h4'/><path d='M10 10h4'/><path d='M10 14h4'/><path d='M10 18h4'/></svg></div>";
-
-      const iU = L.divIcon({
-        className: "",
-        html: mkUniv,
-        iconSize: [38, 38],
-        iconAnchor: [19, 19],
-      });
-      const iP = L.divIcon({
-        className: "",
-        html: mkPPL,
-        iconSize: [38, 38],
-        iconAnchor: [19, 19],
-      });
-
-      L.marker([-7.9604093, 112.6185939], { icon: iU })
-        .addTo(mapUniv)
-        .bindPopup(
-          "<strong>Universitas Negeri Malang</strong><br>Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang",
-        )
-        .openPopup();
-
-      L.marker([-7.9392772, 112.6195131], { icon: iP })
-        .addTo(mapPPL)
-        .bindPopup(
-          "<strong>SMPN 18 Malang</strong><br>Lokasi PPL PPG 2026<br>Jl. Soekarno - Hatta No.A-394, Jatimulyo, Kec. Lowokwaru, Kota Malang",
-        )
-        .openPopup();
-    }
-  </script>
 </body>
 
 </html>

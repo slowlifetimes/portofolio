@@ -1,257 +1,296 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Artefak | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <title>Praktik Pengalaman Lapangan (PPL) Terbimbing | E-Portfolio PPL Muhammad Fajrul Fahmi</title>
+  <meta
+    name="description"
+    content="E-Portfolio PPL PPG - Muhammad Fajrul Fahmi, Praktik Pengalaman Lapangan (PPL) Terbimbing (Semester 1)"
+  />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animate.css" />
   <style>
-    /* ── Artefak Premium Layout ── */
-    .siklus-container {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+    /* â”€â”€ Siklus Navigation Cards â”€â”€ */
+    .siklus-nav-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+    .siklus-nav-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #6366f1, #818cf8); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; }
+    .siklus-nav-icon svg { width: 20px; height: 20px; }
+    .siklus-nav-meta h2 { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0 0 2px; }
+    .siklus-nav-meta p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+    .siklus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+    .siklus-card { padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: inherit; transition: var(--transition); position: relative; overflow: hidden; border: 1px solid var(--glass-border); background: var(--glass-bg); }
+    .siklus-card:hover { background: var(--glass-hover); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.3); }
+    .siklus-card-number { font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, var(--primary-light), #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+    .siklus-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+    .siklus-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0; flex: 1; }
+    .siklus-card-status { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 50px; width: fit-content; }
+    .siklus-card-status svg { width: 12px; height: 12px; }
+    .siklus-card-status.ready { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); color: #22c55e; }
+    .siklus-card-arrow { position: absolute; top: 20px; right: 20px; width: 28px; height: 28px; border-radius: 50%; background: var(--badge-bg); border: 1px solid var(--badge-border); display: flex; align-items: center; justify-content: center; color: var(--text-muted); transition: var(--transition); }
+    .siklus-card-arrow svg { width: 14px; height: 14px; }
+    .siklus-card:hover .siklus-card-arrow { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.3); color: var(--primary-light); transform: translateX(2px); }
 
-    /* Cycle Hero Card */
-    .siklus-hero {
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--glass-border);
-      background: linear-gradient(135deg,
-          var(--glass-bg),
-          rgba(99, 102, 241, 0.05));
-    }
+    /* â”€â”€ CT Page Layout â”€â”€ */
+    .ct-layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; align-items: start; }
 
-    .siklus-hero::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle, var(--primary-light), transparent);
-      filter: blur(40px);
-      opacity: 0.15;
-    }
+    /* â”€â”€ Sidebar TOC â”€â”€ */
+    .ct-toc { position: sticky; top: 100px; background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: var(--radius); padding: 24px 20px; box-shadow: var(--shadow); }
+    .ct-toc-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .ct-toc-title svg { width: 14px; height: 14px; }
+    .ct-toc-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px; }
+    .ct-toc-list li a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: var(--transition); border-left: 2px solid transparent; }
+    .ct-toc-list li a:hover, .ct-toc-list li a.active { background: rgba(99,102,241,0.08); color: var(--primary-light); border-left-color: var(--primary-light); }
+    .ct-toc-list li a svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.6; }
+    .ct-toc-list li a:hover svg, .ct-toc-list li a.active svg { opacity: 1; }
+    .ct-toc-divider { width: 100%; height: 1px; background: var(--glass-border); margin: 8px 0; }
 
-    .siklus-hero .sec-tag {
-      margin-bottom: 12px;
-    }
+    /* â”€â”€ Main Content â”€â”€ */
+    .ct-main { min-width: 0; }
 
-    .siklus-hero h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
+    /* â”€â”€ Section Cards â”€â”€ */
+    .ct-section { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 28px; transition: var(--transition); }
+    .ct-section:hover { border-color: rgba(99,102,241,0.2); box-shadow: 0 4px 24px rgba(99,102,241,0.06); }
+    .ct-section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .ct-section-header .ct-icon-wrap { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ct-section-header .ct-icon-wrap svg { width: 20px; height: 20px; color: #fff; }
+    .ct-section-header h2 { font-size: 1.3rem; font-weight: 700; font-family: "Playfair Display", serif; color: var(--text-primary); margin: 0; letter-spacing: -0.01em; }
+    .ct-section-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 100px; margin-bottom: 6px; }
+    .ct-section-divider { width: 50px; height: 2.5px; border-radius: 2px; margin-bottom: 24px; margin-top: 4px; }
+    .ct-section-body { color: var(--text-secondary); line-height: 1.9; font-size: 0.92rem; }
+    .ct-section-body p { margin-bottom: 18px; text-align: justify; }
+    .ct-section-body p:last-child { margin-bottom: 0; }
 
-    .siklus-hero .meta-row {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .siklus-hero .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    .siklus-hero .meta-item svg {
+    /* Drop cap */
+    .ct-section-body p.drop-cap::first-letter,
+    .drop-cap::first-letter {
+      font-family: "Playfair Display", serif;
+      font-size: 2.8em;
+      float: left;
+      line-height: 0.85;
+      margin-right: 8px;
+      margin-top: 4px;
       color: var(--primary-light);
-      opacity: 0.8;
-    }
-
-    .siklus-hero .hero-desc {
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 800px;
-    }
-
-    /* 4-Column Detail Grid */
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .detail-card {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: var(--transition);
-    }
-
-    .detail-card:hover {
-      background: var(--glass-hover);
-      transform: translateY(-3px);
-    }
-
-    .detail-card-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.75rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
     }
 
-    .detail-card-head .icon-circle {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--badge-bg);
-      border: 1px solid var(--badge-border);
-    }
+    /* Lists */
+    .ct-section-body ol, .ct-section-body ul { padding-left: 20px; margin: 12px 0 18px; }
+    .ct-section-body ol li, .ct-section-body ul li { margin-bottom: 8px; line-height: 1.8; font-size: 0.9rem; }
+    .ct-section-body ol li strong, .ct-section-body ul li strong { color: var(--text-primary); }
 
-    .detail-card-head svg {
-      width: 16px;
-      height: 16px;
-      color: var(--primary-light);
-    }
+    /* Highlight blockquote */
+    .ct-highlight { border-left: 3px solid var(--primary); padding: 16px 20px; margin: 20px 0; background: rgba(99,102,241,0.04); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .ct-highlight p { margin-bottom: 0 !important; font-style: italic; color: var(--text-primary) !important; font-size: 0.93rem !important; }
+    .refleksi-highlight { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(129,140,248,0.04)); border-left: 3px solid var(--primary-light); border-radius: 0 12px 12px 0; padding: 18px 24px; margin: 20px 0; }
+    .refleksi-highlight p { margin: 0; font-style: italic; color: var(--text-primary); }
 
-    .detail-card p {
-      font-size: 0.88rem;
-      line-height: 1.65;
-      color: var(--text-secondary);
-      margin: 0;
-    }
+    /* Challenge boxes */
+    .ct-challenge-box { display: flex; gap: 14px; padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid; margin-bottom: 12px; transition: var(--transition); }
+    .ct-challenge-box:hover { transform: translateX(3px); }
+    .ct-challenge-box.cb-1 { background: rgba(245,158,11,0.04); border-color: rgba(245,158,11,0.18); }
+    .ct-challenge-box.cb-2 { background: rgba(6,182,212,0.04); border-color: rgba(6,182,212,0.18); }
+    .ct-challenge-box.cb-3 { background: rgba(239,68,68,0.04); border-color: rgba(239,68,68,0.18); }
+    .ct-challenge-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .cb-1 .ct-challenge-icon { background: rgba(245,158,11,0.12); color: #d97706; }
+    .cb-2 .ct-challenge-icon { background: rgba(6,182,212,0.12); color: #0891b2; }
+    .cb-3 .ct-challenge-icon { background: rgba(239,68,68,0.12); color: #dc2626; }
+    .ct-challenge-icon svg { width: 16px; height: 16px; }
+    .ct-challenge-body { flex: 1; min-width: 0; }
+    .ct-challenge-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; }
+    .cb-1 .ct-challenge-label { color: #d97706; }
+    .cb-2 .ct-challenge-label { color: #0891b2; }
+    .cb-3 .ct-challenge-label { color: #dc2626; }
+    .ct-challenge-text { font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); margin: 0; text-align: justify; }
 
-    /* Status Accents */
-    .detail-card.pro .icon-circle {
-      background: rgba(34, 197, 94, 0.1);
-      border-color: rgba(34, 197, 94, 0.2);
-    }
+    /* Foundation Grid */
+    .ct-foundation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0 20px; }
+    .ct-foundation-card { padding: 18px 18px 16px; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); background: var(--glass-bg); transition: var(--transition); position: relative; overflow: hidden; }
+    .ct-foundation-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px; border-radius: 3px 3px 0 0; }
+    .ct-foundation-card:nth-child(1)::before { background: linear-gradient(90deg,#6366f1,#818cf8); }
+    .ct-foundation-card:nth-child(2)::before { background: linear-gradient(90deg,#8b5cf6,#a78bfa); }
+    .ct-foundation-card:nth-child(3)::before { background: linear-gradient(90deg,#06b6d4,#22d3ee); }
+    .ct-foundation-card:nth-child(4)::before { background: linear-gradient(90deg,#10b981,#34d399); }
+    .ct-foundation-card:hover { border-color: rgba(99,102,241,0.25); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99,102,241,0.08); }
+    .ct-foundation-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .ct-foundation-card:nth-child(1) .ct-foundation-icon { background: rgba(99,102,241,0.12); color: #6366f1; }
+    .ct-foundation-card:nth-child(2) .ct-foundation-icon { background: rgba(139,92,246,0.12); color: #8b5cf6; }
+    .ct-foundation-card:nth-child(3) .ct-foundation-icon { background: rgba(6,182,212,0.12); color: #06b6d4; }
+    .ct-foundation-card:nth-child(4) .ct-foundation-icon { background: rgba(16,185,129,0.12); color: #10b981; }
+    .ct-foundation-icon svg { width: 17px; height: 17px; }
+    .ct-foundation-name { font-size: 0.88rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+    .ct-foundation-desc { font-size: 0.81rem; line-height: 1.7; color: var(--text-secondary); margin: 0; }
 
-    .detail-card.pro svg {
-      color: #22c55e;
-    }
+    /* Change Cards */
+    .ct-change-cards { display: flex; flex-direction: column; gap: 12px; margin: 16px 0 20px; }
+    .ct-change-card { display: flex; gap: 14px; padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); background: var(--glass-bg); transition: var(--transition); }
+    .ct-change-card:hover { border-color: rgba(236,72,153,0.25); transform: translateX(3px); }
+    .ct-change-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ct-change-card:nth-child(1) .ct-change-icon { background: rgba(236,72,153,0.1); color: #ec4899; }
+    .ct-change-card:nth-child(2) .ct-change-icon { background: rgba(139,92,246,0.1); color: #8b5cf6; }
+    .ct-change-card:nth-child(3) .ct-change-icon { background: rgba(16,185,129,0.1); color: #10b981; }
+    .ct-change-icon svg { width: 17px; height: 17px; }
+    .ct-change-body { flex: 1; min-width: 0; }
+    .ct-change-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 5px; }
+    .ct-change-card:nth-child(1) .ct-change-label { color: #ec4899; }
+    .ct-change-card:nth-child(2) .ct-change-label { color: #8b5cf6; }
+    .ct-change-card:nth-child(3) .ct-change-label { color: #10b981; }
+    .ct-change-text { font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); margin: 0; text-align: justify; }
 
-    .detail-card.con .icon-circle {
-      background: rgba(245, 158, 11, 0.1);
-      border-color: rgba(245, 158, 11, 0.2);
-    }
+    /* Method Pills */
+    .ct-methods { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+    .ct-method-pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; border-radius: 100px; font-size: 0.76rem; font-weight: 600; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.18); color: var(--primary-light); transition: var(--transition); }
+    .ct-method-pill:hover { background: rgba(99,102,241,0.15); transform: translateY(-1px); }
+    .ct-method-pill svg { width: 12px; height: 12px; }
 
-    .detail-card.con svg {
-      color: #f59e0b;
-    }
+    /* Info banner */
+    .ct-info-banner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0 4px; }
+    .ct-info-item { display: flex; align-items: flex-start; gap: 10px; padding: 14px; border-radius: var(--radius-sm); background: rgba(99,102,241,0.04); border: 1px solid rgba(99,102,241,0.1); }
+    .ct-info-icon { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ct-info-icon svg { width: 15px; height: 15px; color: #fff; }
+    .ct-info-item:nth-child(1) .ct-info-icon { background: linear-gradient(135deg,#6366f1,#818cf8); }
+    .ct-info-item:nth-child(2) .ct-info-icon { background: linear-gradient(135deg,#10b981,#34d399); }
+    .ct-info-item:nth-child(3) .ct-info-icon { background: linear-gradient(135deg,#f59e0b,#fbbf24); }
+    .ct-info-text { flex: 1; font-size: 0.8rem; line-height: 1.55; color: var(--text-secondary); }
+    .ct-info-text strong { display: block; color: var(--text-primary); font-size: 0.82rem; margin-bottom: 2px; }
 
-    /* Theory & Files Section */
-    .bottom-grid {
-      display: grid;
-      grid-template-columns: 350px 1fr;
-      gap: 24px;
-    }
+    /* Progress steps */
+    .ct-progress { position: relative; padding-left: 28px; margin: 20px 0; }
+    .ct-progress::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(180deg,#06b6d4,#6366f1,#8b5cf6); border-radius: 2px; }
+    .ct-progress-step { position: relative; padding: 4px 0 16px; }
+    .ct-progress-step:last-child { padding-bottom: 0; }
+    .ct-progress-step::before { content: ""; position: absolute; left: -23px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); border: 2px solid rgba(99,102,241,0.25); box-shadow: 0 0 0 3px rgba(99,102,241,0.06); }
+    .ct-progress-step p { margin: 0 !important; font-size: 0.87rem !important; line-height: 1.8 !important; color: var(--text-secondary) !important; text-align: justify !important; }
 
-    .theory-card {
-      padding: 32px;
-    }
+    /* Tab System */
+    .ct-tabs { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; justify-content: center; }
+    .ct-tab-btn { padding: 11px 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; gap: 9px; transition: var(--transition); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-family: inherit; }
+    .ct-tab-btn:hover { background: rgba(99,102,241,0.06); color: var(--primary-light); border-color: rgba(99,102,241,0.2); }
+    .ct-tab-btn.active { background: rgba(99,102,241,0.1); color: var(--primary-light); border-color: var(--primary-light); box-shadow: 0 4px 14px rgba(99,102,241,0.1); }
+    .ct-tab-btn svg { width: 16px; height: 16px; }
+    .ct-tab-pane { display: none; animation: ctFadeIn 0.4s ease forwards; }
+    .ct-tab-pane.active { display: block; }
+    @keyframes ctFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    .theory-card h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--primary-light);
-    }
+    /* Artefak Document Viewer */
+    .ct-artefak-doc { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--glass-border); }
+    .ct-doc-toggle { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); border-radius: var(--radius-sm); color: var(--primary-light); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: var(--transition); font-family: inherit; }
+    .ct-doc-toggle:hover { background: rgba(99,102,241,0.2); }
+    .ct-doc-toggle svg { width: 16px; height: 16px; }
+    .ct-doc-viewer { margin-top: 12px; width: 100%; height: 0; overflow: hidden; transition: height 0.3s ease; border-radius: var(--radius-sm); background: var(--glass-bg); }
+    .ct-doc-viewer.active { height: 500px; border: 1px solid var(--glass-border); }
+    .ct-doc-viewer iframe { width: 100%; height: 100%; border: none; }
 
-    .theory-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
+    /* Artefak Cards */
+    .ct-artefak-card { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 20px; transition: var(--transition); position: relative; overflow: hidden; }
+    .ct-artefak-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--primary), var(--secondary)); border-radius: 4px 0 0 4px; }
+    .ct-artefak-card:hover { border-color: rgba(99,102,241,0.25); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.08); }
+    .ct-artefak-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; flex-shrink: 0; }
+    .ct-artefak-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 16px; line-height: 1.5; }
+    .ct-artefak-label { font-size: 0.78rem; font-weight: 600; color: var(--primary-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .ct-artefak-label svg { width: 14px; height: 14px; }
+    .ct-artefak-text { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.85; margin-bottom: 16px; text-align: justify; }
+    .ct-artefak-text:last-child { margin-bottom: 0; }
 
-    .theory-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    /* Accordion */
+    .ct-accordion { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .ct-accordion-item { border: 1px solid var(--glass-border); border-radius: var(--radius-sm); overflow: hidden; transition: var(--transition); }
+    .ct-accordion-item.open { border-color: rgba(99,102,241,0.2); box-shadow: 0 4px 16px rgba(99,102,241,0.06); }
+    .ct-accordion-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: rgba(99,102,241,0.03); cursor: pointer; transition: var(--transition); border: none; width: 100%; text-align: left; font-family: inherit; color: inherit; }
+    .ct-accordion-header:hover { background: rgba(99,102,241,0.07); }
+    .ct-accordion-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; font-size: 0.75rem; font-weight: 800; }
+    .ct-accordion-icon svg { width: 16px; height: 16px; }
+    .ct-accordion-title { flex: 1; font-size: 0.88rem; font-weight: 700; color: var(--text-primary); }
+    .ct-accordion-badge { font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; background: rgba(99,102,241,0.08); color: var(--primary-light); }
+    .ct-accordion-chevron { width: 18px; height: 18px; color: var(--text-muted); transition: transform 0.3s ease; flex-shrink: 0; }
+    .ct-accordion-item.open .ct-accordion-chevron { transform: rotate(180deg); }
+    .ct-accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .ct-accordion-item.open .ct-accordion-body { max-height: 600px; }
+    .ct-accordion-inner { padding: 12px 18px 16px; border-top: 1px solid var(--glass-border); }
 
-    .theory-item {
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: var(--badge-bg);
-      border: 1px solid var(--badge-border);
-      font-size: 0.82rem;
-      color: var(--text-primary);
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    /* File List */
+    .ct-file-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+    .ct-file-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: var(--radius-sm); transition: var(--transition); text-decoration: none; color: var(--text-secondary); font-size: 0.84rem; border: 1px solid transparent; }
+    .ct-file-item:hover { background: rgba(99,102,241,0.05); border-color: rgba(99,102,241,0.12); color: var(--primary-light); }
+    .ct-file-icon { width: 28px; height: 28px; border-radius: 6px; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ct-file-icon svg { width: 14px; height: 14px; color: #dc2626; }
+    .ct-file-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ct-file-dl { width: 22px; height: 22px; color: var(--text-muted); opacity: 0; transition: var(--transition); flex-shrink: 0; }
+    .ct-file-item:hover .ct-file-dl { opacity: 1; color: var(--primary-light); }
 
-    .theory-item::before {
-      content: "◈";
-      color: var(--primary-light);
-      font-size: 0.7rem;
-    }
+    /* File Row (style lama untuk tab arsip) */
+    .file-list { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
+    .file-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: var(--radius-sm); background: var(--glass-bg); border: 1px solid var(--glass-border); text-decoration: none; color: inherit; transition: var(--transition); }
+    .file-row:hover { background: var(--glass-hover); border-color: rgba(99,102,241,0.3); transform: translateX(4px); }
+    .file-row-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(99,102,241,0.1); color: var(--primary-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .file-row-icon svg { width: 18px; height: 18px; }
+    .file-row-info { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+    .file-row-info strong { font-size: 0.9rem; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .file-row-info span { font-size: 0.78rem; color: var(--text-muted); }
+    .file-row-tag { font-size: 0.72rem; font-weight: 700; padding: 5px 12px; border-radius: 8px; background: var(--badge-bg); border: 1px solid var(--badge-border); color: var(--primary-light); letter-spacing: 0.05em; flex-shrink: 0; transition: var(--transition); }
+    .file-row:hover .file-row-tag { background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.35); }
 
-    .files-container {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    /* Penilaian Cards */
+    .penilaian-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+    .penilaian-box { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .penilaian-box-head { display: flex; align-items: center; gap: 10px; }
+    .penilaian-box-head h3 { font-size: 0.92rem; font-weight: 700; color: var(--text-primary); margin: 0; }
 
-    .file-group {
-      padding: 24px;
-    }
+    /* Color Accents */
+    .accent-refleksi .ct-icon-wrap { background: linear-gradient(135deg,#6366f1,#8b5cf6); }
+    .accent-refleksi .ct-section-divider { background: linear-gradient(90deg,#6366f1,#8b5cf6); }
+    .accent-refleksi .ct-section-tag { background: rgba(99,102,241,0.1); color: #6366f1; border: 1px solid rgba(99,102,241,0.2); }
+    .accent-connection .ct-icon-wrap { background: linear-gradient(135deg,#6366f1,#818cf8); }
+    .accent-connection .ct-section-divider { background: linear-gradient(90deg,#6366f1,#818cf8); }
+    .accent-connection .ct-section-tag { background: rgba(99,102,241,0.1); color: #6366f1; border: 1px solid rgba(99,102,241,0.2); }
+    .accent-challenge .ct-icon-wrap { background: linear-gradient(135deg,#f59e0b,#fbbf24); }
+    .accent-challenge .ct-section-divider { background: linear-gradient(90deg,#f59e0b,#fbbf24); }
+    .accent-challenge .ct-section-tag { background: rgba(245,158,11,0.1); color: #d97706; border: 1px solid rgba(245,158,11,0.2); }
+    .accent-concept .ct-icon-wrap { background: linear-gradient(135deg,#10b981,#34d399); }
+    .accent-concept .ct-section-divider { background: linear-gradient(90deg,#10b981,#34d399); }
+    .accent-concept .ct-section-tag { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
+    .accent-change .ct-icon-wrap { background: linear-gradient(135deg,#ec4899,#f472b6); }
+    .accent-change .ct-section-divider { background: linear-gradient(90deg,#ec4899,#f472b6); }
+    .accent-change .ct-section-tag { background: rgba(236,72,153,0.1); color: #db2777; border: 1px solid rgba(236,72,153,0.2); }
+    .accent-analisis .ct-icon-wrap { background: linear-gradient(135deg,#8b5cf6,#a78bfa); }
+    .accent-analisis .ct-section-divider { background: linear-gradient(90deg,#8b5cf6,#a78bfa); }
+    .accent-analisis .ct-section-tag { background: rgba(139,92,246,0.1); color: #7c3aed; border: 1px solid rgba(139,92,246,0.2); }
+    .accent-filosofi .ct-icon-wrap { background: linear-gradient(135deg,#ec4899,#f472b6); }
+    .accent-filosofi .ct-section-divider { background: linear-gradient(90deg,#ec4899,#f472b6); }
+    .accent-filosofi .ct-section-tag { background: rgba(236,72,153,0.1); color: #db2777; border: 1px solid rgba(236,72,153,0.2); }
+    .accent-penilaian .ct-icon-wrap { background: linear-gradient(135deg,#06b6d4,#22d3ee); }
+    .accent-penilaian .ct-section-divider { background: linear-gradient(90deg,#06b6d4,#22d3ee); }
+    .accent-penilaian .ct-section-tag { background: rgba(6,182,212,0.1); color: #0891b2; border: 1px solid rgba(6,182,212,0.2); }
+    .accent-tugas .ct-icon-wrap { background: linear-gradient(135deg,#10b981,#34d399); }
+    .accent-tugas .ct-section-divider { background: linear-gradient(90deg,#10b981,#34d399); }
+    .accent-tugas .ct-section-tag { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
+    .accent-rumusan .ct-icon-wrap { background: linear-gradient(135deg,#06b6d4,#22d3ee); }
+    .accent-rumusan .ct-section-divider { background: linear-gradient(90deg,#06b6d4,#22d3ee); }
+    .accent-rumusan .ct-section-tag { background: rgba(6,182,212,0.1); color: #0891b2; border: 1px solid rgba(6,182,212,0.2); }
 
-    .file-group-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--glass-border);
-    }
-
-    .file-group-head span {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
+    /* Responsive */
     @media (max-width: 1000px) {
-      .bottom-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .detail-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .siklus-grid { grid-template-columns: repeat(2, 1fr); }
+      .penilaian-grid { grid-template-columns: 1fr; }
     }
-
+    @media (max-width: 900px) {
+      .ct-layout { grid-template-columns: 1fr; }
+      .ct-toc { position: relative; top: 0; display: flex; flex-direction: column; }
+      .ct-toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+      .ct-toc-divider { display: none; }
+    }
+    @media (max-width: 640px) {
+      .ct-foundation-grid { grid-template-columns: 1fr; }
+      .ct-info-banner { grid-template-columns: 1fr; }
+      .ct-tabs { gap: 6px; }
+      .ct-tab-btn { padding: 9px 14px; font-size: 0.8rem; }
+    }
     @media (max-width: 600px) {
-      .detail-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .siklus-hero {
-        padding: 30px 24px;
-      }
+      .siklus-grid { grid-template-columns: 1fr; }
+      .ct-section { padding: 24px 20px; }
+      .ct-section-header h2 { font-size: 1.1rem; }
+      .ct-artefak-card { padding: 20px 20px 20px 24px; }
+      .ct-toc-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -268,14 +307,33 @@
 
   <nav id="navbar">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
       <ul class="nav-links" id="navList">
         <li><a href="index.html">Beranda</a></li>
         <li><a href="profil.html">Profil</a></li>
-        <li><a href="artefak.html">Artefak</a></li>
-        <li><a href="penilaian.html">Penilaian</a></li>
         <li><a href="model-guru.html">Model Guru</a></li>
-        <li><a href="refleksi.html">Refleksi</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn active" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+            <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+            <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+            <a href="artefak.html" class="active">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+            <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+            <a href="computational-thinking.html">Computational Thinking</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+          <div class="dropdown-content">
+            <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+            <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+            <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+            <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+            <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+            <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+          </div>
+        </li>
         <li><a href="berkas.html">Berkas</a></li>
       </ul>
       <div class="nav-right">
@@ -292,411 +350,1073 @@
   <div class="page-wrap">
     <section>
       <div class="container">
+        <!-- Page Header -->
         <div class="sec-header fade-in">
-          <span class="sec-tag">Produk Pembelajaran</span>
+          <span class="sec-tag">Produk Pembelajaran · Semester 1</span>
           <h1 class="sec-title">Artefak PPL Terbimbing</h1>
           <p class="sec-desc">
-            Dokumentasi perangkat pembelajaran selama tiga siklus, dilengkapi
-            analisis mendalam berbasis kajian teori.
+            Dokumentasi perangkat pembelajaran, modul ajar, instrumen penilaian, dan analisis reflektif pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing di SMP Negeri 18 Malang.
           </p>
           <div class="divider"></div>
         </div>
 
-        <!-- Tabs — kept the same -->
-        <div class="tab-nav fade-in">
-          <button class="tab-btn active" data-target="s1">
-            <i data-lucide="book" style="
-                  width: 14px;
-                  height: 14px;
-                  vertical-align: middle;
-                  margin-right: 6px;
-                "></i>Siklus 1
-          </button>
-          <button class="tab-btn" data-target="s2">
-            <i data-lucide="book" style="
-                  width: 14px;
-                  height: 14px;
-                  vertical-align: middle;
-                  margin-right: 6px;
-                "></i>Siklus 2
-          </button>
-          <button class="tab-btn" data-target="s3">
-            <i data-lucide="book" style="
-                  width: 14px;
-                  height: 14px;
-                  vertical-align: middle;
-                  margin-right: 6px;
-                "></i>Siklus 3
-          </button>
-        </div>
-
-        <!-- ═══ SIKLUS 1 ═══ -->
-        <div class="tab-pane active" id="s1">
-          <div class="siklus-container">
-            <!-- Hero Card -->
-            <div class="glass siklus-hero fade-in">
-              <span class="sec-tag">Siklus 1 · PPG</span>
-              <h2 class="siklus-title">
-                Penyisipan Objek pada Aplikasi Ms. Word (Insert Picture, Shapes, dan Word Art)
-              </h2>
-              <div class="meta-row">
-                <div class="meta-item">
-                  <i data-lucide="calendar"></i> 21 April 2026
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="building-2"></i> SMPN 18 Malang
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="book-open"></i> Kelas VII
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="layers"></i> PjBL Approach
-                </div>
-              </div>
-              <p class="hero-desc">
-                Siklus pertama berfokus pada keterampilan penyisipan objek gambar, bentuk, dan teks dekoratif
-                menggunakan pendekatan kontekstual berbasis
-                <em>Project-Based Learning (PjBL)</em>. Siswa membuat dokumen kreatif
-                yang dihubungkan dengan kebutuhan praktik sehari-hari,
-                mendorong pemahaman bermakna sejak awal.
-              </p>
+        <!-- ═══ SIKLUS NAVIGATION ═══ -->
+        <div class="fade-in">
+          <div class="siklus-nav-header">
+            <div class="siklus-nav-icon"><i data-lucide="layers"></i></div>
+            <div class="siklus-nav-meta">
+              <h2>Siklus Pembelajaran</h2>
+              <p>Pilih siklus untuk melihat modul ajar, dokumentasi, dan analisis pembelajaran</p>
             </div>
+          </div>
 
-            <!-- Detail Grid -->
-            <div class="detail-grid fade-in">
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="map-pin"></i></div>
-                  Konteks
-                </div>
-                <p>
-                  RPP mengacu Kurikulum Merdeka dengan orientasi pemahaman
-                  bermakna.
-                </p>
+          <div class="siklus-grid">
+            <a href="ppl-terbimbing-siklus1.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">01</div>
+              <div>
+                <h3>Siklus 1</h3>
+                <p>Penyisipan Objek pada Aplikasi Ms. Word (Insert Picture, Shapes, dan Word Art)</p>
               </div>
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="target"></i></div>
-                  Tujuan
-                </div>
-                <p>
-                  Siswa mampu menyisipkan gambar (Insert Picture), bentuk geometris (Shapes),
-                  dan seni tulisan (Word Art) secara estetik dalam dokumen.
-                </p>
-              </div>
-              <div class="glass detail-card pro">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="check-circle-2"></i>
-                  </div>
-                  Kelebihan
-                </div>
-                <p>
-                  Siswa sangat antusias mendesain dokumen sendiri, modul praktik interaktif,
-                  dan panduan visual sangat mudah dipahami.
-                </p>
-              </div>
-              <div class="glass detail-card con">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="alert-triangle"></i>
-                  </div>
-                  Kekurangan
-                </div>
-                <p>
-                  Sebagian siswa lambat dalam mengoperasikan mouse/keyboard;
-                  diperlukan bimbingan personal (scaffolding).
-                </p>
-              </div>
-            </div>
 
-            <!-- Bottom Layout -->
-            <div class="bottom-grid fade-in">
-              <div class="glass theory-card">
-                <h4><i data-lucide="scroll-text"></i> Kajian Teori</h4>
-                <p>
-                  Analisis berbasis mata kuliah
-                  <em>Perencanaan Pembelajaran</em> &amp;
-                  <em>Teknologi Pendidikan</em>:
-                </p>
-                <div class="theory-list">
-                  <div class="theory-item">
-                    Project-Based Learning (PjBL)
-                  </div>
-                  <div class="theory-item">
-                    TPACK Framework
-                  </div>
-                  <div class="theory-item">Teori Kognitivisme Piaget</div>
-                  <div class="theory-item">Kurikulum Merdeka</div>
-                </div>
+            </a>
+
+            <a href="ppl-terbimbing-siklus2.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">02</div>
+              <div>
+                <h3>Siklus 2</h3>
+                <p>Ms. Word (Insert Table)</p>
               </div>
-              <div class="files-container">
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="folder-open" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      File Pembelajaran</span>
-                  </div>
-                  <div id="s1-files"></div>
-                </div>
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="camera" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      Dokumentasi</span>
-                  </div>
-                  <div id="s1-docs"></div>
-                </div>
+
+            </a>
+
+            <a href="ppl-terbimbing-siklus3.html" class="glass siklus-card">
+              <div class="siklus-card-arrow"><i data-lucide="arrow-right"></i></div>
+              <div class="siklus-card-number">03</div>
+              <div>
+                <h3>Siklus 3</h3>
+                <p>Ms. Word (Insert Symbol dan Equation)</p>
               </div>
-            </div>
+
+            </a>
           </div>
         </div>
 
-        <!-- ═══ SIKLUS 2 ═══ -->
-        <div class="tab-pane" id="s2">
-          <div class="siklus-container">
-            <div class="glass siklus-hero fade-in">
-              <span class="sec-tag">Siklus 2 · PPG</span>
-              <h2 class="siklus-title">
-                Ms. Word (Insert Table)
-              </h2>
-              <div class="meta-row">
-                <div class="meta-item">
-                  <i data-lucide="calendar"></i> 28 April 2026
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="building-2"></i> SMPN 18 Malang
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="book-open"></i> Kelas VII
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="layers"></i> Discovery Learning
-                </div>
-              </div>
-              <p class="hero-desc">
-                Siklus kedua mengembangkan pemahaman penyisipan tabel, pemformatan kolom dan baris, serta penataan data
-                secara terstruktur pada dokumen Ms. Word menggunakan metode <em>Discovery Learning</em>.
-              </p>
-            </div>
+        <!-- ═══ DOKUMEN & REFLEKSI (CT-Style Layout) ═══ -->
 
-            <div class="detail-grid fade-in">
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="map-pin"></i></div>
-                  Konteks
-                </div>
-                <p>
-                  Revisi siklus 1: pengelolaan waktu lebih fleksibel. Pembuatan tabel jadwal pelajaran atau jadwal piket
-                  kelas secara mandiri oleh siswa.
-                </p>
-              </div>
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="target"></i></div>
-                  Tujuan
-                </div>
-                <p>
-                  Siswa mampu menyisipkan tabel (Insert Table), memformat sel, serta menata data teks dan angka secara
-                  rapi.
-                </p>
-              </div>
-              <div class="glass detail-card pro">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="check-circle-2"></i>
-                  </div>
-                  Kelebihan
-                </div>
-                <p>
-                  Praktik pembuatan jadwal pelajaran nyata sangat relevan dengan kebutuhan sehari-hari siswa kelas VII.
-                </p>
-              </div>
-              <div class="glass detail-card con">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="alert-triangle"></i>
-                  </div>
-                  Kekurangan
-                </div>
-                <p>
-                  Keterbatasan waktu saat pemformatan border dan warna sel; perlu panduan langkah-demi-langkah (cheat
-                  sheet) yang dicetak.
-                </p>
-              </div>
-            </div>
-
-            <div class="bottom-grid fade-in">
-              <div class="glass theory-card">
-                <h4><i data-lucide="scroll-text"></i> Kajian Teori</h4>
-                <p>
-                  Analisis berbasis mata kuliah <em>Media Pembelajaran</em> &amp;
-                  <em>Psikologi Pendidikan</em>:
-                </p>
-                <div class="theory-list">
-                  <div class="theory-item">Multimedia Learning (Mayer)</div>
-                  <div class="theory-item">Discovery Learning (Bruner)</div>
-                </div>
-              </div>
-              <div class="files-container">
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="folder-open" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      File Pembelajaran</span>
-                  </div>
-                  <div id="s2-files"></div>
-                </div>
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="camera" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      Dokumentasi</span>
-                  </div>
-                  <div id="s2-docs"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Tab Buttons -->
+        <div class="ct-tabs fade-in">
+          <button class="ct-tab-btn active" data-tab="tab-refleksi4c">
+            <i data-lucide="brain"></i> Refleksi 4C
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-analisis-new">
+            <i data-lucide="search"></i> Analisis Artefak
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-hasil">
+            <i data-lucide="file-text"></i> Hasil Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-lembar">
+            <i data-lucide="file-down"></i> Lembar Refleksi
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-tugas-new">
+            <i data-lucide="folder-open"></i> Tugas Perkuliahan
+          </button>
+          <button class="ct-tab-btn" data-tab="tab-arsip">
+            <i data-lucide="archive"></i> Arsip PPL
+          </button>
         </div>
 
-        <!-- ═══ SIKLUS 3 ═══ -->
-        <div class="tab-pane" id="s3">
-          <div class="siklus-container">
-            <div class="glass siklus-hero fade-in">
-              <span class="sec-tag">Siklus 3 · PPG</span>
-              <h2 class="siklus-title">
-                Ms. Word (Insert Symbol dan Equation)
-              </h2>
-              <div class="meta-row">
-                <div class="meta-item">
-                  <i data-lucide="calendar"></i> 5 Mei 2026
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="building-2"></i> SMPN 18 Malang
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="book-open"></i> Kelas VII
-                </div>
-                <div class="meta-item">
-                  <i data-lucide="layers"></i> Formative Assessment
-                </div>
-              </div>
-              <p class="hero-desc">
-                Siklus ketiga berfokus pada pengenalan penyisipan simbol-simbol khusus dan formula matematika
-                menggunakan fitur Symbol dan Equation di Ms. Word. Asesmen formatif diperkuat dengan umpan balik
-                langsung.
-              </p>
-            </div>
+        <!-- Layout: Sidebar + Main -->
+        <div class="ct-layout">
 
-            <div class="detail-grid fade-in">
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="map-pin"></i></div>
-                  Konteks
-                </div>
-                <p>
-                  Siklus final dengan penekanan pada pembuatan lembar soal matematika sederhana menggunakan Word,
-                  menerapkan perbaikan pengelolaan waktu dari siklus 1 &amp; 2.
-                </p>
-              </div>
-              <div class="glass detail-card">
-                <div class="detail-card-head">
-                  <div class="icon-circle"><i data-lucide="target"></i></div>
-                  Tujuan
-                </div>
-                <p>
-                  Siswa mampu menggunakan fitur Symbol dan Equation untuk menyisipkan rumus matematika dan karakter
-                  khusus pada dokumen.
-                </p>
-              </div>
-              <div class="glass detail-card pro">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="check-circle-2"></i>
-                  </div>
-                  Kelebihan
-                </div>
-                <p>
-                  Siswa memahami bahwa Ms. Word dapat digunakan untuk menulis dokumen ilmiah dan matematis secara
-                  profesional.
-                </p>
-              </div>
-              <div class="glass detail-card con">
-                <div class="detail-card-head">
-                  <div class="icon-circle">
-                    <i data-lucide="alert-triangle"></i>
-                  </div>
-                  Kekurangan
-                </div>
-                <p>
-                  Beberapa siswa kesulitan mencari letak simbol khusus; diperlukan pendampingan ekstra untuk menemukan
-                  menu simbol.
-                </p>
-              </div>
+          <!-- Sidebar TOC -->
+          <aside class="ct-toc fade-in">
+            <div class="ct-toc-title">
+              <i data-lucide="list"></i> Daftar Isi
             </div>
+            <ul class="ct-toc-list" id="ctTocList">
+              <!-- Populated dynamically by JS per active tab -->
+            </ul>
+          </aside>
 
-            <div class="bottom-grid fade-in">
-              <div class="glass theory-card">
-                <h4><i data-lucide="scroll-text"></i> Kajian Teori</h4>
-                <p>
-                  Analisis berbasis mata kuliah
-                  <em>Evaluasi Pembelajaran</em> &amp; <em>Etika Profesi</em>:
+          <!-- Main Content -->
+          <div class="ct-main">
+
+            <!-- ═══ TAB 1: Refleksi 4C ═══ -->
+            <div class="ct-tab-pane active" id="tab-refleksi4c">
+
+              <!-- Pengantar Refleksi -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-refleksi-4c">
+                <span class="ct-section-tag">Refleksi 4C</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="edit-3"></i></div>
+                  <h2>Refleksi Pengalaman PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing di SMP Negeri 18 Malang selama Semester 1 Program PPG Prajabatan memberikan pengalaman belajar yang sangat berharga. Melalui tiga siklus pembelajaran Informatika, saya berkesempatan merancang, melaksanakan, dan mengevaluasi proses pembelajaran secara langsung di hadapan peserta didik sesungguhnya.
+                  </p>
+                  <p>
+                    Berikut adalah refleksi pengalaman PPL Terbimbing yang disusun dengan kerangka 4C: <strong>Connection</strong>, <strong>Challenge</strong>, <strong>Concept</strong>, dan <strong>Change</strong>.
+                  </p>
+                  <div class="ct-info-banner">
+                    <div class="ct-info-item">
+                      <div class="ct-info-icon"><i data-lucide="link"></i></div>
+                      <div class="ct-info-text">
+                        <strong>Connection</strong>
+                        Keterkaitan teori &amp; praktik lapangan
+                      </div>
+                    </div>
+                    <div class="ct-info-item">
+                      <div class="ct-info-icon"><i data-lucide="zap"></i></div>
+                      <div class="ct-info-text">
+                        <strong>Challenge</strong>
+                        Tantangan selama PPL Terbimbing
+                      </div>
+                    </div>
+                    <div class="ct-info-item">
+                      <div class="ct-info-icon"><i data-lucide="lightbulb"></i></div>
+                      <div class="ct-info-text">
+                        <strong>Concept &amp; Change</strong>
+                        Konsep kunci &amp; transformasi diri
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Connection -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-connection">
+                <span class="ct-section-tag">Connection</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="link"></i></div>
+                  <h2>Connection — Keterkaitan Teori &amp; Praktik</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Selama mengikuti perkuliahan PPG, saya mempelajari berbagai teori dan pendekatan pedagogik seperti Problem-Based Learning (PBL), pembelajaran berdiferensiasi, serta kerangka TPACK (Technological Pedagogical Content Knowledge). Namun, pemahaman sejati baru muncul ketika teori-teori tersebut diaplikasikan langsung di laboratorium komputer SMP Negeri 18 Malang.
+                  </p>
+
+                  <div class="ct-highlight">
+                    <p>
+                      Keterkaitan utama yang saya temukan adalah bahwa desain pembelajaran yang baik—dimulai dari analisis kebutuhan peserta didik, penyusunan modul ajar yang terstruktur berdasarkan Kurikulum Merdeka, hingga pelaksanaan asesmen formatif—sangat menentukan keberhasilan proses belajar mengajar di kelas.
+                    </p>
+                  </div>
+
+                  <div class="ct-methods">
+                    <span class="ct-method-pill"><i data-lucide="compass"></i> Problem-Based Learning</span>
+                    <span class="ct-method-pill"><i data-lucide="target"></i> Kurikulum Merdeka</span>
+                    <span class="ct-method-pill"><i data-lucide="cpu"></i> TPACK</span>
+                    <span class="ct-method-pill"><i data-lucide="users"></i> Pembelajaran Berdiferensiasi</span>
+                    <span class="ct-method-pill"><i data-lucide="activity"></i> Asesmen Formatif</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Challenge -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-challenge">
+                <span class="ct-section-tag">Challenge</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="zap"></i></div>
+                  <h2>Challenge — Tantangan yang Dihadapi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Tantangan terbesar selama pelaksanaan PPL Terbimbing mencakup aspek teknis maupun pedagogis. Menghadapi siswa SMP yang memiliki tingkat keterampilan digital beragam memaksa saya untuk terus beradaptasi dan menyesuaikan strategi pembelajaran secara real-time.
+                  </p>
+
+                  <div class="ct-challenge-box cb-1">
+                    <div class="ct-challenge-icon"><i data-lucide="monitor"></i></div>
+                    <div class="ct-challenge-body">
+                      <div class="ct-challenge-label">Tantangan 1 · Disparitas Keterampilan Digital Siswa</div>
+                      <p class="ct-challenge-text">Terdapat perbedaan signifikan dalam kemampuan mengoperasikan komputer di antara peserta didik. Sebagian siswa sudah terbiasa dengan keyboard dan mouse, sementara sebagian lainnya masih membutuhkan bimbingan dasar. Hal ini menuntut strategi scaffolding bertingkat dan pendampingan individual.</p>
+                    </div>
+                  </div>
+
+                  <div class="ct-challenge-box cb-2">
+                    <div class="ct-challenge-icon"><i data-lucide="clock"></i></div>
+                    <div class="ct-challenge-body">
+                      <div class="ct-challenge-label">Tantangan 2 · Pengelolaan Waktu &amp; Kelas</div>
+                      <p class="ct-challenge-text">Alokasi waktu pembelajaran yang terbatas (2 × 40 menit) seringkali tidak cukup untuk menyelesaikan seluruh kegiatan praktikum. Selain itu, mengelola antusiasme siswa di laboratorium komputer agar tetap fokus dan kondusif menjadi tantangan tersendiri.</p>
+                    </div>
+                  </div>
+
+                  <div class="ct-challenge-box cb-3">
+                    <div class="ct-challenge-icon"><i data-lucide="file-warning"></i></div>
+                    <div class="ct-challenge-body">
+                      <div class="ct-challenge-label">Tantangan 3 · Penyesuaian Modul Praktikum</div>
+                      <p class="ct-challenge-text">Modul praktikum yang telah dirancang terkadang perlu dimodifikasi di saat pelaksanaan karena kendala teknis (komputer bermasalah, versi software berbeda) maupun tingkat pemahaman siswa yang tidak sesuai ekspektasi awal.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Concept -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-concept">
+                <span class="ct-section-tag">Concept</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="lightbulb"></i></div>
+                  <h2>Concept — Konsep-Konsep Penting</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Dari pelaksanaan tiga siklus PPL Terbimbing, terdapat beberapa konsep kunci yang saya pahami secara mendalam dan menjadi landasan dalam merancang pembelajaran Informatika yang efektif:
+                  </p>
+
+                  <div class="ct-foundation-grid">
+                    <div class="ct-foundation-card">
+                      <div class="ct-foundation-icon"><i data-lucide="git-branch"></i></div>
+                      <div class="ct-foundation-name">Problem-Based Learning (PBL)</div>
+                      <p class="ct-foundation-desc">Model pembelajaran yang menghadapkan siswa pada masalah nyata sebagai stimulus belajar. Pada PPL, siswa diminta membuat produk digital (poster, jadwal, rumus) menggunakan Ms. Word.</p>
+                    </div>
+                    <div class="ct-foundation-card">
+                      <div class="ct-foundation-icon"><i data-lucide="cpu"></i></div>
+                      <div class="ct-foundation-name">TPACK</div>
+                      <p class="ct-foundation-desc">Kerangka integrasi pengetahuan teknologi, pedagogi, dan konten. Guru harus mensinergikan ketiga aspek ini agar pembelajaran bermakna.</p>
+                    </div>
+                    <div class="ct-foundation-card">
+                      <div class="ct-foundation-icon"><i data-lucide="layers"></i></div>
+                      <div class="ct-foundation-name">Scaffolding Bertingkat</div>
+                      <p class="ct-foundation-desc">Pemberian dukungan belajar secara bertahap sesuai kebutuhan siswa—dari bimbingan penuh hingga kemandirian—untuk mengakomodasi keberagaman kemampuan.</p>
+                    </div>
+                    <div class="ct-foundation-card">
+                      <div class="ct-foundation-icon"><i data-lucide="bar-chart"></i></div>
+                      <div class="ct-foundation-name">Asesmen Formatif Berkelanjutan</div>
+                      <p class="ct-foundation-desc">Penilaian selama proses untuk memberikan umpan balik konstruktif. Dilakukan melalui observasi, tanya jawab, dan pengecekan hasil kerja siswa secara berkala.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Change -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-change">
+                <span class="ct-section-tag">Change</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="refresh-cw"></i></div>
+                  <h2>Change — Perubahan &amp; Transformasi Diri</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Pengalaman PPL Terbimbing membawa perubahan paradigma yang signifikan pada diri saya sebagai calon pendidik. Berikut adalah transformasi yang saya rasakan dan komitmen yang saya bangun:
+                  </p>
+
+                  <div class="ct-change-cards">
+                    <div class="ct-change-card">
+                      <div class="ct-change-icon"><i data-lucide="user-check"></i></div>
+                      <div class="ct-change-body">
+                        <div class="ct-change-label">Guru Sebagai Fasilitator</div>
+                        <p class="ct-change-text">Saya berubah dari pemahaman guru sebagai "penyampai materi" menjadi fasilitator yang membimbing peserta didik menemukan dan mengkonstruksi pengetahuan secara mandiri melalui pengalaman langsung.</p>
+                      </div>
+                    </div>
+                    <div class="ct-change-card">
+                      <div class="ct-change-icon"><i data-lucide="heart"></i></div>
+                      <div class="ct-change-body">
+                        <div class="ct-change-label">Empati &amp; Kesabaran Pedagogis</div>
+                        <p class="ct-change-text">Saya belajar untuk lebih sabar dan empatik terhadap kecepatan belajar yang beragam. Setiap siswa memiliki titik start yang berbeda dan membutuhkan pendekatan yang disesuaikan.</p>
+                      </div>
+                    </div>
+                    <div class="ct-change-card">
+                      <div class="ct-change-icon"><i data-lucide="trending-up"></i></div>
+                      <div class="ct-change-body">
+                        <div class="ct-change-label">Refleksi Sebagai Budaya</div>
+                        <p class="ct-change-text">Saya berkomitmen menjadikan refleksi sebagai kebiasaan profesional—selalu mengevaluasi setiap pelaksanaan pembelajaran untuk perbaikan berkelanjutan menuju PPL Mandiri di Semester 2.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-refleksi4c -->
+
+            <!-- ═══ TAB 2: Analisis Artefak ═══ -->
+            <div class="ct-tab-pane" id="tab-analisis-new">
+
+              <!-- Pengantar Analisis -->
+              <div class="ct-section accent-analisis fade-in" id="sec-analisis-new">
+                <span class="ct-section-tag">A · Pemilihan Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="search"></i></div>
+                  <h2>Analisis Artefak Pembelajaran PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Berikut adalah analisis terhadap Lembar Kerja (LK) pilihan yang saya jadikan artefak utama sebagai bukti otentik proses dan hasil belajar selama PPL Terbimbing. LK-LK ini dipilih karena merepresentasikan fase-fase penting: observasi lingkungan belajar, refleksi asistensi, hingga refleksi siklus praktik terbimbing.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Artefak 1: LK 2 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-1">
+                <span class="ct-artefak-num">1</span>
+                <h3>LK 2 — Observasi Lingkungan Belajar</h3>
+                <div class="ct-artefak-label">
+                  <i data-lucide="help-circle"></i> Alasan Pemilihan
+                </div>
+                <p class="ct-artefak-text">
+                  LK 2 dipilih karena merupakan artefak yang secara langsung merekam kondisi nyata lingkungan belajar di SMP Negeri 18 Malang — mulai dari kondisi fisik kelas, ketersediaan sarana TIK, hingga pola interaksi guru-siswa. Hasil observasi dalam LK ini menjadi fondasi bagi saya untuk menyusun pendekatan pembelajaran yang kontekstual dan responsif terhadap kondisi lapangan yang sebenarnya.
                 </p>
-                <div class="theory-list">
-                  <div class="theory-item">
-                    Assessment for Learning (Black &amp; Wiliam)
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/ppl1/Tugas/LK 2 Observasi Lingkungan Belajar.pdf"></iframe>
                   </div>
-                  <div class="theory-item">Taksonomi Bloom Revisi</div>
-                  <div class="theory-item">Reflective Practice (Schön)</div>
-                  <div class="theory-item">Scaffolding Vygotsky</div>
                 </div>
               </div>
-              <div class="files-container">
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="folder-open" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      File Pembelajaran</span>
-                  </div>
-                  <div id="s3-files"></div>
+
+              <!-- Artefak 2: LK 3 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-2">
+                <span class="ct-artefak-num">2</span>
+                <h3>LK 3 — Refleksi Pembelajaran Praktik Asistensi</h3>
+                <div class="ct-artefak-label">
+                  <i data-lucide="help-circle"></i> Alasan Pemilihan
                 </div>
-                <div class="glass file-group">
-                  <div class="file-group-head">
-                    <span><i data-lucide="camera" style="
-                            width: 14px;
-                            height: 14px;
-                            vertical-align: middle;
-                            margin-right: 6px;
-                          "></i>
-                      Dokumentasi</span>
+                <p class="ct-artefak-text">
+                  LK 3 dipilih karena merekam proses transisi saya dari peran pengamat menjadi pelaksana pembelajaran. Refleksi asistensi dalam LK ini memperlihatkan bagaimana saya mulai mengidentifikasi kelemahan pengelolaan kelas guru pamong dan merumuskan strategi perbaikan yang kemudian saya terapkan saat mengajar mandiri. Artefak ini adalah bukti nyata proses pembentukan kompetensi reflektif.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/ppl1/Tugas/LK 3 Refleksi Pembelajaran Praktik Asistensi.pdf"></iframe>
                   </div>
-                  <div id="s3-docs"></div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+
+              <!-- Artefak 3: LK 4 Siklus 2 -->
+              <div class="ct-artefak-card fade-in" id="sec-artefak-3">
+                <span class="ct-artefak-num">3</span>
+                <h3>LK 4 — Refleksi Praktik Terbimbing Siklus 2</h3>
+                <div class="ct-artefak-label">
+                  <i data-lucide="help-circle"></i> Alasan Pemilihan
+                </div>
+                <p class="ct-artefak-text">
+                  LK 4 Siklus 2 dipilih sebagai representasi titik tengah perjalanan PPL Terbimbing yang paling informatif. Pada siklus ini terlihat perubahan konkret dalam strategi saya: umpan balik dari Siklus 1 telah diterapkan, kelas mulai lebih terkelola, dan asesmen formatif berjalan lebih sistematis. Artefak ini paling jelas menggambarkan siklus refleksi-perbaikan yang menjadi inti dari proses PPL Terbimbing.
+                </p>
+                <div class="ct-artefak-doc">
+                  <button class="ct-doc-toggle" onclick="this.nextElementSibling.classList.toggle('active')">
+                    <i data-lucide="eye"></i> Lihat Dokumen
+                  </button>
+                  <div class="ct-doc-viewer">
+                    <iframe src="files/dokumen/ppl1/Tugas/LK 4 Refleksi Pembelajaran Praktik Terbimbing Siklus 2.pdf"></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <!-- B. Mengapa Artefak Mendukung -->
+              <div class="ct-section accent-analisis fade-in" id="sec-artefak-dukungan">
+                <span class="ct-section-tag">B · Keterkaitan Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="check-circle-2"></i></div>
+                  <h2>Mengapa Artefak Tersebut Mendukung Hasil Refleksi?</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Ketiga LK yang dipilih saling melengkapi dan membentuk narasi perkembangan yang utuh. LK 2 memberikan konteks awal berupa pemahaman mendalam tentang lingkungan belajar; LK 3 merekam transisi dari pengamatan ke pelaksanaan; dan LK 4 Siklus 2 membuktikan bahwa siklus refleksi-perbaikan benar-benar berjalan secara nyata dan terukur.
+                  </p>
+                  <p>
+                    Ketiga LK ini mendukung hasil refleksi 4C karena masing-masing merepresentasikan proses Connection (mengaitkan teori dengan konteks lapangan), Challenge (mengidentifikasi hambatan nyata), Concept (membangun pemahaman pedagogik baru), dan Change (menerapkan perubahan konkret di setiap siklus).
+                  </p>
+                </div>
+              </div>
+
+            </div><!-- /tab-analisis-new -->
+
+            <!-- ═══ TAB 3: Hasil Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-hasil">
+
+              <div class="ct-section accent-rumusan fade-in" id="sec-rumusan">
+                <span class="ct-section-tag">Bagian 3</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap">
+                    <i data-lucide="file-text"></i>
+                  </div>
+                  <h2>Merumuskan Hasil Refleksi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    PPL Terbimbing membuktikan bahwa teori-teori pedagogik — seperti Problem-Based Learning (PBL), TPACK, dan scaffolding — bukan sekadar konsep abstrak, melainkan alat kerja nyata. Mengajarkan materi Informatika di sekolah mendorong saya untuk aktif mentransformasi pengetahuan teoretis menjadi praktik yang kontekstual dan berpusat pada peserta didik.
+                  </p>
+                  <p>
+                    Lembar Kerja (LK 1–4) yang dianalisis mencatat lintasan perkembangan yang konsisten: dari fase orientasi (LK 1–2), asistensi (LK 3), hingga siklus terbimbing (LK 4). Keberhasilan mengatasi disparitas kemampuan digital siswa melalui diferensiasi dan refleksi siklik telah memperkuat kapasitas adaptasi saya sebagai calon pendidik profesional.
+                  </p>
+
+                  <div class="ct-progress">
+                    <div class="ct-progress-step">
+                      <p><strong>Komitmen 1 · Fasilitator Belajar:</strong> Saya berkomitmen untuk beralih secara permanen dari gaya mengajar instruksional satu arah menuju peran fasilitator, memposisikan siswa sebagai subjek aktif yang mengonstruksi pengetahuannya sendiri.</p>
+                    </div>
+                    <div class="ct-progress-step">
+                      <p><strong>Komitmen 2 · Empati Pedagogis Terapan:</strong> Saya akan terus mengenali titik awal dan ZPD siswa yang berbeda, serta menggunakan modul berjenjang atau scaffolding yang tepat untuk memfasilitasi kebutuhan yang beragam.</p>
+                    </div>
+                    <div class="ct-progress-step">
+                      <p><strong>Komitmen 3 · Refleksi Berkelanjutan:</strong> Refleksi siklik yang dilakukan di setiap akhir siklus pembelajaran akan saya jadikan budaya kerja permanen, baik untuk persiapan PPL Mandiri maupun karier mengajar saya di masa depan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-hasil -->
+
+            <!-- ═══ TAB 4: Lembar Refleksi ═══ -->
+            <div class="ct-tab-pane" id="tab-lembar">
+
+              <!-- Header Kosong -->
+              <div class="ct-section accent-penilaian fade-in" id="sec-lembar">
+                <span class="ct-section-tag">Lembar Refleksi</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="file-down"></i></div>
+                  <h2>Lembar Refleksi PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <div class="ct-artefak-doc">
+                    <button class="ct-doc-toggle active" onclick="this.nextElementSibling.classList.toggle('active')">
+                      <i data-lucide="eye"></i> Lihat Dokumen LK 2
+                    </button>
+                    <div class="ct-doc-viewer active">
+                      <iframe src="files/dokumen/ppl1/LK2_PPL Terbimbing.pdf"></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /tab-lembar -->
+
+
+            <!-- ═══ TAB 5: Tugas Perkuliahan ═══ -->
+            <div class="ct-tab-pane" id="tab-tugas-new">
+
+              <!-- Pengantar Tugas -->
+              <div class="ct-section accent-tugas fade-in" id="sec-tugas-new">
+                <span class="ct-section-tag">Tugas PPL Terbimbing</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="folder-open"></i></div>
+                  <h2>Berkas Tugas Perkuliahan PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Berikut adalah kumpulan seluruh berkas tugas perkuliahan Praktik Pengalaman Lapangan (PPL) Terbimbing Semester 1 yang dikelompokkan berdasarkan kategori:
+                  </p>
+                </div>
+              </div>
+
+              <!-- Accordion File Browser -->
+              <div class="ct-accordion fade-in">
+
+                <!-- RPP / Modul Ajar -->
+                <div class="ct-accordion-item" id="sec-rpp">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#6366f1,#818cf8);">📋</div>
+                    <div class="ct-accordion-title">RPP / Modul Ajar — Siklus 1, 2, 3</div>
+                    <span class="ct-accordion-badge">3 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/RPP_Siklus1.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">RPP Siklus 1 — Penyisipan Objek Ms. Word</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/RPP_Siklus2.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">RPP Siklus 2 — Ms. Word (Insert Table)</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/RPP_Siklus3.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">RPP Siklus 3 — Symbol &amp; Equation</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modul Praktikum Siswa -->
+                <div class="ct-accordion-item" id="sec-modul">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">📖</div>
+                    <div class="ct-accordion-title">Modul Praktikum Siswa — Siklus 1, 2, 3</div>
+                    <span class="ct-accordion-badge">3 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus1.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="book-open"></i></span>
+                          <span class="ct-file-name">Modul Praktikum Siklus 1 — Insert Picture, Shapes, WordArt</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus2.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="book-open"></i></span>
+                          <span class="ct-file-name">Modul Praktikum Siklus 2 — Insert Table</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus3.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="book-open"></i></span>
+                          <span class="ct-file-name">Modul Praktikum Siklus 3 — Symbol &amp; Equation</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Instrumen Penilaian -->
+                <div class="ct-accordion-item" id="sec-instrumen">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#06b6d4,#22d3ee);">📊</div>
+                    <div class="ct-accordion-title">Instrumen Penilaian — Lampiran 7 &amp; 8</div>
+                    <span class="ct-accordion-badge">6 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 1.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 7 Siklus 1 — Perangkat Ajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 1.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 8 Siklus 1 — Praktik Mengajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 2.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 7 Siklus 2 — Perangkat Ajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 2.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 8 Siklus 2 — Praktik Mengajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 3.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 7 Siklus 3 — Perangkat Ajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 3.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="clipboard-check"></i></span>
+                          <span class="ct-file-name">Lampiran 8 Siklus 3 — Praktik Mengajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Lembar Kerja (LK) -->
+                <div class="ct-accordion-item" id="sec-lk-tugas">
+                  <button class="ct-accordion-header" onclick="this.parentElement.classList.toggle('open')">
+                    <div class="ct-accordion-icon" style="background:linear-gradient(135deg,#10b981,#34d399);">📝</div>
+                    <div class="ct-accordion-title">Lembar Kerja (LK) — Observasi &amp; Refleksi</div>
+                    <span class="ct-accordion-badge">6 file</span>
+                    <i data-lucide="chevron-down" class="ct-accordion-chevron"></i>
+                  </button>
+                  <div class="ct-accordion-body">
+                    <div class="ct-accordion-inner">
+                      <ul class="ct-file-list">
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 1 Laporan Hasil Orientasi dan Observasi Manajemen Sekolah.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 1 — Laporan Orientasi &amp; Observasi Manajemen Sekolah</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 2 Observasi Lingkungan Belajar.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 2 — Observasi Lingkungan Belajar</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 3 Refleksi Pembelajaran Praktik Asistensi.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 3 — Refleksi Pembelajaran Praktik Asistensi</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 4 Refleksi Pembelajaran Praktik Terbimbing Siklus 1.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 4 — Refleksi Praktik Terbimbing Siklus 1</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 4 Refleksi Pembelajaran Praktik Terbimbing Siklus 2.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 4 — Refleksi Praktik Terbimbing Siklus 2</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                        <li><a class="ct-file-item" href="files/dokumen/ppl1/Tugas/LK 4 Refleksi Pembelajaran Praktik Terbimbing Siklus 3.pdf" target="_blank">
+                          <span class="ct-file-icon"><i data-lucide="file-text"></i></span>
+                          <span class="ct-file-name">LK 4 — Refleksi Praktik Terbimbing Siklus 3</span>
+                          <i data-lucide="download" class="ct-file-dl"></i>
+                        </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /ct-accordion -->
+
+            </div><!-- /tab-tugas-new -->
+
+            <!-- ═══ TAB 6: Arsip PPL (Menu Sebelumnya) ═══ -->
+            <div class="ct-tab-pane" id="tab-arsip">
+
+              <!-- Refleksi Pengantar -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-refleksi">
+                <span class="ct-section-tag">Bagian 1 · Refleksi</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="book-open"></i></div>
+                  <h2>Refleksi Pengalaman Belajar PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing di SMP Negeri 18 Malang memberikan banyak pengalaman dan pembelajaran berharga bagi penulis, baik dalam aspek penguasaan pedagogik maupun pengembangan kompetensi personal sebagai calon pendidik profesional. Selama kegiatan PPL, penulis belajar secara bertahap dan terbimbing untuk menyusun perangkat pembelajaran berbasis Kurikulum Merdeka, mengelola dinamika kelas, memilih metode serta media pembelajaran yang kontekstual, dan merespons kebutuhan belajar unik peserta didik.
+                  </p>
+                  <p>
+                    Sebagai jembatan awal antara teori perkuliahan PPG dan realitas di lapangan sekolah, PPL Terbimbing menuntut adaptasi berkelanjutan terhadap tantangan nyata di laboratorium komputer serta interaksi langsung dengan siswa jenjang Sekolah Menengah Pertama.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Pelaksanaan Pembelajaran di Kelas -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-pelaksanaan">
+                <span class="ct-section-tag">Bagian 2 · Praktik Lapangan</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="presentation"></i></div>
+                  <h2>Pelaksanaan Pembelajaran di SMP Negeri 18 Malang</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <!-- Foto Refleksi -->
+                  <div style="width: 100%; max-width: 640px; margin: 0 auto 28px; text-align: center;">
+                    <img src="files/foto/foto%20refleksi.jpeg" alt="Foto Refleksi Pembelajaran di Kelas" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--glass-border); box-shadow: var(--shadow);" />
+                    <div style="margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); font-style: italic;">
+                      Dokumentasi Praktik Pembelajaran Terbimbing di Laboratorium Komputer SMPN 18 Malang
+                    </div>
+                  </div>
+
+                  <p>
+                    Dalam pelaksanaan pembelajaran informatika, penggunaan media seperti Microsoft Word, modul praktikum cetak maupun digital, WhatsApp grup, dan Google Form sangat membantu kelancaran proses transfer pengetahuan serta meningkatkan keterlibatan aktif peserta didik. Meskipun demikian, penulis mengidentifikasi beberapa kendala nyata selama siklus berlangsung, antara lain pengelolaan alokasi waktu yang ketat, disparitas kecepatan keterampilan teknis mengetik dan navigasi mouse antarpeserta didik, serta perlunya penyesuaian instruksi kerja agar lebih mudah dicerna oleh seluruh siswa.
+                  </p>
+
+                  <div class="refleksi-highlight">
+                    <p>
+                      "Dari pengalaman tersebut, penulis memahami secara mendalam betapa krusialnya rancangan pembelajaran yang interaktif, terstruktur melalui sintaks Problem-Based Learning (PBL), dan berpusat pada peserta didik (student-centered) agar setiap capaian pembelajaran dapat tercapai secara optimal."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kolaborasi & Pembelajaran Profesional -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-kolaborasi">
+                <span class="ct-section-tag">Bagian 3 · Kolaborasi Profesional</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="users"></i></div>
+                  <h2>Komunikasi, Kerjasama, &amp; Etika Guru</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Selain dalam aspek teknis pengajaran, kegiatan PPL Terbimbing memberikan pengalaman yang sangat berharga dalam membangun komunikasi kolegial dan kemitraan kerja sama bersama guru pamong, dosen pembimbing lapangan (DPL), sesama mahasiswa praktikan, serta seluruh civitas akademika SMP Negeri 18 Malang.
+                  </p>
+                  <p>
+                    Penulis belajar mengenai pentingnya tanggung jawab moral, keteladanan kedisiplinan, ketepatan waktu, kemampuan beradaptasi dalam kultur sekolah, serta penjagaan marwah kode etik guru. Setiap masukan konstruktif, kritik, dan bimbingan dari guru pamong dan dosen pembimbing dijadikan kompas evaluasi diri untuk terus membenahi kelemahan dan meningkatkan mutu layanan pendidikan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Kesimpulan Refleksi -->
+              <div class="ct-section accent-refleksi fade-in" id="sec-kesimpulan">
+                <span class="ct-section-tag">Bagian 4 · Sintesis</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="check-circle-2"></i></div>
+                  <h2>Kesimpulan &amp; Rekomendasi Tindak Lanjut</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Secara menyeluruh, rangkaian PPL Terbimbing memberikan fondasi kokoh dalam mengintegrasikan empat kompetensi guru: pedagogik, profesional, kepribadian, dan sosial. Penulis kian memahami esensi menjadi seorang pendidik yang tidak sekadar mentransfer pengetahuan, tetapi membimbing karakter dan membuka wawasan berpikir kritis peserta didik.
+                  </p>
+                  <p>
+                    Pengalaman reflektif pada PPL Terbimbing Semester 1 ini menjadi bekal esensial dan tolok ukur perbaikan dalam menyongsong pelaksanaan PPL Mandiri pada Semester 2.
+                  </p>
+                </div>
+              </div>
+
+
+
+              <div class="ct-section accent-analisis fade-in" id="sec-analisis">
+                <span class="ct-section-tag">Bagian 1 · Telaah Artefak</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="search"></i></div>
+                  <h2>Menganalisis Artefak Pembelajaran</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Artefak pembelajaran yang dihasilkan selama 3 siklus PPL Terbimbing mencakup modul ajar/RPP, bahan ajar panduan praktikum, lembar kerja peserta didik (LKPD), instrumen asesmen formatif, serta rekaman hasil belajar siswa. Setiap artefak disusun dengan mengacu pada prinsip Kurikulum Merdeka yang menekankan fleksibilitas, kebermaknaan, dan ketercapaian kompetensi dasar Informatika Fase D.
+                  </p>
+                  <p>
+                    Pada <strong>Siklus 1</strong>, artefak berfokus pada penyisipan objek grafis dan penataan tata letak visual; pada <strong>Siklus 2</strong> dikembangkan artefak pemformatan data tabel; dan pada <strong>Siklus 3</strong> diselesaikan artefak penulisan rumus ilmiah melalui Symbol dan Equation. Ketiganya menunjukkan kesinambungan kompetensi penguasaan aplikasi perkantoran dari tingkat dasar hingga penerapan aplikatif.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ct-section accent-analisis fade-in" id="sec-pbl-tpack">
+                <span class="ct-section-tag">Bagian 2 · Landasan Teoretis</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="cpu"></i></div>
+                  <h2>Integrasi Problem-Based Learning (PBL) &amp; TPACK</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Desain artefak mengintegrasikan kerangka <strong>Technological Pedagogical Content Knowledge (TPACK)</strong>, di mana penguasaan materi aplikasi pengolah kata disinergikan dengan strategi pedagogik PBL dan pemanfaatan fasilitas TIK sekolah.
+                  </p>
+                  <p>
+                    Siswa tidak hanya diajarkan tombol fungsi perangkat lunak secara mekanis, melainkan dihadapkan pada skenario masalah konkret—seperti pembuatan poster pengumuman, perancangan jadwal piket kelas berstruktur tabel, serta pengetikan lembar rumus sains. Pola ini mengaktifkan proses kognitif tingkat tinggi (Higher Order Thinking Skills / HOTS) serta menumbuhkan daya kreasi mandiri siswa.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ct-section accent-analisis fade-in" id="sec-evaluasi-siklus">
+                <span class="ct-section-tag">Bagian 3 · Evaluasi Siklus</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="trending-up"></i></div>
+                  <h2>Evaluasi Progresivitas Antarsiklus</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Berdasarkan catatan observasi dan refleksi, terdapat peningkatan signifikan dalam hal kemandirian belajar dan efisiensi waktu pengerjaan tugas dari Siklus 1 hingga Siklus 3:
+                  </p>
+                  <ul style="padding-left: 20px; margin-bottom: 18px;">
+                    <li style="margin-bottom: 8px;"><strong>Siklus 1:</strong> Siswa membutuhkan banyak bimbingan teknis dasar mouse dan shortcut keyboard (scaffolding tinggi).</li>
+                    <li style="margin-bottom: 8px;"><strong>Siklus 2:</strong> Siswa mulai terbiasa dengan alur modul praktikum cetak dan mampu menyelesaikan penataan tabel secara lebih cepat dengan scaffolding kelompok.</li>
+                    <li><strong>Siklus 3:</strong> Kemandirian eksplorasi menu Word sudah matang; siswa mampu menyelesaikan pengetikan simbol dan persamaan matematika tanpa hambatan berarti.</li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+              <div class="ct-section accent-filosofi fade-in" id="sec-filosofi">
+                <span class="ct-section-tag">Bagian 1 · Nilai Dasar</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="heart-handshake"></i></div>
+                  <h2>Hakikat &amp; Peran Pendidik sebagai Fasilitator</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p class="drop-cap">
+                    Saya meyakini bahwa pembelajaran yang bermutu bukan sekadar proses mentransfer informasi kognitif dari buku teks ke buku catatan siswa, melainkan mendampingi dan memfasilitasi peserta didik untuk mengalami, menalar, dan menemukan solusi belajar secara langsung.
+                  </p>
+                  <p>
+                    Guru tidak lagi berperan sebagai satu-satunya pemegang otoritas kebenaran di ruang kelas (teacher-centered), melainkan sebagai fasilitator yang menginspirasi, memotivasi, merawat rasa ingin tahu, dan menciptakan atmosfer belajar yang ramah, inklusif, dan interaktif.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ct-section accent-filosofi fade-in" id="sec-diferensiasi">
+                <span class="ct-section-tag">Bagian 2 · Keberagaman Siswa</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="sparkles"></i></div>
+                  <h2>Menghargai Keberagaman &amp; Keunikan Potensi</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Melalui dinamika pembelajaran di kelas dan laboratorium, saya menyadari secara utuh bahwa setiap anak terlahir dengan kecepatan belajar, minat bakat, dan modalitas belajar yang beragam. Ada peserta didik yang cepat memahami instruksi visual, ada yang membutuhkan uji coba langsung berulang kali (kinestetik), dan ada pula yang berkembang optimal dalam dialog kolaboratif.
+                  </p>
+                  <p>
+                    Oleh sebab itu, desain pembelajaran harus mengedepankan prinsip pembelajaran berdiferensiasi (differentiated instruction)—menghadirkan panduan bertingkat, penugasan bervariasi, serta pendampingan yang peka terhadap kebutuhan masing-masing peserta didik.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ct-section accent-filosofi fade-in" id="sec-komitmen">
+                <span class="ct-section-tag">Bagian 3 · Komitmen</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="award"></i></div>
+                  <h2>Komitmen Filosofis Pendidik Profesional</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Proses refleksi dan evaluasi yang jujur merupakan nyawa dari profesi guru. Dari setiap interaksi di kelas, selalu terdapat celah perbaikan untuk menyempurnakan strategi mengajar, komunikasi antargenerasi, dan empati pedagogis.
+                  </p>
+                  <div class="refleksi-highlight">
+                    <p>
+                      "Filosofi mengajar yang senantiasa saya pegang teguh adalah menghadirkan pembelajaran yang memanusiakan, interaktif, berpusat pada peserta didik, serta mampu menumbuhkan daya lentur, rasa percaya diri, dan semangat belajar sepanjang hayat."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="ct-section accent-penilaian fade-in" id="sec-penilaian-info">
+                <span class="ct-section-tag">Instrumen Asesmen</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="clipboard-check"></i></div>
+                  <h2>Instrumen Penilaian PPL (Lampiran 7 &amp; 8)</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Seluruh pelaksanaan kegiatan Praktik Pengalaman Lapangan (PPL) Terbimbing dinilai secara berkala dan terstruktur oleh Guru Pamong dan Dosen Pembimbing Lapangan menggunakan instrumen resmi Program Pendidikan Profesi Guru (PPG):
+                  </p>
+                  <ul style="padding-left: 20px; margin-bottom: 20px;">
+                    <li style="margin-bottom: 8px;"><strong>Lampiran 7:</strong> Instrumen Penilaian Penyusunan Perangkat Pembelajaran (RPP/Modul Ajar, kesesuaian tujuan, media, asesmen).</li>
+                    <li><strong>Lampiran 8:</strong> Instrumen Penilaian Pelaksanaan Praktik Pembelajaran di Kelas (keterampilan mengajar, penguasaan kelas, interaksi siswa, penutup).</li>
+                  </ul>
+                  <p>
+                    Berikut dokumen autentik instrumen penilaian untuk Siklus 1, Siklus 2, dan Siklus 3 yang telah diverifikasi dan ditandatangani.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Penilaian Siklus 1 -->
+              <div class="ct-section accent-penilaian fade-in" id="sec-penilaian-s1">
+                <span class="ct-section-tag">Siklus 1 · 21 April 2026</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="file-check-2"></i></div>
+                  <h2>Penilaian Siklus 1 — Penyisipan Objek Ms. Word</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <div class="penilaian-grid">
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="file-text" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 7: Perangkat Ajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian modul ajar, LKPD, dan media pembelajaran Siklus 1 oleh Guru Pamong.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 1.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 7 siklus 1.pdf</strong>
+                          <span>2.0 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="presentation" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 8: Praktik Mengajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian observasi kinerja mengajar di laboratorium komputer oleh Guru Pamong.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 1.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 8 siklus 1.pdf</strong>
+                          <span>1.6 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Penilaian Siklus 2 -->
+              <div class="ct-section accent-penilaian fade-in" id="sec-penilaian-s2">
+                <span class="ct-section-tag">Siklus 2 · 28 April 2026</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="file-check-2"></i></div>
+                  <h2>Penilaian Siklus 2 — Ms. Word (Insert Table)</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <div class="penilaian-grid">
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="file-text" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 7: Perangkat Ajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian perangkat ajar pemformatan tabel dan modul praktikum Siklus 2.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 2.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 7 siklus 2.pdf</strong>
+                          <span>1.8 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="presentation" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 8: Praktik Mengajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian pelaksanaan praktik mengajar materi tabel kelas VII.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 2.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 8 siklus 2.pdf</strong>
+                          <span>1.6 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Penilaian Siklus 3 -->
+              <div class="ct-section accent-penilaian fade-in" id="sec-penilaian-s3">
+                <span class="ct-section-tag">Siklus 3 · 5 Mei 2026</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="file-check-2"></i></div>
+                  <h2>Penilaian Siklus 3 — Symbol &amp; Equation</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <div class="penilaian-grid">
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="file-text" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 7: Perangkat Ajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian perangkat ajar penulisan rumus matematika dan simbol.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 7 siklus 3.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 7 siklus 3.pdf</strong>
+                          <span>1.9 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                    <div class="penilaian-box">
+                      <div class="penilaian-box-head">
+                        <i data-lucide="presentation" style="color: var(--primary-light);"></i>
+                        <h3>Lampiran 8: Praktik Mengajar</h3>
+                      </div>
+                      <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0;">Penilaian pelaksanaan praktik mengajar siklus final PPL Terbimbing.</p>
+                      <a href="files/dokumen/ppl1/penilaian/Lampiran 8 siklus 3.pdf" class="file-row" target="_blank" style="margin-top: auto;">
+                        <span class="file-row-icon"><i data-lucide="download"></i></span>
+                        <span class="file-row-info">
+                          <strong>Lampiran 8 siklus 3.pdf</strong>
+                          <span>1.6 MB · Unduh / Buka Dokumen</span>
+                        </span>
+                        <span class="file-row-tag">BUKA PDF</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="ct-section accent-tugas fade-in" id="sec-tugas">
+                <span class="ct-section-tag">Bagian 1 · Kumpulan Berkas</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="folder-archive"></i></div>
+                  <h2>Berkas Tugas Perkuliahan PPL Terbimbing</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Kumpulan berkas perangkat pembelajaran, modul praktikum, dan dokumentasi tugas selama pelaksanaan Praktik Pengalaman Lapangan (PPL) Terbimbing:
+                  </p>
+                  <div class="file-list">
+                    <a href="files/dokumen/ppl1/rpp/RPP_Siklus1.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                      <span class="file-row-info">
+                        <strong>RPP Siklus 1 — Penyisipan Objek Ms. Word</strong>
+                        <span>597 KB · Modul Ajar Kurikulum Merdeka</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+
+                    <a href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus1.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="book-open"></i></span>
+                      <span class="file-row-info">
+                        <strong>Modul Praktikum Siswa Siklus 1</strong>
+                        <span>3.1 MB · Panduan Praktik Terbimbing Siswa</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+
+                    <a href="files/dokumen/ppl1/rpp/RPP_Siklus2.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                      <span class="file-row-info">
+                        <strong>RPP Siklus 2 — Ms. Word (Insert Table)</strong>
+                        <span>595 KB · Modul Ajar Pemformatan Tabel</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+
+                    <a href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus2.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="book-open"></i></span>
+                      <span class="file-row-info">
+                        <strong>Modul Praktikum Siswa Siklus 2</strong>
+                        <span>456 KB · Panduan Pembuatan Tabel Praktis</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+
+                    <a href="files/dokumen/ppl1/rpp/RPP_Siklus3.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="file-text"></i></span>
+                      <span class="file-row-info">
+                        <strong>RPP Siklus 3 — Symbol &amp; Equation</strong>
+                        <span>544 KB · Modul Ajar Penulisan Rumus Ilmiah</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+
+                    <a href="files/dokumen/ppl1/rpp/Modul_Praktik_Siklus3.pdf" class="file-row" target="_blank">
+                      <span class="file-row-icon"><i data-lucide="book-open"></i></span>
+                      <span class="file-row-info">
+                        <strong>Modul Praktikum Siswa Siklus 3</strong>
+                        <span>422 KB · Panduan Praktikum Simbol &amp; Persamaan</span>
+                      </span>
+                      <span class="file-row-tag">BUKA PDF</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ct-section accent-tugas fade-in" id="sec-laporan">
+                <span class="ct-section-tag">Bagian 2 · Laporan Akhir</span>
+                <div class="ct-section-header">
+                  <div class="ct-icon-wrap"><i data-lucide="file-signature"></i></div>
+                  <h2>Laporan Akhir &amp; Pengesahan</h2>
+                </div>
+                <div class="ct-section-divider"></div>
+                <div class="ct-section-body">
+                  <p>
+                    Laporan komprehensif pelaksanaan PPL Terbimbing di SMP Negeri 18 Malang mencakup profil sekolah mitra, analisis kebutuhan peserta didik, dokumentasi pelaksanaan 3 siklus, serta lembar pengesahan dari Guru Pamong, Kepala Sekolah, dan Dosen Pembimbing Lapangan.
+                  </p>
+                  <p>
+                    Seluruh dokumen arsip lengkap tersimpan secara rapi pada sistem e-portfolio dan repositori perkuliahan PPG.
+                  </p>
+                </div>
+              </div>
+
+            </div><!-- /tab-arsip -->
+
+          </div><!-- /ct-main -->
+        </div><!-- /ct-layout -->
+
       </div>
     </section>
   </div>
@@ -707,25 +1427,134 @@
       <a href="index.html">Beranda</a>
     </p>
   </footer>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
   <script>
-    function pageInit() {
-      initTabs(".tab-btn", ".tab-pane");
-      loadManifest().then((data) => {
-        data.siklus.forEach((s) => {
-          renderFileRows(s.files, document.getElementById(`s${s.id}-files`));
-          const photosOnly = s.dokumentasi.filter((d) =>
-            ["jpg", "jpeg", "png", "webp"].includes(d.type.toLowerCase()),
-          );
-          renderFileRows(
-            photosOnly,
-            document.getElementById(`s${s.id}-docs`),
-          );
+    // ── Tab System ──
+    (function () {
+      const tabBtns = document.querySelectorAll('.ct-tab-btn');
+      const tabPanes = document.querySelectorAll('.ct-tab-pane');
+      const tocList = document.getElementById('ctTocList');
+
+      // TOC definitions per tab
+      const tocData = {
+        'tab-refleksi4c': [
+          { href: '#sec-refleksi-4c', icon: 'edit-3',       label: 'Pengantar Refleksi' },
+          { href: '#sec-connection',  icon: 'link',          label: 'Connection' },
+          { href: '#sec-challenge',   icon: 'zap',           label: 'Challenge' },
+          { href: '#sec-concept',     icon: 'lightbulb',     label: 'Concept' },
+          { href: '#sec-change',      icon: 'refresh-cw',    label: 'Change' }
+        ],
+        'tab-analisis-new': [
+          { href: '#sec-analisis-new',    icon: 'search',        label: 'Pemilihan Artefak' },
+          { href: '#sec-artefak-1',       icon: 'file-text',     label: 'RPP Siklus 1' },
+          { href: '#sec-artefak-2',       icon: 'file-text',     label: 'Modul Siklus 2' },
+          { href: '#sec-artefak-3',       icon: 'file-text',     label: 'RPP Siklus 3' },
+          { href: '#sec-artefak-dukungan', icon: 'check-circle', label: 'Dukungan Refleksi' }
+        ],
+        'tab-hasil': [
+          { href: '#sec-hasil',         icon: 'file-text', label: 'Rumusan Refleksi' },
+          { href: '#sec-komitmen-rtl',   icon: 'award',     label: 'Komitmen & RTL' }
+        ],
+        'tab-lembar': [
+          { href: '#sec-lembar',   icon: 'file-down',  label: 'Pengantar LK' },
+          { href: '#sec-lk1',      icon: 'file-text',  label: 'LK 1 — Orientasi' },
+          { href: '#sec-lk2',      icon: 'file-text',  label: 'LK 2 — Observasi' },
+          { href: '#sec-lk3',      icon: 'file-text',  label: 'LK 3 — Asistensi' },
+          { href: '#sec-lk4-s1',   icon: 'file-text',  label: 'LK 4 — Siklus 1' },
+          { href: '#sec-lk4-s2',   icon: 'file-text',  label: 'LK 4 — Siklus 2' },
+          { href: '#sec-lk4-s3',   icon: 'file-text',  label: 'LK 4 — Siklus 3' }
+        ],
+        'tab-tugas-new': [
+          { href: '#sec-tugas-new',  icon: 'folder-open',     label: 'Tugas Perkuliahan' },
+          { href: '#sec-rpp',        icon: 'folder',          label: 'RPP / Modul Ajar' },
+          { href: '#sec-modul',      icon: 'folder',          label: 'Modul Praktikum' },
+          { href: '#sec-instrumen',   icon: 'folder',          label: 'Instrumen Penilaian' },
+          { href: '#sec-lk-tugas',   icon: 'folder',          label: 'Lembar Kerja (LK)' }
+        ],
+        'tab-arsip': [
+          { href: '#sec-refleksi',    icon: 'book-open',        label: 'Refleksi PPL' },
+          { href: '#sec-pelaksanaan', icon: 'presentation',     label: 'Praktik Kelas' },
+          { href: '#sec-kolaborasi',  icon: 'users',            label: 'Kolaborasi' },
+          { href: '#sec-kesimpulan',  icon: 'check-circle-2',   label: 'Kesimpulan' },
+          { href: '#sec-analisis',        icon: 'search',       label: 'Telaah Artefak' },
+          { href: '#sec-pbl-tpack',       icon: 'cpu',          label: 'PBL & TPACK' },
+          { href: '#sec-evaluasi-siklus', icon: 'trending-up',   label: 'Evaluasi Siklus' },
+          { href: '#sec-filosofi',    icon: 'heart-handshake',  label: 'Peran Pendidik' },
+          { href: '#sec-diferensiasi', icon: 'sparkles',        label: 'Keberagaman' },
+          { href: '#sec-komitmen',    icon: 'award',            label: 'Komitmen Guru' },
+          { href: '#sec-penilaian-info', icon: 'clipboard-check', label: 'Instrumen Asesmen' },
+          { href: '#sec-penilaian-s1',   icon: 'file-check-2',    label: 'Penilaian Siklus 1' },
+          { href: '#sec-penilaian-s2',   icon: 'file-check-2',    label: 'Penilaian Siklus 2' },
+          { href: '#sec-penilaian-s3',   icon: 'file-check-2',    label: 'Penilaian Siklus 3' },
+          { href: '#sec-tugas',   icon: 'folder-archive',  label: 'Kumpulan Berkas' },
+          { href: '#sec-laporan', icon: 'file-signature',  label: 'Laporan Akhir' }
+        ]
+      };
+
+      function buildToc(tabId) {
+        const items = tocData[tabId] || [];
+        tocList.innerHTML = items.map((item, i) =>
+          `<li><a href="${item.href}"${i === 0 ? ' class="active"' : ''}><i data-lucide="${item.icon}"></i> ${item.label}</a></li>`
+        ).join('');
+        if (window.lucide) lucide.createIcons();
+        initScrollSpy();
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab');
+
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          document.getElementById(targetId).classList.add('active');
+
+          buildToc(targetId);
         });
       });
+
+      // Build initial TOC
+      buildToc('tab-refleksi4c');
+    })();
+
+    // ── Sidebar TOC Active Scroll Spy ──
+    function initScrollSpy() {
+      const tocLinks = document.querySelectorAll('#ctTocList a');
+      const sections = [];
+
+      tocLinks.forEach(link => {
+        const id = link.getAttribute('href');
+        if (id && id.startsWith('#')) {
+          const el = document.querySelector(id);
+          if (el) sections.push({ el, link });
+        }
+      });
+
+      function setActive() {
+        if (!sections.length) return;
+        let current = sections[0];
+        const scrollY = window.scrollY + 140;
+
+        for (const sec of sections) {
+          if (sec.el.offsetTop <= scrollY) {
+            current = sec;
+          }
+        }
+
+        tocLinks.forEach(l => l.classList.remove('active'));
+        if (current) current.link.classList.add('active');
+      }
+
+      window.removeEventListener('scroll', window._ctScrollSpy);
+      window._ctScrollSpy = setActive;
+      window.addEventListener('scroll', setActive, { passive: true });
+      setActive();
     }
+    initScrollSpy();
   </script>
 </body>
 

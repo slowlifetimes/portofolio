@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id">
 
 <head>
@@ -18,7 +18,6 @@
       color: var(--primary-light);
       font-weight: 700;
     }
-
     @media (max-width: 700px) {
       .refleksi-body p.drop-cap::first-letter {
         font-size: 2.2em;
@@ -39,16 +38,35 @@
 
   <nav id="navbar">
     <div class="container nav-inner">
-      <a class="nav-logo" href="index.html">E<span>-Portfolio</span></a>
-      <ul class="nav-links" id="navList">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="artefak.html">Artefak</a></li>
-        <li><a href="penilaian.html">Penilaian</a></li>
-        <li><a href="model-guru.html">Model Guru</a></li>
-        <li><a href="refleksi.html" class="active">Refleksi</a></li>
-        <li><a href="berkas.html">Berkas</a></li>
-      </ul>
+      <a class="nav-logo" href="index.html" style="display:flex; align-items:center;"><img src="files/foto/logo/logo.webp" alt="E-Portfolio Logo" style="height:45px; width:auto;"></a>
+                                              <ul class="nav-links" id="navList">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="model-guru.html">Model Guru</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 1 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="filosofi-pendidikan.html">Filosofi Pendidikan dan Pendidikan Nilai</a>
+              <a href="peserta-didik.html">Peserta didik dan Pemahamannya</a>
+              <a href="pembelajaran-mendalam.html">Pembelajaran Mendalam dan Asesmen Dasar</a>
+              <a href="artefak.html" class="active">Praktik Pengalaman Lapangan (PPL) Terbimbing</a>
+              <a href="growth-mindset.html">Pola Pikir Bertumbuh (Growth Mindset)</a>
+              <a href="computational-thinking.html">Computational Thinking</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn" style="display:flex; align-items:center; gap:4px;">Semester 2 <i data-lucide="chevron-down" style="width:16px; height:16px;"></i></a>
+            <div class="dropdown-content">
+              <a href="pembelajaran-sosial-emosional.html">Pembelajaran Sosial Emosional</a>
+              <a href="ppl-mandiri.html">Praktik Pengalaman Lapangan (PPL) Mandiri</a>
+              <a href="pembelajaran-mendalam-lanjut.html">Pembelajaran Mendalam dan Asesmen Lanjut</a>
+              <a href="etika-dan-profesionalisme-guru.html">Etika Dan Profesionalisme Guru</a>
+              <a href="projek-kepemimpinan.html">Projek Kepemimpinan</a>
+              <a href="seminar-pendidikan-profesi-guru.html">Seminar Pendidikan Profesi Guru</a>
+            </div>
+          </li>
+          <li><a href="berkas.html">Berkas</a></li>
+        </ul>
       <div class="nav-right">
         <button class="theme-btn" id="themeBtn">
           <i data-lucide="moon"></i>
@@ -63,6 +81,17 @@
   <div class="page-wrap">
     <section>
       <div class="container">
+                <div class="tab-nav fade-in" style="justify-content: center; margin-bottom: 40px; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px;">
+          <a href="artefak.html" class="tab-btn " style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="clipboard-list" style="width: 14px; height: 14px; margin-right: 6px;"></i> Artefak
+          </a>
+          <a href="penilaian.html" class="tab-btn " style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="bar-chart-2" style="width: 14px; height: 14px; margin-right: 6px;"></i> Penilaian
+          </a>
+          <a href="refleksi.html" class="tab-btn active" style="text-decoration: none; display: inline-flex; align-items: center;">
+            <i data-lucide="book-open" style="width: 14px; height: 14px; margin-right: 6px;"></i> Refleksi
+          </a>
+        </div>
         <div class="sec-header fade-in">
           <span class="sec-tag">Refleksi & Filosofi</span>
           <h1 class="sec-title">Refleksi Akhir & Filosofi Mengajar</h1>
@@ -82,7 +111,7 @@
           <div class="refleksi-divider"></div>
 
           <div class="refleksi-body">
-            <!-- Foto Refleksi Di Atas -->
+                        <!-- Foto Refleksi Di Atas -->
             <div class="image-slot fade-in" style="
                   width: 100%;
                   max-width: 580px;
@@ -91,6 +120,7 @@
                 ">
               <img src="files/foto/foto%20refleksi.jpeg" alt="Foto Refleksi" class="img-frame"
                 style="aspect-ratio: 16/9; object-fit: cover; width: 100%;" />
+              <div class="img-label">Refleksi Pembelajaran di Kelas</div>
             </div>
 
             <p class="drop-cap">
@@ -101,36 +131,36 @@
               strategi pembelajaran dengan kondisi peserta didik.
             </p>
 
-            <p>
-              Dalam pelaksanaan pembelajaran, penggunaan media seperti Microsoft Word, modul praktikum, WhatsApp, dan
-              Google Form membantu proses penyampaian materi dan meningkatkan keterlibatan peserta didik. Meskipun
-              masih terdapat beberapa kendala seperti pengelolaan waktu, partisipasi peserta didik yang belum merata,
-              dan keterbatasan interaksi pada pembelajaran daring, kegiatan PPL memberikan pengalaman nyata dalam
-              menghadapi berbagai situasi pembelajaran di kelas maupun secara online.
-            </p>
-
-            <div class="refleksi-highlight" style="margin-top: 24px">
               <p>
-                Dari pengalaman tersebut, penulis memahami pentingnya pembelajaran yang interaktif, terstruktur, dan
-                berpusat pada peserta didik agar tujuan pembelajaran dapat tercapai secara optimal.
+                Dalam pelaksanaan pembelajaran, penggunaan media seperti Microsoft Word, modul praktikum, WhatsApp, dan
+                Google Form membantu proses penyampaian materi dan meningkatkan keterlibatan peserta didik. Meskipun
+                masih terdapat beberapa kendala seperti pengelolaan waktu, partisipasi peserta didik yang belum merata,
+                dan keterbatasan interaksi pada pembelajaran daring, kegiatan PPL memberikan pengalaman nyata dalam
+                menghadapi berbagai situasi pembelajaran di kelas maupun secara online.
               </p>
-            </div>
 
-            <p>
-              Selain dalam aspek pembelajaran, kegiatan PPL juga memberikan pengalaman dalam membangun komunikasi
-              dan kerja sama dengan guru pamong, dosen pembimbing, serta lingkungan sekolah. Penulis belajar
-              mengenai tanggung jawab, kedisiplinan, kemampuan beradaptasi, serta etika sebagai seorang pendidik
-              dalam lingkungan sekolah. Umpan balik dan arahan dari guru pamong maupun dosen pembimbing menjadi
-              bahan evaluasi yang membantu penulis untuk memperbaiki kekurangan dan meningkatkan kualitas diri.
-            </p>
+                            <div class="refleksi-highlight" style="margin-top: 24px">
+                  <p>
+                    Dari pengalaman tersebut, penulis memahami pentingnya pembelajaran yang interaktif, terstruktur, dan
+                    berpusat pada peserta didik agar tujuan pembelajaran dapat tercapai secara optimal.
+                  </p>
+                </div>
 
-            <p>
-              Secara keseluruhan, kegiatan PPL Terbimbing memberikan pengalaman yang sangat bermanfaat dalam
-              mengembangkan kompetensi pedagogik, profesional, sosial, dan kepribadian sebagai calon guru. Melalui
-              kegiatan ini, penulis menjadi lebih memahami peran dan tanggung jawab seorang pendidik serta
-              termotivasi untuk terus meningkatkan kemampuan dalam menciptakan pembelajaran yang efektif, inovatif,
-              dan bermakna bagi peserta didik.
-            </p>
+                <p>
+                  Selain dalam aspek pembelajaran, kegiatan PPL juga memberikan pengalaman dalam membangun komunikasi
+                  dan kerja sama dengan guru pamong, dosen pembimbing, serta lingkungan sekolah. Penulis belajar
+                  mengenai tanggung jawab, kedisiplinan, kemampuan beradaptasi, serta etika sebagai seorang pendidik
+                  dalam lingkungan sekolah. Umpan balik dan arahan dari guru pamong maupun dosen pembimbing menjadi
+                  bahan evaluasi yang membantu penulis untuk memperbaiki kekurangan dan meningkatkan kualitas diri.
+                </p>
+
+                <p>
+                  Secara keseluruhan, kegiatan PPL Terbimbing memberikan pengalaman yang sangat bermanfaat dalam
+                  mengembangkan kompetensi pedagogik, profesional, sosial, dan kepribadian sebagai calon guru. Melalui
+                  kegiatan ini, penulis menjadi lebih memahami peran dan tanggung jawab seorang pendidik serta
+                  termotivasi untuk terus meningkatkan kemampuan dalam menciptakan pembelajaran yang efektif, inovatif,
+                  dan bermakna bagi peserta didik.
+                </p>
           </div>
         </div>
 
@@ -148,33 +178,33 @@
           <div class="refleksi-divider"></div>
 
           <div class="refleksi-body">
-            <p class="drop-cap">
+                        <p class="drop-cap">
               Saya meyakini bahwa pembelajaran yang baik bukan hanya tentang menyampaikan materi, tetapi tentang
               membantu peserta didik memahami, mencoba, dan mengalami proses belajar secara langsung. Guru bukan hanya
               sebagai pemberi informasi, melainkan sebagai fasilitator yang membimbing, memotivasi, dan menciptakan
               suasana belajar yang nyaman serta interaktif.
             </p>
 
-            <p>
-              Melalui pengalaman pembelajaran yang telah dilakukan, saya belajar bahwa setiap peserta didik memiliki
-              cara belajar dan tingkat pemahaman yang berbeda. Oleh karena itu, pembelajaran perlu disesuaikan dengan
-              kebutuhan peserta didik melalui penggunaan media, praktik langsung, diskusi, dan pendekatan yang
-              mendorong keterlibatan aktif.
-            </p>
-
-            <p>
-              Saya juga meyakini bahwa proses refleksi dan evaluasi merupakan bagian penting dalam pembelajaran, baik
-              bagi peserta didik maupun guru. Dari setiap pengalaman mengajar, selalu ada hal yang dapat diperbaiki
-              dan dikembangkan agar pembelajaran menjadi lebih efektif, bermakna, dan menyenangkan.
-            </p>
-
-            <div class="refleksi-highlight">
               <p>
-                Dengan demikian, filosofi mengajar yang saya pegang adalah menciptakan pembelajaran yang interaktif,
-                berpusat pada peserta didik, serta mampu membangun keterampilan, rasa percaya diri, dan semangat
-                belajar peserta didik secara berkelanjutan.
+                Melalui pengalaman pembelajaran yang telah dilakukan, saya belajar bahwa setiap peserta didik memiliki
+                cara belajar dan tingkat pemahaman yang berbeda. Oleh karena itu, pembelajaran perlu disesuaikan dengan
+                kebutuhan peserta didik melalui penggunaan media, praktik langsung, diskusi, dan pendekatan yang
+                mendorong keterlibatan aktif.
               </p>
-            </div>
+
+              <p>
+                Saya juga meyakini bahwa proses refleksi dan evaluasi merupakan bagian penting dalam pembelajaran, baik
+                bagi peserta didik maupun guru. Dari setiap pengalaman mengajar, selalu ada hal yang dapat diperbaiki
+                dan dikembangkan agar pembelajaran menjadi lebih efektif, bermakna, dan menyenangkan.
+              </p>
+
+              <div class="refleksi-highlight">
+                <p>
+                  Dengan demikian, filosofi mengajar yang saya pegang adalah menciptakan pembelajaran yang interaktif,
+                  berpusat pada peserta didik, serta mampu membangun keterampilan, rasa percaya diri, dan semangat
+                  belajar peserta didik secara berkelanjutan.
+                </p>
+              </div>
           </div>
         </div>
       </div>
