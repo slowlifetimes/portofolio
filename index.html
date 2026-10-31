@@ -176,7 +176,7 @@
                   class="sec-title"
                   style="font-size: 1.5rem; margin-top: 4px; margin-bottom: 0"
                 >
-                  Momen PPL Terbimbing
+                  Momen Dokumentasi Praktik &amp; Kegiatan PPL
                 </h2>
               </div>
               <a
@@ -344,20 +344,23 @@
             const slide = document.createElement("div");
             slide.className = "slider-slide";
             slide.style.width = `${100 / slides.length}%`;
-            slide.innerHTML = `<img src="${f.src}" alt="${f.caption}" loading="lazy"/>`;
+            const encodedSrc = encodeURI(f.src);
+            slide.innerHTML = `<img src="${encodedSrc}" alt="${f.caption}" loading="lazy"/>`;
             track.appendChild(slide);
 
-            const dot = document.createElement("button");
-            dot.className = "slider-dot";
-            dot.setAttribute("aria-label", `Foto ${i + 1}`);
-            dot.addEventListener("click", () => {
-              go(i);
-              resetAuto();
-            });
-            dotsWrap.appendChild(dot);
+            if (slides.length <= 20) {
+              const dot = document.createElement("button");
+              dot.className = "slider-dot";
+              dot.setAttribute("aria-label", `Foto ${i + 1}`);
+              dot.addEventListener("click", () => {
+                go(i);
+                resetAuto();
+              });
+              dotsWrap.appendChild(dot);
+            }
           });
           prevBtn.style.display = nextBtn.style.display = "flex";
-          dotsWrap.style.display = "flex";
+          dotsWrap.style.display = slides.length <= 20 ? "flex" : "none";
         }
 
         function go(idx) {
@@ -365,10 +368,20 @@
           const offset = -(current * (100 / slides.length));
           track.style.transform = `translateX(${offset}%)`;
           const f = slides[current];
-          caption.innerHTML = `<span class="slider-cap-label">${f.label}</span><span class="slider-cap-text">${f.caption}</span>`;
-          dotsWrap
-            .querySelectorAll(".slider-dot")
-            .forEach((d, i) => d.classList.toggle("active", i === current));
+          caption.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:12px; width:100%;">
+              <div style="min-width:0;">
+                <span class="slider-cap-label">${f.label}</span>
+                <span class="slider-cap-text">${f.caption}</span>
+              </div>
+              <span class="slider-cap-count">${current + 1} / ${slides.length}</span>
+            </div>
+          `;
+          if (slides.length <= 20) {
+            dotsWrap
+              .querySelectorAll(".slider-dot")
+              .forEach((d, i) => d.classList.toggle("active", i === current));
+          }
         }
 
         function startAuto() {
@@ -481,6 +494,21 @@
         letter-spacing: 0.1em;
         color: var(--primary-light);
         opacity: 0.9;
+      }
+
+      .slider-cap-count {
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: #ffffff;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 5px 12px;
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        white-space: nowrap;
+        letter-spacing: 0.5px;
+        flex-shrink: 0;
       }
 
       .slider-cap-text {

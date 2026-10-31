@@ -51,3 +51,4 @@ check_file("ppl-mandiri.html")
 
 check_file("model-guru.html")
 check_file("profil.html")
+check_file("index.html")

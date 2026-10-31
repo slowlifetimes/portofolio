@@ -509,9 +509,10 @@ function refreshIcons(el) {
 async function fileExists(url) {
   if (window.location.protocol === "file:") return true; // Local file:// protocol compatibility
   try {
-    const r = await fetch(url, { method: "HEAD" });
+    const encoded = encodeURI(url);
+    const r = await fetch(encoded, { method: "HEAD" });
     if (r.ok) return true;
-    const r2 = await fetch(url, { method: "GET" });
+    const r2 = await fetch(encoded, { method: "GET" });
     return r2.ok;
   } catch {
     return false;
